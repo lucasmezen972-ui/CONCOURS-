@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concours Attaché Territorial – Manuel Complet – Martinique</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/enhancements.css">
 </head>
 <body>
 
@@ -19,8 +20,13 @@
   <nav>
     <a href="#" data-page="home" class="nav-home">Accueil</a>
     <a href="#" data-page="planner">Planning</a>
-    <a href="#" data-page="mises-en-situation">Situations</a>
+    <a href="#" data-page="dashboard" class="nav-badge">📊 Bord</a>
+    <a href="#" data-page="simulation-orale" class="nav-badge">🎤 Oral</a>
   </nav>
+  <div class="header-search-wrap">
+    <input id="global-search-input" type="text" placeholder="🔍 Rechercher…" autocomplete="off" spellcheck="false">
+    <div id="header-search-dropdown" class="header-search-dropdown"></div>
+  </div>
 </header>
 
 <!-- LAYOUT -->
@@ -49,6 +55,11 @@
           <li><a class="chapter-link" href="#" data-page="home"><span class="check"></span>Présentation du manuel</a></li>
           <li><a class="chapter-link" href="#" data-page="planner"><span class="check"></span>Planning jour par jour</a></li>
           <li><a class="chapter-link" href="#" data-page="mises-en-situation"><span class="check"></span>50 Mises en situation</a></li>
+          <li><a class="chapter-link" href="#" data-page="dashboard"><span class="check"></span>📊 Tableau de bord</a></li>
+          <li><a class="chapter-link" href="#" data-page="recherche"><span class="check"></span>🔍 Recherche globale</a></li>
+          <li><a class="chapter-link" href="#" data-page="simulation-orale"><span class="check"></span>🎤 Simulation orale</a></li>
+          <li><a class="chapter-link" href="#" data-page="banque-jury"><span class="check"></span>🎯 Banque de questions jury</a></li>
+          <li><a class="chapter-link" href="#" data-page="annales"><span class="check"></span>📄 Annales corrigées</a></li>
         </ul>
       </li>
       <li>
@@ -590,7 +601,12 @@
         </div>
 
         <button class="quiz-btn">Vérifier mes réponses</button>
-        <div class="score-display" style="display:none"><div class="score-num">0/10</div><div class="score-label">Score</div></div>
+        <button class="quiz-replay-btn">↺ Rejouer ce quiz</button>
+        <div class="score-display" style="display:none">
+          <div class="score-num">0/10</div>
+          <div class="score-label">Score</div>
+          <div class="score-msg"></div>
+        </div>
       </div>
 
       <div class="jury-questions">
@@ -620,10 +636,119 @@
     <!-- Inclusion des autres chapitres via fichiers séparés -->
     <!-- Les sections suivantes sont chargées dynamiquement -->
 
+    <!-- ========== TABLEAU DE BORD ========== -->
+    <section id="dashboard" class="page-section">
+      <div class="db-header">
+        <h1>📊 Tableau de bord</h1>
+        <p>Suivez votre progression en temps réel sur les 127 jours de préparation</p>
+      </div>
+      <div id="db-tips" class="db-tip-card">Chargement de votre progression…</div>
+      <div class="db-main-card">
+        <div class="db-main-info">
+          <div class="db-main-pct" id="db-pct">0%</div>
+          <div class="db-main-label">Progression globale</div>
+        </div>
+        <div class="db-main-bar"><div class="db-main-fill" style="width:0%"></div></div>
+      </div>
+      <div class="db-stats-grid">
+        <div class="db-stat-card"><div class="db-stat-icon">📚</div><div class="db-stat-val" id="db-done">0/0</div><div class="db-stat-label">Chapitres terminés</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">✅</div><div class="db-stat-val" id="db-quiz-ok" style="color:var(--success)">0</div><div class="db-stat-label">Quiz réussis (≥70%)</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">❌</div><div class="db-stat-val" id="db-quiz-ko" style="color:var(--danger)">0</div><div class="db-stat-label">Quiz à retravailler</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">📈</div><div class="db-stat-val" id="db-avg-quiz">—</div><div class="db-stat-label">Moyenne quiz</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">⏱️</div><div class="db-stat-val" id="db-temps">—</div><div class="db-stat-label">Temps restant estimé</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">🎤</div><div class="db-stat-val" id="db-oral-avg">—</div><div class="db-stat-label">Simulation orale</div></div>
+      </div>
+      <div class="db-niveau-card">
+        <span class="db-niveau-label">Niveau estimé :</span>
+        <span id="db-niveau" class="db-niveau-val">—</span>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>📊 Progression par partie</h2></div>
+        <div class="card-body" id="db-parts-chart"><p style="color:var(--text-muted)">Chargement…</p></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>🕒 Historique des quiz récents</h2></div>
+        <div class="card-body" id="db-quiz-history"><p style="color:var(--text-muted)">Aucun quiz effectué.</p></div>
+      </div>
+    </section>
+
+    <!-- ========== RECHERCHE ========== -->
+    <section id="recherche" class="page-section">
+      <div class="search-page-header">
+        <h1>🔍 Moteur de recherche</h1>
+        <p>Retrouvez instantanément n'importe quelle notion, définition, question de jury ou cas pratique du manuel</p>
+      </div>
+      <div class="search-page-bar">
+        <input id="search-page-input" type="text" placeholder="Ex : déconcentration, CTM, chlordécone, marchés publics, ordonnateur…" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="search-results-container"></div>
+    </section>
+
+    <!-- ========== SIMULATION ORALE ========== -->
+    <section id="simulation-orale" class="page-section">
+      <div class="oral-sim-header">
+        <h1>🎤 Simulation d'oral</h1>
+        <p>Préparez votre passage devant le jury · Questions tirées aléatoirement de la banque de 200+ questions</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>⏱️ Chronomètre</h2><p>Simulez la durée réelle de votre réponse</p></div>
+        <div class="card-body oral-timer-section">
+          <div id="oral-timer-display" class="oral-timer-display">02:00</div>
+          <div class="oral-timer-controls">
+            <select id="oral-duration-select">
+              <option value="120">2 min – Réponse à une question</option>
+              <option value="300">5 min – Présentation personnelle</option>
+              <option value="600">10 min – Exposé thématique</option>
+              <option value="1200">20 min – Oral complet</option>
+            </select>
+            <button id="oral-start-btn" class="oral-btn primary">▶ Démarrer</button>
+            <button id="oral-pause-btn" class="oral-btn">⏸ Pause</button>
+            <button id="oral-reset-btn" class="oral-btn">↺ Réinitialiser</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>🎲 Tirage aléatoire de question</h2><p>Simulez les questions du jury</p></div>
+        <div class="card-body">
+          <div class="oral-controls">
+            <select id="oral-category-select">
+              <option value="all">Toutes les catégories</option>
+              <option value="motivation">Motivation &amp; projet professionnel</option>
+              <option value="territorial">Environnement territorial</option>
+              <option value="martinique">Martinique &amp; CTM</option>
+              <option value="rh">RH &amp; Management</option>
+              <option value="finances">Finances publiques</option>
+              <option value="actualite">Actualités territoriales</option>
+              <option value="situation">Mises en situation</option>
+            </select>
+            <button id="oral-draw-btn" class="oral-btn primary">🎲 Tirer une question</button>
+          </div>
+          <div id="oral-question-display" class="oral-question-display">
+            <p class="oral-intro">Sélectionnez une catégorie et cliquez sur « Tirer une question » pour commencer votre simulation d'oral.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>💡 Conseils pour l'oral</h2></div>
+        <div class="card-body">
+          <div class="oral-tips-grid">
+            <div class="oral-tip"><div class="oral-tip-icon">🎯</div><div class="oral-tip-title">Structurez votre réponse</div><p>Répondez en 3 temps : Situation → Analyse → Proposition. Évitez le hors-sujet et les longues digressions.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">👁️</div><div class="oral-tip-title">Contact visuel</div><p>Regardez chaque juré à tour de rôle. Le contact visuel inspire confiance. Ne fixez pas vos notes.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🗣️</div><div class="oral-tip-title">Maîtrisez votre voix</div><p>Parlez clairement, pas trop vite. Faites des pauses. Articulez les chiffres et les sigles.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">💼</div><div class="oral-tip-title">Posture professionnelle</div><p>Asseyez-vous droit, mains visibles. Pas de gestes parasites. Restez naturel et détendu.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🇲🇶</div><div class="oral-tip-title">Valorisez la Martinique</div><p>Citez des exemples locaux concrets (CTM, chlordécone, emploi…). Le jury valorise la connaissance locale.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🎓</div><div class="oral-tip-title">Valorisez votre Bachelor RH</div><p>Faites le lien entre votre formation en RH et les missions concrètes d'un Attaché Territorial.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 </div>
 
 <script src="js/app.js"></script>
+<script src="content/banque-jury.js"></script>
+<script src="content/annales.js"></script>
 <script src="content/partie1.js"></script>
 <script src="content/partie2.js"></script>
 <script src="content/partie3.js"></script>
