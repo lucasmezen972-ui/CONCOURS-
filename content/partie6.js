@@ -147,6 +147,41 @@
   </div>
 </div>
 
+<h2 class="section-title">Questions sur la fonction publique et le management</h2>
+<div class="jury-questions">
+  <div class="jq-title">🎤 Questions – FPT &amp; Management</div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Quelle est la différence entre un fonctionnaire et un contractuel ? »</div>
+    <div class="jq-r">Le fonctionnaire est recruté par concours, nommé à titre permanent dans un grade (statut d'emploi). Il bénéficie d'une garantie de l'emploi et d'une carrière. Le contractuel est recruté par contrat (CDD ou CDI) sur un emploi déterminé. En FPT, les contractuels peuvent être recrutés sur des emplois de catégorie A si aucun fonctionnaire n'est disponible, ou pour des besoins temporaires. La loi de transformation de la FP (2019) a élargi le recours aux contractuels, notamment sur les emplois de direction.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que le principe de neutralité dans la fonction publique ? »</div>
+    <div class="jq-r">Le principe de neutralité impose à l'agent public de ne pas manifester ses convictions politiques, religieuses ou philosophiques dans l'exercice de ses fonctions. Il doit traiter tous les usagers de la même manière, sans discrimination. Ce principe est un corollaire du principe d'égalité devant le service public. En pratique : pas de port de signes religieux ostentatoires · discrétion sur les opinions personnelles · impartialité dans les décisions. Il s'applique à tous les agents quelle que soit leur catégorie.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Comment définissez-vous le management participatif ? »</div>
+    <div class="jq-r">Le management participatif consiste à associer les membres de l'équipe aux décisions qui les concernent, en valorisant leurs compétences et leur intelligence collective. Dans le secteur public, il prend plusieurs formes : groupes de travail thématiques · consultation du CST sur les projets d'organisation · entretiens réguliers · boîte à idées · projets de service co-construits. Avantages : adhésion des agents · meilleure qualité des décisions · développement des compétences · cohésion d'équipe. Limite : plus chronophage sur le court terme, mais plus efficace sur le long terme.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Quelle serait votre première action si vous découvriez une irrégularité financière dans votre service ? »</div>
+    <div class="jq-r">Je suivrais immédiatement la procédure légale : 1) Documenter et sécuriser les preuves sans les détruire ni les diffuser · 2) En référer sans délai à mon supérieur hiérarchique (DGS ou directeur) · 3) Si l'irrégularité implique un supérieur hiérarchique : saisir directement le Président du Conseil Exécutif ou la Direction des Finances · 4) Si l'irrégularité est grave : le comptable public peut être alerté · la DGCCRF ou le Parquet peuvent être saisis. Le dispositif de protection des lanceurs d'alerte (loi Sapin II) protège les agents signalant de bonne foi. Je n'agirais pas seul ni dans la précipitation.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que le droit de grève dans la fonction publique ? »</div>
+    <div class="jq-r">Le droit de grève est reconnu aux fonctionnaires (Préambule Constitution 1946). Ses modalités diffèrent du secteur privé : préavis obligatoire de 5 jours · pas de droit de grève pour certains corps (police, armée) · service minimum obligatoire dans certains secteurs (transport, éducation). La grève entraîne une retenue sur traitement (1/30e par jour de grève). L'agent en grève ne peut être sanctionné pour ce motif. Le dialogue social, via le CST, doit être privilégié pour prévenir les conflits.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">« Qu'entendez-vous par "devoir de réserve" du fonctionnaire ? »</div>
+    <div class="jq-r">Le devoir de réserve oblige l'agent public à ne pas exprimer publiquement des opinions susceptibles de nuire au bon fonctionnement du service, à l'image de l'administration ou à l'autorité de l'État. Il ne figure pas explicitement dans la loi mais est consacré par la jurisprudence. Il varie selon le grade et l'emploi (plus strict pour les cadres dirigeants). À différencier de l'obligation de discrétion professionnelle (faits et informations confidentiels) et du secret professionnel (données protégées). En pratique : un attaché territorial peut avoir des opinions politiques personnelles mais ne doit pas les exprimer dans le cadre de ses fonctions.</div>
+  </div>
+</div>
+
 <button class="mark-done-btn" data-chapter="p6c2" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
 <div class="chapter-nav">
   <a href="#" data-page="p6c1" class="chapter-nav-btn">← Ch.1 Attentes &amp; présentation</a>
@@ -206,6 +241,38 @@
   </div>
 </div>
 
+<div class="mise-en-situation">
+  <div class="mes-header">🎭 Mise en situation 4 – Gestion d'un agent en souffrance</div>
+  <div class="mes-body">
+    <div class="mes-contexte"><strong>Contexte :</strong> Un agent de votre équipe à la CTM (catégorie B, 15 ans de carrière) présente des signes de mal-être au travail depuis 6 semaines : absences récurrentes, baisse de productivité visible, conflit avec un collègue. Ses collègues vous ont signalé qu'il évoque parfois « ne plus tenir ».</div>
+    <div class="mes-mission">🎯 Quelle est votre démarche en tant que responsable ?</div>
+    <button class="mes-toggle">▼ Voir le corrigé</button>
+    <div class="mes-corrige">
+      <p><strong>Urgence :</strong> Si les propos laissent craindre un risque suicidaire, alerter immédiatement le médecin de prévention et le DRH.</p>
+      <p><strong>Étape 1 – Entretien bienveillant :</strong> Demander à voir l'agent en tête-à-tête dans un cadre confidentiel. Écoute sans jugement. Ne pas aborder la performance dès le départ mais laisser l'agent s'exprimer.</p>
+      <p><strong>Étape 2 – Identifier les causes :</strong> Causes professionnelles (surcharge, conflit, manque de sens, changement organisationnel) ou personnelles ? La distinction est importante pour orienter les actions.</p>
+      <p><strong>Étape 3 – Mobiliser les ressources :</strong> Orienter vers le médecin de prévention (RDV confidentiel) · informer le DRH sans révéler les détails confidentiels · associer le CSSCT si risques psychosociaux identifiés.</p>
+      <p><strong>Étape 4 – Suivi :</strong> Maintenir un contact régulier et bienveillant · adapter la charge de travail temporairement si possible · consigner les actions dans un journal de bord.</p>
+      <p><strong>À retenir :</strong> Prévention des RPS = obligation de l'employeur public (accord cadre DGAFP 2013). Ne jamais agir seul, toujours en coordination avec la DRH et le médecin de prévention.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mise-en-situation">
+  <div class="mes-header">🎭 Mise en situation 5 – Commande publique urgente</div>
+  <div class="mes-body">
+    <div class="mes-contexte"><strong>Contexte :</strong> Vous êtes attaché territorial à la direction des routes de la CTM. Suite à des pluies exceptionnelles, une route communale est endommagée et crée un danger pour les usagers. L'élu concerné vous demande de « passer une commande immédiate à l'entreprise locale habituelle » sans formalité, pour réparer en 48h.</div>
+    <div class="mes-mission">🎯 Comment procédez-vous légalement ?</div>
+    <button class="mes-toggle">▼ Voir le corrigé</button>
+    <div class="mes-corrige">
+      <p><strong>Premier réflexe :</strong> Sécuriser physiquement la route (signalisation, fermeture si nécessaire) pour éviter tout accident.</p>
+      <p><strong>Cadre juridique :</strong> Même en urgence, la commande publique s'applique. MAIS le code de la commande publique prévoit une procédure d'urgence impérieuse (art. L2122-1) qui permet de passer un marché de gré à gré sans publicité ni mise en concurrence, à condition de démontrer l'urgence imprévisible, impérative et non imputable à la collectivité.</p>
+      <p><strong>Actions :</strong> Documenter l'urgence (photos, rapport technique) · contacter 2-3 entreprises par téléphone pour comparaison rapide · en informer le DAF et le DGS · signer le bon de commande en urgence · régulariser la procédure dès que possible · conserver tous les justificatifs pour le comptable et la CRC.</p>
+      <p><strong>Ce qu'on ne fait PAS :</strong> passer commande sans aucun document ni traçabilité · choisir l'entreprise « habituelle » sans justification · ignorer le comptable public.</p>
+    </div>
+  </div>
+</div>
+
 <div class="fiche-synthese">
   <h3>📋 FICHE – Mises en situation orales</h3>
   <div class="fiche-item">Écouter la question entière avant de répondre · reformuler si besoin</div>
@@ -213,6 +280,8 @@
   <div class="fiche-item">Toujours montrer qu'on informe sa hiérarchie et qu'on respecte les procédures</div>
   <div class="fiche-item">Crise cyclone : PCA · coordination préfecture · ORSEC · communication usagers</div>
   <div class="fiche-item">Conflit : entretiens séparés → médiation → règles collectives → DRH si nécessaire</div>
+  <div class="fiche-item">Agent en souffrance : écoute → médecin prévention → DRH → suivi bienveillant</div>
+  <div class="fiche-item">Urgence commande : sécuriser · documenter · gré à gré justifié · régulariser</div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p6c3" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>

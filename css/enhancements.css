@@ -710,6 +710,17 @@
 }
 .chapter-nav-btn.next:hover { transform: translateX(2px); }
 
+/* ── FICHES EXPRESS TOOLBAR ─────────────────────────────── */
+.fe-toolbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.fe-toolbar .fe-filters { flex: 1; }
+.fe-solo-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+
 /* ── CHAPTER NAV ROW (prev/next) ────────────────────────── */
 .chapter-nav-row {
   display: flex;
