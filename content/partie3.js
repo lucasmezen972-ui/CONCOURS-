@@ -47,8 +47,24 @@
   </tbody>
 </table>
 
-<h2 class="section-title">4. La DGF – Dotation Globale de Fonctionnement</h2>
-<p>Principal concours financier de l'État aux collectivités (~26 milliards d'euros). Elle comprend :</p>
+<h2 class="section-title">4. Le calendrier budgétaire</h2>
+<table>
+  <thead><tr><th>Étape</th><th>Délai</th></tr></thead>
+  <tbody>
+    <tr><td>Débat d'Orientations Budgétaires (DOB)</td><td>Au moins 2 mois avant le vote du BP (obligatoire pour communes &gt;3 500 hab, CTM, Régions, Départements)</td></tr>
+    <tr><td>Vote du Budget Primitif (BP)</td><td>Avant le 31 décembre N-1 · transmission au préfet sous 15 jours</td></tr>
+    <tr><td>Décision Modificative (DM)</td><td>En cours d'exercice si ajustement nécessaire · votée par l'assemblée délibérante</td></tr>
+    <tr><td>Compte administratif (CA)</td><td>Vote avant le 30 juin de l'année N+1 · bilan exécution</td></tr>
+    <tr><td>Compte de gestion</td><td>Remis par le comptable public · certification des comptes</td></tr>
+  </tbody>
+</table>
+<div class="info-box">
+  <div class="info-title">ℹ️ Compte Financier Unique (CFU) – depuis 2023</div>
+  Le CFU remplace progressivement le compte administratif et le compte de gestion par un document unique, fruit de la réforme M57. Il facilite la comparaison des collectivités et rapproche la comptabilité publique locale des normes privées.
+</div>
+
+<h2 class="section-title">5. La DGF – Dotation Globale de Fonctionnement</h2>
+<p>Principal concours financier de l'État aux collectivités (~27 milliards d'euros en 2024). Elle comprend :</p>
 <ul>
   <li><strong>Pour les communes</strong> : dotation forfaitaire + dotation de solidarité urbaine (DSU) + dotation de solidarité rurale (DSR)</li>
   <li><strong>Pour les départements</strong> : dotation forfaitaire + dotation de péréquation</li>
@@ -73,7 +89,9 @@
   <div class="fiche-item">6 principes : annualité · unité · universalité · équilibre réel · sincérité · spécialité</div>
   <div class="fiche-item">2 sections : fonctionnement (courant) + investissement</div>
   <div class="fiche-item">Recettes : fiscalité ~40% · dotations État ~30% · emprunts ~15%</div>
-  <div class="fiche-item">DGF = ~26 Mds€ · dotation forfaitaire + DSU + DSR</div>
+  <div class="fiche-item">DGF = ~27 Mds€ en 2024 · dotation forfaitaire + DSU + DSR</div>
+  <div class="fiche-item">DOB obligatoire 2 mois avant BP · DM = ajustement en cours d'exercice</div>
+  <div class="fiche-item">CFU 2023 : fusion compte administratif + compte de gestion (réforme M57)</div>
   <div class="fiche-item">CTM : octroi de mer + fonds EU 2021-2027 (~800 M€) + TVA réduite</div>
 </div>
 
@@ -97,6 +115,14 @@
   <div class="jq-item">
     <div class="jq-q">« Qu'est-ce que l'octroi de mer et pourquoi est-il important pour la Martinique ? »</div>
     <div class="jq-r">Taxe sur les marchandises importées en Martinique (et produites localement pour certains produits). Ressource fiscale majeure des collectivités martiniquaises (~200 M€/an). Protège la production locale. Autorisé par dérogation européenne jusqu'en 2027 (en négociation pour prolongation). Redistribué aux communes et à la CTM.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce qu'un Débat d'Orientations Budgétaires et à quoi sert-il ? »</div>
+    <div class="jq-r">Le DOB est un débat obligatoire en assemblée délibérante sur les grandes orientations budgétaires de l'exercice à venir, au moins 2 mois avant le vote du BP. Il permet de débattre des priorités politiques, des évolutions des dépenses et recettes, et des objectifs d'endettement. Il n'a pas valeur de décision : c'est un temps de discussion et d'information. Obligatoire pour les communes &gt;3 500 habitants, les départements, les régions et la CTM. Rapport au Président + publication sur le site de la collectivité.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quels sont les impacts du budget de l'État 2025 sur les collectivités territoriales ? »</div>
+    <div class="jq-r">La loi de finances 2025 impose une contribution exceptionnelle des collectivités au redressement des finances publiques (environ 3 milliards d'euros prélevés sur le fonds de compensation). Les collectivités de plus grande taille (CTM, grandes villes) sont davantage touchées. La DGF est gelée en valeur nominale (pas d'augmentation). Conséquence : arbitrages difficiles entre maintien des services, report des investissements et maîtrise de l'endettement. Pour la CTM, s'ajoute la contrainte du régime de l'octroi de mer à renégocier avant 2027.</div>
   </div>
   <div class="jq-item">
     <div class="jq-q">« La règle d'or s'applique-t-elle aux collectivités locales ? »</div>
@@ -171,6 +197,12 @@
   <li><strong>Cour des comptes</strong> : contrôle des établissements publics nationaux et coordination des CRC</li>
 </ul>
 
+<h2 class="section-title">5. L'instruction M57 – Référentiel comptable unifié 2024</h2>
+<div class="definition-box">
+  <div class="def-title">📖 Réforme majeure depuis le 1er janvier 2024</div>
+  L'instruction <strong>M57</strong> remplace les instructions M14 (communes), M52 (départements) et M71 (régions) par un référentiel comptable unique. Elle introduit : une nomenclature harmonisée des comptes · la possibilité de comptabilité analytique · le <strong>Compte Financier Unique (CFU)</strong> (fusion du compte administratif et du compte de gestion) · des informations financières plus riches dans les annexes budgétaires. Impact pour la CTM : obligation d'application depuis 2024 · rapprochement avec les pratiques comptables privées · meilleure comparabilité.
+</div>
+
 <div class="martinique-box">
   <h3 class="sub-title" style="margin-top:14px">Comptabilité publique en Martinique</h3>
   <p>Les collectivités martiniquaises sont soumises aux instructions M14 (communes) et M57 (nouveau référentiel unique depuis 2024 pour toutes les collectivités). La M57 est une évolution majeure qui harmonise la comptabilité de toutes les strates territoriales.</p>
@@ -190,6 +222,10 @@
 
 <div class="jury-questions">
   <div class="jq-title">🎤 Questions de jury</div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que l'instruction M57 et pourquoi est-elle importante pour la CTM ? »</div>
+    <div class="jq-r">L'instruction M57 est le nouveau référentiel comptable unique applicable à toutes les collectivités territoriales depuis le 1er janvier 2024. Elle fusionne les anciennes instructions M14, M52 et M71 en un cadre harmonisé. Innovations majeures : introduction d'une comptabilité analytique facilitant le contrôle de gestion · Compte Financier Unique (CFU) qui fusionne le compte administratif et le compte de gestion · informations financières enrichies dans les annexes. Pour la CTM, cette réforme améliore la lisibilité des comptes, facilite les comparaisons inter-collectivités et rapproche la comptabilité territoriale des pratiques privées. Elle renforce la transparence vis-à-vis des citoyens et des élus.</div>
+  </div>
   <div class="jq-item">
     <div class="jq-q">« Pourquoi sépare-t-on l'ordonnateur du comptable dans la comptabilité publique ? »</div>
     <div class="jq-r">Pour des raisons de contrôle mutuel et de sécurité des fonds publics. L'ordonnateur décide mais ne touche pas aux fonds. Le comptable vérifie les pièces justificatives et paie, mais ne décide pas la dépense. En cas d'irrégularité, le comptable peut suspendre le paiement (réquisition de l'ordonnateur nécessaire). Cette séparation limite les risques de fraude et d'erreur.</div>
@@ -229,10 +265,10 @@
   <thead><tr><th>Montant HT</th><th>Procédure</th><th>Formalités</th></tr></thead>
   <tbody>
     <tr><td>&lt; 40 000 €</td><td>Marché sans formalité préalable</td><td>Bon de commande · devis simple</td></tr>
-    <tr><td>40 000 € – 215 000 €</td><td>MAPA (Marché à Procédure Adaptée) – Fournitures/services</td><td>Publicité adaptée · mise en concurrence</td></tr>
-    <tr><td>40 000 € – 5,4 M €</td><td>MAPA – Travaux</td><td>Publicité adaptée</td></tr>
-    <tr><td>&gt; 215 000 €</td><td>Appel d'offres ouvert ou restreint (F/S)</td><td>Publication BOAMP + JOUE · dossier complet</td></tr>
-    <tr><td>&gt; 5,4 M €</td><td>Appel d'offres (Travaux)</td><td>Même obligations</td></tr>
+    <tr><td>40 000 € – 221 000 €</td><td>MAPA (Marché à Procédure Adaptée) – Fournitures/services</td><td>Publicité adaptée · mise en concurrence</td></tr>
+    <tr><td>40 000 € – 5 538 000 €</td><td>MAPA – Travaux</td><td>Publicité adaptée</td></tr>
+    <tr><td>&gt; 221 000 €</td><td>Appel d'offres ouvert ou restreint (F/S)</td><td>Publication BOAMP + JOUE · dossier complet</td></tr>
+    <tr><td>&gt; 5 538 000 €</td><td>Appel d'offres (Travaux)</td><td>Même obligations</td></tr>
   </tbody>
 </table>
 
@@ -243,7 +279,15 @@
   <li><strong>Critères possibles</strong> : prix · qualité technique · délais · service après-vente · performances environnementales · insertion professionnelle</li>
 </ul>
 
-<h2 class="section-title">4. L'achat public responsable</h2>
+<h2 class="section-title">4. Les procédures particulières</h2>
+<ul>
+  <li><strong>Procédure négociée avec publicité</strong> : possible si l'AO infructueux · travaux complexes · solutions innovantes. Le pouvoir adjudicateur négocie directement avec les candidats.</li>
+  <li><strong>Dialogue compétitif</strong> : pour les besoins très complexes (infrastructures SI, PPP) · dialogue avec les candidats avant offre finale.</li>
+  <li><strong>Urgence impérieuse</strong> (art. L2122-1 CCP) : marché de gré à gré sans publicité ni mise en concurrence si urgence non prévisible (catastrophe naturelle, panne critique).</li>
+  <li><strong>Accord-cadre</strong> : fixe les conditions des marchés ultérieurs sur 4 ans max · utile pour les achats récurrents (fournitures de bureau, petits travaux).</li>
+</ul>
+
+<h2 class="section-title">5. L'achat public responsable</h2>
 <p>Le code de la commande publique encourage les achats publics responsables :</p>
 <ul>
   <li>Clauses d'insertion (emploi de publics éloignés)</li>
@@ -265,7 +309,7 @@
 <div class="fiche-synthese">
   <h3>📋 FICHE – Marchés publics</h3>
   <div class="fiche-item">CCP depuis avril 2019 · ~100 Mds€/an commande publique France</div>
-  <div class="fiche-item">Seuils : &lt;40K€ sans formalité · &lt;215K€ MAPA · &gt;215K€ AO</div>
+  <div class="fiche-item">Seuils 2024 : &lt;40K€ sans formalité · &lt;221K€ F/S ou &lt;5,538M€ T : MAPA · au-delà : AO</div>
   <div class="fiche-item">Critère OEPA : qualité-prix + critères techniques + enviro.</div>
   <div class="fiche-item">SPASER obligatoire pour collectivités &gt;100M€ d'achats</div>
   <div class="fiche-item">Martinique : allotissement pour PME locales · SRDEII</div>
@@ -284,6 +328,10 @@
   <div class="jq-item">
     <div class="jq-q">« Qu'est-ce que l'allotissement dans les marchés publics ? »</div>
     <div class="jq-r">Principe (posé à l'art. L2113-10 CCP) selon lequel le marché est divisé en lots séparés. Objectif : faciliter l'accès des PME à la commande publique et introduire plus de concurrence. Chaque lot peut être attribué à un titulaire différent. Le pouvoir adjudicateur peut décider de ne pas allotir si l'allotissement est de nature à restreindre la concurrence ou rend l'exécution techniquement difficile. En Martinique, c'est un outil crucial pour permettre aux entreprises locales de répondre.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Dans quel cas peut-on passer un marché en urgence sans publicité ni mise en concurrence ? »</div>
+    <div class="jq-r">L'article L2122-1 du CCP prévoit la procédure négociée sans publicité ni mise en concurrence pour les cas d'urgence impérieuse résultant de circonstances imprévisibles (catastrophe naturelle, panne de réseau critique, urgence sanitaire). Trois conditions cumulatives : urgence avérée · caractère imprévisible · non imputabilité à l'acheteur. Il faut documenter soigneusement l'urgence (photos, rapport technique, constat) car le contrôle de légalité est strict. En Martinique, après un cyclone ou une coulée de boue : nettoyage d'urgence, réparation de route, etc. Tous les justificatifs doivent être conservés pour la CRC.</div>
   </div>
 </div>
 
