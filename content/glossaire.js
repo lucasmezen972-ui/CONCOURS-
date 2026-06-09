@@ -160,7 +160,26 @@
 
     /* Z */
     { t: 'ZAN', d: 'Zéro Artificialisation Nette : objectif fixé par la loi Climat et Résilience 2021. Réduire de 50% le rythme d\'artificialisation des sols d\'ici 2031 et atteindre le ZAN absolu en 2050.', ref: 'P7·C1' },
-    { t: 'ZFA', d: 'Zone Franche d\'Activité : dispositif fiscal (LODEOM 2009) accordant des abattements aux entreprises implantées en outre-mer pour compenser les surcoûts de l\'insularité et stimuler l\'emploi.', ref: 'P8·C2' }
+    { t: 'ZFA', d: 'Zone Franche d\'Activité : dispositif fiscal (LODEOM 2009) accordant des abattements aux entreprises implantées en outre-mer pour compenser les surcoûts de l\'insularité et stimuler l\'emploi.', ref: 'P8·C2' },
+
+    /* Termes supplémentaires */
+    { t: 'CGFP', d: 'Code Général de la Fonction Publique : entré en vigueur le 1er mars 2022, il codifie les trois statuts de la fonction publique (État, territoriale, hospitalière) en un texte unique. Remplace les lois du 13/07/1983, 26/01/1984, 11/01/1984 et 09/01/1986.', ref: 'P4·C1' },
+    { t: 'CLM', d: 'Congé de Longue Maladie : congé accordé au fonctionnaire atteint d\'une maladie nécessitant un traitement prolongé. Durée max : 3 ans (1 an plein traitement + 2 ans demi-traitement). Soumis à l\'avis du comité médical.', ref: 'P4·C2' },
+    { t: 'CLD', d: 'Congé de Longue Durée : congé accordé pour des affections graves (liste réglementaire). Durée max : 5 ans (3 ans plein + 2 ans demi-traitement). Plus protecteur que le CLM.', ref: 'P4·C2' },
+    { t: 'DETR', d: 'Dotation d\'Équipement des Territoires Ruraux : aide de l\'État aux communes rurales et petites villes pour financer leurs investissements (voirie, bâtiments publics, équipements numériques). Distribuée par le préfet.', ref: 'P3·C1' },
+    { t: 'DSIL', d: 'Dotation de Soutien à l\'Investissement Local : dotation d\'État finançant les projets structurants des collectivités (priorités : écologie, numérique, résilience sanitaire). Distribuée par les préfets de région.', ref: 'P3·C1' },
+    { t: 'DUERP', d: 'Document Unique d\'Évaluation des Risques Professionnels : obligation légale pour tout employeur public. Recense tous les risques (physiques, chimiques, psychosociaux) et le plan d\'actions de prévention. Mis à jour chaque année et à chaque changement important.', ref: 'P4·C3' },
+    { t: 'FIA', d: 'Formation Initiale d\'Application : formation obligatoire dispensée par le CNFPT à tout lauréat d\'un concours territorial. Sa durée varie selon le cadre d\'emplois (ex : 6 mois pour les attachés). Elle combine apports théoriques et périodes en collectivité.', ref: 'P4·C1' },
+    { t: 'FIPHFP', d: 'Fonds pour l\'Insertion des Personnes Handicapées dans la Fonction Publique : finance les aménagements de postes et actions en faveur de l\'emploi des travailleurs handicapés dans les trois versants de la FP. Collectivités : obligation d\'emploi de 6% d\'agents RQTH.', ref: 'P4·C2' },
+    { t: 'GEPP', d: 'Gestion des Emplois et des Parcours Professionnels : nouvelle appellation de la GPEC depuis la loi de transformation de la fonction publique de 2019. Démarche prospective d\'adaptation des ressources humaines aux besoins futurs.', ref: 'P4·C2' },
+    { t: 'HATVP', d: 'Haute Autorité pour la Transparence de la Vie Publique : institution indépendante créée par la loi Sapin I (2013). Elle reçoit et publie les déclarations de patrimoine et d\'intérêts des élus et hauts fonctionnaires. Prévient les conflits d\'intérêts.', ref: 'P2·C2' },
+    { t: 'ISST', d: 'Inspecteur Santé Sécurité Travail : agent de l\'État (DREETS) qui contrôle le respect des règles d\'hygiène et de sécurité dans les services publics, y compris les collectivités territoriales. Peut formuler des injonctions.', ref: 'P4·C3' },
+    { t: 'Lanceur d\'alerte', d: 'Personne signalant un crime, délit, manquement grave à la loi ou danger grave et imminent. Protégé par la loi Sapin II (2016, renforcée 2022) contre les représailles. Dans la FPT : possibilité de saisir le référent déontologue ou de déposer en ligne.', ref: 'P4·C3' },
+    { t: 'ORSEC', d: 'Organisation de la Réponse de SEcurité Civile : dispositif de gestion des crises prévu par la loi de modernisation de la sécurité civile (2004). Activé par le préfet pour coordonner l\'ensemble des acteurs publics et privés en cas de catastrophe.', ref: 'P7·C3' },
+    { t: 'Référent déontologue', d: 'Personne chargée de conseiller les agents et de recevoir les alertes éthiques dans la FPT. Obligatoire depuis la loi Sapin II. Peut être mutualisé avec le CDG. Doit être un tiers indépendant.', ref: 'P4·C3' },
+    { t: 'RQTH', d: 'Reconnaissance de la Qualité de Travailleur Handicapé : délivrée par la MDPH. Ouvre des droits spécifiques dans la FPT (aménagement du poste, priorité de mutation, temps partiel de droit). La collectivité peut bénéficier d\'aides du FIPHFP pour les aménagements.', ref: 'P4·C2' },
+    { t: 'RSU', d: 'Rapport Social Unique : document annuel obligatoire présenté au CST, regroupant toutes les données RH de la collectivité (effectifs, rémunérations, formations, conditions de travail, égalité F/H). Il remplace l\'ancien bilan social depuis la loi de 2019.', ref: 'P4·C1' },
+    { t: 'Télétravail', d: 'Mode d\'organisation du travail permettant à un agent d\'exercer ses fonctions à distance (domicile ou tiers-lieu) grâce au numérique. Encadré par le décret du 5 mai 2020. Droits : équipement, prise en charge des frais, droit à la déconnexion. Maximum 3 jours/semaine en général.', ref: 'P4·C2' }
   ];
 
   /* Build alphabet index */
