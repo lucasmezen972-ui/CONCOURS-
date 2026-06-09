@@ -359,6 +359,32 @@
       }
     }());
 
+    /* Compte à rebours concours */
+    (function () {
+      const dateInput = db.querySelector('#db-exam-date');
+      const countdownDiv = db.querySelector('#db-countdown-display');
+      const daysEl = db.querySelector('#db-days-left');
+      const labelEl = db.querySelector('#db-days-label');
+      if (!dateInput) return;
+      const saved = localStorage.getItem('concours_exam_date');
+      if (saved) {
+        dateInput.value = saved;
+        const today = new Date(); today.setHours(0,0,0,0);
+        const target = new Date(saved); target.setHours(0,0,0,0);
+        const diff = Math.round((target - today) / 86400000);
+        if (countdownDiv) countdownDiv.style.display = 'block';
+        if (daysEl) daysEl.textContent = diff > 0 ? diff : 0;
+        if (labelEl) {
+          if (diff > 1) labelEl.textContent = 'jours avant le concours';
+          else if (diff === 1) labelEl.textContent = 'jour avant le concours – c\'est demain !';
+          else if (diff === 0) labelEl.textContent = '🏆 C\'est aujourd\'hui – bonne chance !';
+          else labelEl.textContent = 'jours depuis le concours – félicitations !';
+        }
+        if (daysEl && diff <= 7 && diff >= 0) daysEl.style.color = '#c62828';
+        else if (daysEl) daysEl.style.color = 'var(--primary)';
+      }
+    }());
+
     /* Chapitres faibles */
     const weak = db.querySelector('#db-weak-chapters');
     if (weak) {
@@ -383,6 +409,17 @@
         : '<p class="db-empty">Aucun chapitre faible détecté. Continuez les quiz !</p>';
     }
   }
+
+  /* ──────────────────────────────────────────────────────────
+     DASHBOARD – Sauvegarde date concours
+  ────────────────────────────────────────────────────────── */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('#db-exam-date-save')) return;
+    const dateInput = document.getElementById('db-exam-date');
+    if (!dateInput || !dateInput.value) return;
+    localStorage.setItem('concours_exam_date', dateInput.value);
+    refreshDashboard();
+  });
 
   /* ──────────────────────────────────────────────────────────
      RECHERCHE GLOBALE
