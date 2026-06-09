@@ -1,10 +1,115 @@
 /* ============================================================
-   PARTIE 1 – Chapitres 2 à 6 (injectés dynamiquement)
+   PARTIE 1 – Chapitres 1 à 6 (injectés dynamiquement)
    ============================================================ */
 (function() {
   const container = document.querySelector('.main-content');
 
   const sections = [
+    // ---- P1C1 : Organisation administrative française ----
+    { id: 'p1c1', html: `
+<section id="p1c1" class="page-section">
+<div class="chapter-title">
+  <div class="num">P1·C1</div>
+  <div><div class="part-tag">Partie 1 – Environnement territorial</div><h1>Organisation administrative française</h1></div>
+</div>
+<div class="chapter-intro">Comprendre comment la France organise son administration est le point de départ de toute préparation au concours d'Attaché Territorial. Ce chapitre présente la distinction État unitaire / État fédéral, la déconcentration, les institutions centrales et le rôle du préfet.</div>
+
+<h2 class="section-title">1. Un État unitaire et décentralisé</h2>
+<p>La France est un <strong>État unitaire</strong> (art. 1 Constitution : « La France est une République indivisible »), mais son organisation administrative est à la fois :</p>
+<ul>
+  <li><strong>Déconcentrée</strong> : l'État transfère des pouvoirs de décision à ses représentants locaux (préfets, recteurs, DDETS…) tout en restant une seule personne morale.</li>
+  <li><strong>Décentralisée</strong> : des collectivités territoriales distinctes (communes, départements, régions, CTM…) disposent de la personnalité morale et s'administrent librement.</li>
+</ul>
+<div class="info-box">
+  <div class="info-title">ℹ️ Formule-clé à retenir</div>
+  <strong>Déconcentration</strong> = agir sur place (même personne morale État) · <strong>Décentralisation</strong> = agir en autonomie (autre personne morale). La France combine les deux systèmes.
+</div>
+
+<h2 class="section-title">2. L'organisation centrale de l'État</h2>
+<table>
+  <thead><tr><th>Institution</th><th>Rôle</th></tr></thead>
+  <tbody>
+    <tr><td>Président de la République</td><td>Élu au suffrage universel direct · chef des armées · nomme le Premier ministre · politique étrangère et défense</td></tr>
+    <tr><td>Premier ministre</td><td>Dirige le gouvernement · responsable devant l'Assemblée nationale · coordonne l'action gouvernementale · signe les décrets</td></tr>
+    <tr><td>Gouvernement / Ministres</td><td>Chaque ministre dirige un département ministériel · prépare les lois et les décrets · autorité hiérarchique sur l'administration centrale</td></tr>
+    <tr><td>Conseil d'État</td><td>Juridiction administrative suprême + conseiller juridique du gouvernement (avis sur les projets de loi)</td></tr>
+    <tr><td>Cour des comptes</td><td>Contrôle les comptes et la gestion de l'État et des organismes publics nationaux</td></tr>
+  </tbody>
+</table>
+
+<h2 class="section-title">3. La déconcentration – Le préfet, pivot du système</h2>
+<p>Le <strong>préfet</strong> est le représentant de l'État dans le département (et la région pour le préfet de région). Il est nommé en Conseil des ministres.</p>
+<ul>
+  <li><strong>Missions du préfet</strong> : contrôle de légalité des actes des collectivités · maintien de l'ordre public · coordination des services déconcentrés de l'État · gestion des crises (ORSEC, plan ORSEC cyclone en Martinique).</li>
+  <li><strong>Services déconcentrés</strong> : DDETS (travail, emploi), DEAL (environnement, logement), DAAF (agriculture), DRAJES (sports), Rectorat (éducation)…</li>
+  <li><strong>Sous-préfet</strong> : représentant de l'État dans les arrondissements · relais de proximité.</li>
+</ul>
+
+<h2 class="section-title">4. La hiérarchie des normes</h2>
+<table>
+  <thead><tr><th>Niveau</th><th>Acte</th><th>Auteur</th></tr></thead>
+  <tbody>
+    <tr><td>1 – Constitutionnel</td><td>Constitution · Préambules · DDHC · PFRLR</td><td>Pouvoir constituant</td></tr>
+    <tr><td>2 – Conventionnel</td><td>Traités internationaux et droit UE</td><td>Exécutif + Parlement</td></tr>
+    <tr><td>3 – Législatif</td><td>Lois organiques, ordinaires, de finances</td><td>Parlement</td></tr>
+    <tr><td>4 – Réglementaire</td><td>Décrets, arrêtés, circulaires</td><td>Gouvernement + préfet + exécutif local</td></tr>
+    <tr><td>5 – Actes individuels</td><td>Décisions individuelles, contrats</td><td>Administration</td></tr>
+  </tbody>
+</table>
+
+<h2 class="section-title">5. Le contrôle de légalité</h2>
+<p>Depuis la loi de décentralisation du 2 mars 1982 (suppression de la tutelle a priori), les actes des collectivités territoriales sont soumis au <strong>contrôle de légalité a posteriori</strong> exercé par le préfet :</p>
+<ul>
+  <li>La collectivité transmet ses actes au préfet dans les 15 jours.</li>
+  <li>Le préfet dispose de <strong>2 mois</strong> pour déférer l'acte au Tribunal Administratif (TA) s'il estime qu'il est illégal.</li>
+  <li>L'acte est <strong>exécutoire dès sa transmission</strong> au préfet (pas d'effet suspensif automatique).</li>
+  <li>En parallèle, le <strong>contrôle budgétaire</strong> est exercé conjointement par le préfet et la Chambre Régionale des Comptes.</li>
+</ul>
+
+<div class="martinique-box">
+  <h3 class="sub-title" style="margin-top:14px">Martinique dans l'organisation administrative</h3>
+  <p>La Martinique est un <strong>DOM-ROM</strong> (Département et Région d'Outre-Mer) régi par l'article 73 de la Constitution. Depuis 2015, la CTM (Collectivité Territoriale de Martinique) est une collectivité unique qui remplace le Conseil Général et le Conseil Régional.</p>
+  <ul>
+    <li><strong>Préfet de Martinique</strong> : représentant de l'État · contrôle de légalité des actes CTM · ORSEC cyclone · autorité de police</li>
+    <li><strong>Services déconcentrés</strong> : DEAL Martinique (logement, environnement) · DAAF (agriculture) · DRAJES Antilles-Guyane · DREETS</li>
+    <li><strong>Spécificité art. 73</strong> : les lois et règlements s'appliquent de plein droit, mais la CTM peut obtenir des habilitations pour adapter la législation à ses spécificités</li>
+    <li><strong>CRAC</strong> (Chambre Régionale des Comptes Antilles-Guyane) : contrôle les comptes de la CTM et des communes</li>
+  </ul>
+</div>
+
+<div class="fiche-synthese">
+  <h3>📋 FICHE – Organisation administrative</h3>
+  <div class="fiche-item">État unitaire = une seule personne morale · déconcentration ≠ décentralisation</div>
+  <div class="fiche-item">Préfet = représentant État · contrôle légalité · ORSEC · services déconcentrés</div>
+  <div class="fiche-item">Hiérarchie : Constitution → Traités → Loi → Règlement → Actes individuels</div>
+  <div class="fiche-item">Contrôle de légalité a posteriori depuis 1982 · délai 2 mois pour saisir le TA</div>
+  <div class="fiche-item">Martinique : DOM-ROM art. 73 · préfet + DEAL + CRAC · habilitations législatives possibles</div>
+</div>
+
+<div class="jury-questions">
+  <div class="jq-title">🎤 Questions de jury</div>
+  <div class="jq-item">
+    <div class="jq-q">« Quelle est la différence entre déconcentration et décentralisation ? »</div>
+    <div class="jq-r">La déconcentration consiste pour l'État central à déléguer des pouvoirs de décision à ses représentants locaux (préfets, recteurs) qui agissent en son nom : il n'y a qu'une seule personne morale. La décentralisation transfère des compétences à des collectivités territoriales dotées de la personnalité morale et qui s'administrent librement par des conseils élus. La France pratique les deux : déconcentration (préfets) + décentralisation (CTM, communes). La loi du 2 mars 1982 a supprimé la tutelle a priori du préfet sur les collectivités, remplacée par le contrôle de légalité a posteriori.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quel est le rôle du préfet vis-à-vis de la CTM ? »</div>
+    <div class="jq-r">Le préfet de Martinique est le représentant de l'État. Vis-à-vis de la CTM, il exerce le contrôle de légalité a posteriori : la CTM lui transmet ses actes (délibérations, arrêtés) dans les 15 jours et le préfet peut les déférer au Tribunal Administratif dans les 2 mois s'il les estime illégaux. Le préfet exerce également le contrôle budgétaire (avec la CRAC) et veille à l'application des lois sur le territoire. Il coordonne les services déconcentrés de l'État en Martinique (DEAL, DAAF, DREETS…). En matière de sécurité civile, il active le dispositif ORSEC en cas de crise (cyclone, séisme).</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que l'article 73 de la Constitution et quelles sont ses implications pour la Martinique ? »</div>
+    <div class="jq-r">L'article 73 de la Constitution régit les départements et régions d'outre-mer (DOM-ROM). Il prévoit que les lois et règlements s'appliquent de plein droit dans ces territoires, mais peuvent faire l'objet d'adaptations tenant aux caractéristiques et contraintes particulières de ces collectivités. Depuis la révision constitutionnelle de 2003 (art. 73 al. 3), la CTM peut être habilitée par le Parlement à fixer elle-même les règles applicables sur son territoire dans un domaine relevant de la loi ou du règlement — c'est le pouvoir normatif dérogatoire. Exemple : habilitation en matière de formation professionnelle, de fiscalité locale (octroi de mer).</div>
+  </div>
+</div>
+
+<button class="mark-done-btn" data-chapter="p1c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
+<div class="chapter-nav">
+  <a href="#" data-page="home" class="chapter-nav-btn">← Accueil</a>
+  <a href="#" data-page="p1c2" class="chapter-nav-btn next">Ch.2 La décentralisation →</a>
+</div>
+</section>`
+    },
+
     // ---- P1C2 : Décentralisation ----
     { id: 'p1c2', html: `
 <section id="p1c2" class="page-section">
