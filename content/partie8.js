@@ -290,6 +290,81 @@
     <div class="jq-q">10. « En tant que futur Attaché Territorial à la CTM, quelle serait votre priorité dans les 6 premiers mois ? »</div>
     <div class="jq-r">Mes priorités seraient : 1) Comprendre l'organisation de la CTM, ses orientations stratégiques et son fonctionnement réel (PADDM, organigramme, procédures internes) · 2) Établir des relations de confiance avec mon équipe et ma hiérarchie · 3) Maîtriser le cadre juridique et budgétaire spécifique à la CTM (CGCT, fonds européens, octroi de mer) · 4) Identifier un ou deux dossiers prioritaires sur lesquels apporter rapidement de la valeur ajoutée, en mobilisant mes compétences RH. La posture serait celle d'un apprenant-contributeur, humble mais engagé.</div>
   </div>
+
+  <div class="jq-item">
+    <div class="jq-q">11. « Qu'est-ce que l'octroi de mer et pourquoi est-il si important pour la Martinique ? »</div>
+    <div class="jq-r">L'octroi de mer est une taxe perçue sur les importations de marchandises aux Antilles. C'est une ressource fiscale propre aux DROM, autorisée par une dérogation européenne renouvelée (dernière prolongation jusqu'en 2027). Il représente environ 200 M€/an pour la Martinique et constitue la principale ressource fiscale des communes martiniquaises (répartition entre CTM et communes). Son importance : financer les services publics locaux sans fiscalité foncière excessive · protéger la production locale · compenser les surcoûts liés à l'insularité. Enjeu politique majeur : sa pérennisation au-delà de 2027.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">12. « Quel est le rôle de la CTM dans la gestion des fonds européens ? »</div>
+    <div class="jq-r">La CTM est autorité de gestion des fonds structurels européens, ce qui est un atout majeur : elle gère directement les programmes FEDER, FSE+, FEADER et FEAMPA pour la période 2021-2027, représentant environ 800 millions d'euros. Ce rôle implique : instruction et sélection des projets · conventionnement avec les bénéficiaires · suivi et contrôle des dépenses · certification des dépenses auprès de la Commission européenne. La CTM a renforcé ses équipes d'ingénierie financière pour optimiser l'utilisation de ces fonds, notamment dans les domaines de la transition énergétique et du développement économique.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">13. « Quelles sont les relations de la Martinique avec ses voisins caribéens ? »</div>
+    <div class="jq-r">La Martinique développe une coopération régionale caribéenne à plusieurs niveaux : 1) Institutionnel : membership de la CTM au sein de l'OECO (Organisation des États de la Caraïbe Orientale) comme membre associé, et au CARICOM (Communauté Caribéenne) · 2) Économique : échanges commerciaux avec la Guadeloupe, Sainte-Lucie, la Barbade · 3) Culturel : langue créole, musique (zouk, biguine), festival Caraïbe · 4) Environnemental : coopération sur la gestion des risques naturels (cyclones), la biodiversité marine et le changement climatique. L'enjeu : valoriser la position de la Martinique comme hub régional francophone dans la Caraïbe.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">14. « Pourquoi la situation de l'eau potable est-elle une priorité absolue en Martinique ? »</div>
+    <div class="jq-r">La crise de l'eau en Martinique est une urgence multidimensionnelle : pertes supérieures à 50% dans un réseau vétuste (certaines canalisations datent des années 1960) · coupures régulières affectant parfois 100 000 habitants simultanément · qualité inégale selon les zones · surcoût pour les usagers (eau en bouteille) · image négative pour le tourisme. La CTM coordonne un programme d'urgence pluriannuel avec l'État et les fonds européens pour renouveler les canalisations, améliorer la gouvernance (rationaliser les syndicats des eaux) et sécuriser l'alimentation en eau des populations. C'est aussi un enjeu de santé publique, notamment pour les populations vulnérables.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">15. « Comment la CTM gère-t-elle la question du logement ? »</div>
+    <div class="jq-r">Le logement est un enjeu majeur en Martinique : pénurie de logements accessibles · habitat insalubre (bidonvilles) · contraintes sismiques sur les constructions · cherté du foncier. La CTM agit via : 1) La politique foncière (PADDM, établissement foncier EPFAM) · 2) Le soutien aux bailleurs sociaux (SEM, offices HLM) · 3) La résorption de l'habitat insalubre (RHI) · 4) L'accompagnement des primo-accédants modestes · 5) L'intégration des normes parasismiques dans les programmes de construction. L'enjeu est de loger dignement une population où 30% vit sous le seuil de pauvreté.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">16. « Qu'est-ce que le rhum agricole AOC Martinique et quel est son importance économique ? »</div>
+    <div class="jq-r">Le rhum agricole AOC Martinique (Appellation d'Origine Contrôlée, 1996) est le seul rhum français à bénéficier d'une AOC. Il est produit à partir de vesou (jus de canne fraîche pressée) dans 9 distilleries réparties sur l'île. Sa réglementation stricte porte sur la variété de canne, le terroir, le procédé de distillation et les conditions d'élevage. Importance économique : 50 000 hl d'alcool pur exportés/an · image de prestige mondial · valeur ajoutée 4 fois supérieure au rhum industriel · filière intégrée (cultivation, distillation, embouteillage) · ambassadeur de la Martinique à l'international. La CTM soutient la filière via son plan agricole et ses actions de promotion.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">17. « Quelle est la place de la Martinique dans l'Union européenne ? »</div>
+    <div class="jq-r">La Martinique est une Région Ultrapériphérique (RUP) de l'Union européenne (art. 349 TFUE), au même titre que la Guadeloupe, la Guyane, La Réunion, Mayotte, les Açores, Madère et les Canaries. Ce statut implique : le droit européen s'applique intégralement · bénéfice des fonds structurels (FEDER, FSE+, FEADER) avec taux de cofinancement majorés · possibilité de dérogations aux règles du marché intérieur pour tenir compte des spécificités (octroi de mer, zonage fiscal) · représentation au Parlement européen. Ce statut RUP est fondamental pour le financement du développement martiniquais.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">18. « Comment s'organise la démocratie participative à la CTM ? »</div>
+    <div class="jq-r">La CTM développe plusieurs formes de démocratie participative au-delà du CESECEM (organe consultatif obligatoire) : 1) Consultations publiques lors de l'élaboration du PADDM et des grands projets structurants · 2) Concertation obligatoire pour les projets ayant un impact sur l'environnement (enquêtes publiques) · 3) Budget participatif dans certaines communes · 4) Conseils de quartier dans les villes importantes · 5) Plateformes numériques de consultation citoyenne. L'enjeu est de renforcer la légitimité des décisions dans un contexte de défiance envers les institutions.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">19. « Qu'est-ce que la CESECEM et quel est son rôle ? »</div>
+    <div class="jq-r">La CESECEM (Conseil Économique, Social, Environnemental, de la Culture et de l'Éducation de Martinique) est l'assemblée consultative de la CTM, équivalent martiniquais du CESER des régions. Elle regroupe des représentants des organisations économiques, sociales, culturelles et éducatives. Sa consultation est obligatoire sur le budget, le PADDM et les grands projets stratégiques. Elle rend des avis qui ne sont pas contraignants pour l'Assemblée et le Conseil Exécutif, mais enrichissent le débat public. C'est un espace de dialogue entre la CTM et la société civile martiniquaise.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">20. « Comment définissez-vous l'identité créole martiniquaise et son lien avec l'action publique ? »</div>
+    <div class="jq-r">L'identité créole martiniquaise est le produit d'une histoire unique mêlant héritages africains, européens, indiens et autochtones, transmise par la langue créole, les arts, la gastronomie et les valeurs de solidarité et de résilience. Pour la CTM, reconnaître et valoriser cette identité est un enjeu politique et de développement : 1) Politique culturelle forte (festival de Fort-de-France, musées, patrimoine) · 2) Enseignement du créole (CAPES, intégration en milieu scolaire) · 3) Coopération avec les pays créolophones de la Caraïbe · 4) Valorisation économique (artisanat, gastronomie, écotourisme culturel). L'identité est un levier d'attractivité et de cohésion sociale.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">21. « Qu'est-ce que le PADDM et comment est-il élaboré ? »</div>
+    <div class="jq-r">Le PADDM (Plan d'Aménagement et de Développement Durable de la Martinique) est le document de planification stratégique de la CTM, équivalent du SRADDET des régions mais avec un périmètre élargi aux compétences départementales. Il fixe les grandes orientations : aménagement du territoire · mobilité · logement · développement économique · environnement · équilibres entre zones urbaines et rurales. Il est opposable aux SCoT et PLU des 34 communes. Son élaboration est participative (concertation, consultation du CESECEM, enquête publique). La révision du PADDM s'effectue tous les 6 ans pour intégrer les nouvelles priorités (ZAN, transition énergétique, risques climatiques).</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">22. « Quelles sont les spécificités de la fonction publique territoriale en Martinique ? »</div>
+    <div class="jq-r">La FPT en Martinique obéit aux mêmes règles statutaires qu'en métropole (loi 84-53) mais avec quelques spécificités : 1) Majoration de rémunération (SMA : supplément de traitement) pour compenser le coût de la vie plus élevé (+25% environ) · 2) Le CNFPT dispose d'une délégation Antilles-Guyane à Fort-de-France pour la formation · 3) La CTM emploie environ 5 500 agents directs, plus les agents des 34 communes et des 4 EPCI · 4) Enjeux de recrutement spécifiques : attirer des profils qualifiés dans un contexte d'émigration des jeunes diplômés · 5) Plans de formation adaptés aux spécificités locales (risques naturels, créole, coopération caribéenne).</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">23. « Quel est l'enjeu de la transition énergétique pour la Martinique ? »</div>
+    <div class="jq-r">La Martinique dépend à 90% des hydrocarbures importés pour son énergie, ce qui est une vulnérabilité majeure (coût, risque d'approvisionnement, empreinte carbone). Le Plan Énergie Martinique (PEM) vise 100% d'énergies renouvelables en 2030 : développement de l'éolien (Galion I et II) · du solaire photovoltaïque · de la géothermie (projet Géotherwal) · de l'hydroélectricité. La CTM est co-pilote du PEM avec l'État et EDF. Enjeux : réduction de la facture énergétique des ménages et des entreprises · transition vers des véhicules électriques · indépendance énergétique. La biomasse (bagasse de canne) est aussi valorisée dans la production d'électricité.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">24. « Quelle est votre motivation pour travailler à la CTM plutôt que dans une autre collectivité ? »</div>
+    <div class="jq-r">La CTM représente pour moi une opportunité unique pour trois raisons : 1) L'ampleur des missions : exercer des compétences d'un département ET d'une région dans une collectivité de taille humaine, ce qui offre une vision stratégique globale rare en début de carrière · 2) Les défis concrets et porteurs de sens : transition énergétique, lutte contre le chômage, gestion des risques naturels, valorisation de l'identité martiniquaise — autant de projets qui touchent directement la vie des habitants · 3) L'ancrage dans ma collectivité : contribuer au développement de la Martinique, territoire qui m'a formé et dont je connais les enjeux de l'intérieur, est une motivation profonde. C'est un engagement au service de ma communauté.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">25. « Que savez-vous de la Martinique de demain ? Quels sont vos espoirs pour ce territoire ? »</div>
+    <div class="jq-r">La Martinique de demain peut s'appuyer sur des atouts réels : une identité culturelle forte, une biodiversité exceptionnelle, un rhum AOC mondialement reconnu, une position géographique stratégique au cœur de la Caraïbe, et un potentiel d'énergies renouvelables considérable. Mes espoirs : que la transition énergétique atteigne ses objectifs en 2030 et libère la Martinique de la dépendance aux hydrocarbures · que la crise de l'eau soit résolue durablement · que les jeunes trouvent des raisons de rester et de s'investir dans leur île · que la coopération caribéenne positionne la Martinique comme pôle régional d'excellence · que le développement économique bénéficie à l'ensemble de la population en réduisant les inégalités. C'est à cela que je souhaite contribuer en tant qu'Attaché Territorial.</div>
+  </div>
 </div>
 
 <div class="fiche-synthese">
