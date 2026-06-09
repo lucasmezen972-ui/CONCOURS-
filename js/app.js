@@ -38,7 +38,10 @@
     history.replaceState(null, '', '#' + target.id);
 
     if (target.id === 'dashboard') refreshDashboard();
-    if (target.id === 'recherche' || target.id === 'banque-jury') buildSearchIndex();
+    if (target.id === 'recherche' || target.id === 'banque-jury') {
+      searchIndex = null; /* reset so newly injected content is picked up */
+      buildSearchIndex();
+    }
   }
 
   /* Exposer pour les onclick inline du sommaire */
@@ -450,7 +453,16 @@
       if (id === 'recherche' || id === 'dashboard' || id === 'simulation-orale') return;
       const lnk = document.querySelector(`[data-page="${id}"]`);
       const pageTitle = lnk ? lnk.textContent.trim() : id;
-      const selectors = 'h1,h2,h3,.def-title,.fiche-item,.jq-q,.quiz-q,.kp-title,.cas-context,.cas-header,.martinique-box h3';
+      const selectors = [
+        'h1', 'h2', 'h3',
+        '.def-title', '.fiche-item', '.jq-q', '.quiz-q',
+        '.kp-title', '.cas-context', '.cas-header', '.martinique-box h3',
+        '.fe-card-q',        /* Fiches Express */
+        '.glossaire-term',   /* Glossaire terms */
+        '.bj-q-text',        /* Banque jury questions */
+        '.eb-qtext',         /* Examen blanc questions */
+        '.mes-titre'         /* Mises en situation */
+      ].join(',');
       section.querySelectorAll(selectors).forEach(el => {
         const text = el.textContent.trim();
         if (text.length < 8) return;
@@ -462,6 +474,11 @@
         else if (el.classList.contains('jq-q')) type = 'Question jury';
         else if (el.classList.contains('quiz-q')) type = 'Quiz';
         else if (el.classList.contains('fiche-item')) type = 'Fiche synthèse';
+        else if (el.classList.contains('fe-card-q')) type = 'Fiche Express';
+        else if (el.classList.contains('glossaire-term')) type = 'Glossaire';
+        else if (el.classList.contains('bj-q-text')) type = 'Banque jury';
+        else if (el.classList.contains('eb-qtext')) type = 'Examen blanc';
+        else if (el.classList.contains('mes-titre')) type = 'Mise en situation';
         searchIndex.push({ pageId: id, pageTitle, text: text.substring(0, 200), type });
       });
     });
