@@ -593,4 +593,122 @@
     });
   });
 
+  /* ──────────────────────────────────────────────────────────
+     SIDEBAR SEARCH – Filtrer les chapitres par nom
+  ────────────────────────────────────────────────────────── */
+  document.addEventListener('input', function (e) {
+    if (!e.target.matches('#sidebar-search')) return;
+    const q = e.target.value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const links = document.querySelectorAll('.sidebar .chapter-link');
+    links.forEach(link => {
+      const text = link.textContent.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const show = !q || text.includes(q);
+      link.closest('li').style.display = show ? '' : 'none';
+    });
+    /* Afficher/masquer les sections vides */
+    document.querySelectorAll('.sidebar .chapter-list').forEach(list => {
+      const visible = list.querySelectorAll('li[style=""]').length || !q;
+      const anyVisible = Array.from(list.querySelectorAll('li')).some(li => li.style.display !== 'none');
+      list.closest('li')?.querySelector('.part-header') && (list.parentElement.style.display = anyVisible ? '' : 'none');
+    });
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     NAVIGATION CLAVIER – ←/→ chapitres, Esc accueil
+  ────────────────────────────────────────────────────────── */
+  function getChapterIds() {
+    return Array.from(document.querySelectorAll('.chapter-link[data-page]'))
+      .map(a => a.dataset.page)
+      .filter(id => id && document.getElementById(id));
+  }
+
+  function currentPageId() {
+    const active = document.querySelector('.page-section.active');
+    return active ? active.id : 'home';
+  }
+
+  function showKbdHint(msg) {
+    let toast = document.getElementById('kbd-hint-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'kbd-hint-toast';
+      toast.className = 'kbd-hint';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    /* Ignore si focus dans un champ texte */
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement.isContentEditable) return;
+
+    if (e.key === 'Escape') {
+      showPage('home');
+      showKbdHint('↩ Accueil');
+      return;
+    }
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const ids = getChapterIds();
+      const cur = currentPageId();
+      const idx = ids.indexOf(cur);
+      if (e.key === 'ArrowRight') {
+        const next = idx < ids.length - 1 ? ids[idx + 1] : ids[0];
+        showPage(next);
+        showKbdHint('→ Chapitre suivant');
+      } else {
+        const prev = idx > 0 ? ids[idx - 1] : ids[ids.length - 1];
+        showPage(prev);
+        showKbdHint('← Chapitre précédent');
+      }
+    }
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     BOUTONS PREV / NEXT en bas de chaque chapitre
+  ────────────────────────────────────────────────────────── */
+  function injectChapterNav() {
+    const links = Array.from(document.querySelectorAll('.chapter-link[data-page]'));
+    const ids = links.map(a => a.dataset.page).filter(id => {
+      const el = document.getElementById(id);
+      return el && el.classList.contains('page-section');
+    });
+
+    ids.forEach((id, i) => {
+      const section = document.getElementById(id);
+      if (!section || section.querySelector('.chapter-nav-row') || section.querySelector('.chapter-nav')) return;
+
+      const prevId = i > 0 ? ids[i - 1] : null;
+      const nextId = i < ids.length - 1 ? ids[i + 1] : null;
+
+      const prevLabel = prevId ? (document.querySelector(`[data-page="${prevId}"]`)?.textContent.trim() || prevId) : null;
+      const nextLabel = nextId ? (document.querySelector(`[data-page="${nextId}"]`)?.textContent.trim() || nextId) : null;
+
+      const nav = document.createElement('div');
+      nav.className = 'chapter-nav-row';
+      nav.innerHTML = `
+        ${prevId ? `<button class="chapter-nav-btn prev-btn" data-page="${prevId}">← ${prevLabel}</button>` : '<span></span>'}
+        ${nextId ? `<button class="chapter-nav-btn next-btn" data-page="${nextId}">${nextLabel} →</button>` : '<span></span>'}
+      `;
+      section.appendChild(nav);
+    });
+  }
+
+  /* Appeler après le chargement complet */
+  window.addEventListener('load', injectChapterNav);
+
+  /* Gérer les clics sur les boutons nav de chapitre */
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.chapter-nav-btn[data-page]');
+    if (btn) {
+      e.preventDefault();
+      showPage(btn.dataset.page);
+    }
+  });
+
 })();

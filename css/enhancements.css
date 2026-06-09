@@ -710,6 +710,17 @@
 }
 .chapter-nav-btn.next:hover { transform: translateX(2px); }
 
+/* ── CHAPTER NAV ROW (prev/next) ────────────────────────── */
+.chapter-nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.chapter-nav-row span { flex: 1; }
+
 /* ── KEYBOARD SHORTCUT HINT ──────────────────────────────── */
 .kbd-hint {
   position: fixed;
