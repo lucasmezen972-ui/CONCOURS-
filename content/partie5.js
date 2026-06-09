@@ -98,6 +98,14 @@
     <div class="jq-q">« Quelle est la différence entre une note de synthèse et une note à l'usage d'un supérieur ? »</div>
     <div class="jq-r">La note de synthèse : présente objectivement les informations d'un dossier sans recommandations. La note à l'usage d'un supérieur : va plus loin · elle analyse, hiérarchise ET propose des orientations ou des décisions. Plus opérationnelle, orientée action.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment le jury évalue-t-il la qualité du plan d'une note ? »</div>
+    <div class="jq-r">Le jury apprécie : la logique interne (chaque partie découle de la précédente), l'équilibre des parties (proportions comparables), la couverture complète du sujet (aucun angle oublié), la clarté des intitulés de parties (formulés en propositions complètes, pas en mots-clés), et la présence de transitions entre les parties. Un plan déséquilibré ou trop chronologique est pénalisé.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Pourquoi l'en-tête d'une note est-elle si importante ? »</div>
+    <div class="jq-r">Elle ancre la note dans son contexte professionnel réel. Un en-tête complet (À : destinataire avec qualité · De : auteur avec qualité et direction · Objet : titre opérationnel précis · Date) montre que le candidat maîtrise le format et se projette dans la posture d'un vrai agent territorial. L'absence d'en-tête est lourdement pénalisée car elle traduit une méconnaissance de l'exercice professionnel.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p5c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -185,6 +193,22 @@
   <div class="fiche-item">Structure : 2-3 parties · 2-3 sous-parties par partie</div>
 </div>
 
+<div class="jury-questions">
+  <div class="jq-title">🎤 Questions de jury</div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment formuler une bonne problématique à partir d'un dossier de concours ? »</div>
+    <div class="jq-r">Partir de la commande explicite (ce que demande le supérieur), identifier le problème central sous-jacent (pourquoi c'est un enjeu), puis formuler la question de manière opérationnelle. Une bonne problématique est : précise (pas trop large), liée au contexte du sujet, orientée vers l'action ou la décision, et reformulable en deux phrases maximum. Elle guide tout le plan.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Que faire si le dossier contient des documents contradictoires ? »</div>
+    <div class="jq-r">C'est voulu ! Le jury teste votre capacité de jugement. Il faut : identifier et mentionner la contradiction (sans la nier) · la mettre en perspective (dates, sources, contextes différents) · prendre position avec des arguments et nuances · proposer une voie de synthèse. Ne jamais ignorer un document en contradiction car il peut contenir une information clé. La contradiction peut même structurer le plan (partie I : arguments en faveur / partie II : limites et nuances).</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quel est le bon nombre de parties dans une note pour le concours d'Attaché Territorial ? »</div>
+    <div class="jq-r">Deux parties équilibrées est le standard le plus sûr et le plus apprécié. Un plan en trois parties est acceptable si les trois thèmes sont vraiment distincts et équivalents. Plus de trois parties fragilise l'équilibre et suggère un manque de synthèse. Chaque partie doit avoir 2 à 3 sous-parties de longueur comparable. Un plan 2×3 (2 parties, 3 sous-parties chacune) est considéré comme un modèle d'équilibre.</div>
+  </div>
+</div>
+
 <button class="mark-done-btn" data-chapter="p5c2" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
 <div class="chapter-nav">
   <a href="#" data-page="p5c1" class="chapter-nav-btn">← Ch.1 Comprendre l'épreuve</a>
@@ -232,6 +256,22 @@
   <div class="fiche-item">Objet : La crise de l'eau potable en Martinique – Enjeux et préconisations</div>
   <div class="fiche-item">Date : [Date]</div>
   <div class="fiche-item" style="margin-top:12px">« Depuis plusieurs années, la Martinique est confrontée à une crise structurelle de l'eau potable, caractérisée par des interruptions récurrentes de distribution et des taux de perte en réseau parmi les plus élevés de France (plus de 50%). Dans ce contexte, la question de la gouvernance et du financement du service de l'eau constitue un enjeu majeur pour la CTM, tant en termes d'attractivité du territoire que de santé publique. Il convient d'analyser les causes de cette situation (I) avant d'envisager les leviers d'action disponibles pour y remédier (II). »</div>
+</div>
+
+<div class="jury-questions">
+  <div class="jq-title">🎤 Questions de jury</div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment rédiger une introduction de note efficace en moins de 15 minutes ? »</div>
+    <div class="jq-r">En suivant quatre temps stricts : 1. Contextualiser en 1-2 phrases (le fait/la situation qui justifie la note) · 2. Poser la problématique en 1 phrase interrogative ou assertive · 3. Annoncer le plan en 1 phrase avec les titres des parties · 4. Relire pour vérifier l'absence de « je » et la présence de l'en-tête. La méthode CAPAP aide : Contexte · Enjeux · Problématique · Annonce · Plan.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Pourquoi est-il interdit d'utiliser la première personne du singulier dans une note administrative ? »</div>
+    <div class="jq-r">La note est un document institutionnel, pas personnel. Le « je » introduit une subjectivité incompatible avec la neutralité et l'objectivité attendues d'un agent territorial. On lui substitue : « il convient de », « il apparaît que », « la collectivité pourrait envisager », « on peut noter que ». Cette règle illustre aussi la posture professionnelle de l'attaché : il s'efface derrière l'institution et son supérieur.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Que faire si vous manquez de temps lors de l'épreuve écrite ? »</div>
+    <div class="jq-r">Prioriser : finir l'introduction et la première partie complètes vaut mieux qu'une note inachevée mais brouillonne. Si la deuxième partie est incomplète, rédiger a minima les titres et sous-titres avec quelques mots-clés : le jury voit que vous avez le plan et les idées. Rédiger une courte conclusion bâclée est mieux que pas de conclusion. Ne jamais sacrifier la relecture finale : fautes d'orthographe = image négative immédiate.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p5c3" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -295,6 +335,18 @@
   <div class="fiche-item">Partie I : diagnostic (obstacles/enjeux) · Partie II : préconisations (leviers)</div>
   <div class="fiche-item">Transition marquée entre les deux parties</div>
   <div class="fiche-item">Vocabulaire technique précis · pas de « je » · formules impersonnelles</div>
+</div>
+
+<div class="jury-questions">
+  <div class="jq-title">🎤 Questions de jury sur la méthodologie de la note</div>
+  <div class="jq-item">
+    <div class="jq-q">« Après la lecture de votre note, que pensez-vous de votre introduction ? »</div>
+    <div class="jq-r">Question piège : le jury veut voir votre capacité d'auto-évaluation et de recul. Répondre honnêtement : pointer ce qui était réussi (si c'est le cas) et identifier une limite (ex. problématique trop large, transition à améliorer). Montrer qu'on comprend les critères du jury. Éviter l'excès de modestie autant que la prétention. Proposer comment on l'améliorerait si on recommençait.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment s'entraîner efficacement à l'épreuve de note avant le concours ? »</div>
+    <div class="jq-r">Méthode progressive : 1. Analyser des corrigés de notes sans avoir traité le sujet (déconstruire la méthode) · 2. S'entraîner à construire des plans sans rédiger (15 min par sujet) · 3. Rédiger des introductions complètes (20 min par sujet) · 4. Entraînement en conditions réelles (3h, dossier imprimé, sans Internet) · 5. Faire corriger par un tiers (pair, formateur CDG). Viser au moins 5 sujets complets traités avant le concours.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p5c4" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>

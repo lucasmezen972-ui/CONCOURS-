@@ -24,6 +24,7 @@
     { t: 'Bloc de constitutionnalité', d: 'Ensemble formant la norme constitutionnelle de référence : Constitution 1958 + DDHC 1789 + Préambule 1946 (droits sociaux) + Charte de l\'environnement 2004.', ref: 'P2·C1' },
     { t: 'Budget annexe', d: 'Budget distinct du budget principal retraçant les opérations d\'un service public industriel et commercial (SPIC) : eau, assainissement, transports…', ref: 'P3·C1' },
     { t: 'Budget primitif', d: 'Premier budget annuel voté par l\'assemblée délibérante avant le 15 avril. Il fixe les prévisions de recettes et d\'autorisations de dépenses pour l\'année.', ref: 'P3·C1' },
+    { t: 'Bien-être au travail', d: 'État global de satisfaction physique et psychologique des agents. Inclut la prévention des risques psychosociaux (RPS), l\'ergonomie, le management bienveillant. Objectif du DUERP et du plan de prévention.', ref: 'P4·C3' },
 
     /* C */
     { t: 'CAP', d: 'Commission Administrative Paritaire : instance consultée pour les décisions individuelles défavorables concernant la carrière des fonctionnaires (licenciement, refus promotion…). Organisée par catégorie.', ref: 'P4·C3' },
@@ -45,6 +46,9 @@
 
     /* D */
     { t: 'DDHC', d: 'Déclaration des Droits de l\'Homme et du Citoyen de 1789 : fait partie du bloc de constitutionnalité. Proclame les droits fondamentaux (liberté, égalité, propriété, sûreté, résistance à l\'oppression).', ref: 'P2·C1' },
+    { t: 'DEAL', d: 'Direction de l\'Environnement, de l\'Aménagement et du Logement : service déconcentré de l\'État dans les DROM. Contrôle les autorisations d\'urbanisme, les risques naturels, le logement social et les EnR.', ref: 'P7·C1' },
+    { t: 'Déféré préfectoral', d: 'Procédure permettant au préfet de déférer devant le tribunal administratif un acte d\'une collectivité territoriale qu\'il estime illégal. Délai de 2 mois après transmission.', ref: 'P2·C3' },
+    { t: 'Délibération', d: 'Acte de l\'assemblée délibérante d\'une collectivité (Assemblée de Martinique, conseil municipal…) prenant une décision sur une question relevant de ses compétences. Transmise au préfet pour contrôle de légalité.', ref: 'P2·C3' },
     { t: 'Décentralisation', d: 'Transfert de compétences de l\'État vers des collectivités territoriales dotées d\'une personnalité juridique, d\'un budget propre et gérées par des élus. Introduite par les lois Defferre 1982-1983.', ref: 'P1·C2' },
     { t: 'Déconcentration', d: 'Délégation de pouvoirs à des agents de l\'État implantés en région (préfets, recteurs, DRFIP…). L\'État reste l\'employeur et responsable, contrairement à la décentralisation.', ref: 'P1·C2' },
     { t: 'DGF', d: 'Dotation Globale de Fonctionnement : principale dotation de l\'État aux collectivités (~26 Mds€/an). Allouée selon des critères de population, de charges et de ressources.', ref: 'P3·C1' },
@@ -53,6 +57,7 @@
     { t: 'DSP', d: 'Délégation de Service Public : contrat par lequel une collectivité confie la gestion d\'un service public à un opérateur rémunéré par les résultats d\'exploitation. Formes : concession, affermage, régie intéressée.', ref: 'P4·C4' },
 
     /* E */
+    { t: 'Évaluation des politiques publiques', d: 'Démarche visant à apprécier l\'efficacité, l\'efficience et la pertinence d\'une politique publique. Méthodes : indicateurs de résultats, enquêtes, audits, études d\'impact. Outil de pilotage et de reddition de comptes.', ref: 'P4·C4' },
     { t: 'Entretien professionnel', d: 'Évaluation annuelle du fonctionnaire menée par son supérieur hiérarchique direct. Remplace la notation chiffrée depuis 2010. Évalue résultats, fixe objectifs, identifie besoins de formation.', ref: 'P4·C2' },
     { t: 'EPCI', d: 'Établissement Public de Coopération Intercommunale : regroupe plusieurs communes pour exercer des compétences en commun. Formes : communauté de communes (CC), d\'agglomération (CA), urbaine (CU), métropole.', ref: 'P1·C4' },
     { t: 'Équilibre budgétaire', d: 'Obligation légale pour les collectivités : chaque section (fonctionnement et investissement) doit être équilibrée en recettes et dépenses réelles.', ref: 'P3·C2' },
@@ -64,12 +69,15 @@
     { t: 'FSE+', d: 'Fonds Social Européen + : finance formation professionnelle, insertion et emploi. La Martinique (RUP) bénéficie de cofinancements bonifiés pour accompagner les demandeurs d\'emploi et publics fragiles.', ref: 'P8·C2' },
 
     /* G */
+    { t: 'Gouvernance', d: 'Ensemble des règles, pratiques et institutions par lesquelles un territoire ou une organisation est géré. Inclut la participation citoyenne, la coordination des acteurs et la transparence de la décision publique.', ref: 'P4·C4' },
+    { t: 'GPEC', d: 'Gestion Prévisionnelle des Emplois et des Compétences : démarche anticipant à 3-5 ans les besoins en effectifs et compétences d\'une collectivité pour adapter les ressources humaines aux enjeux futurs.', ref: 'P4·C2' },
     { t: 'Grade', d: 'Division dans un cadre d\'emplois de la FPT. L\'agent est titulaire d\'un grade (ex : attaché principal) et affecté sur un emploi. Le grade est la garantie statutaire (on ne peut pas supprimer le grade).', ref: 'P4·C1' },
 
     /* H */
     { t: 'Hiérarchie des normes', d: 'Principe selon lequel chaque norme juridique doit être conforme à celles qui lui sont supérieures. Pyramide : Constitution → Traités → Lois → Règlements.', ref: 'P2·C1' },
 
     /* I */
+    { t: 'Indicateur de performance', d: 'Mesure chiffrée permettant d\'évaluer l\'atteinte d\'un objectif. Doit être SMART. Dans la collectivité : indicateurs de moyens (inputs), de résultats (outputs) et d\'impact (outcomes).', ref: 'P4·C4' },
     { t: 'IAE', d: 'Insertion par l\'Activité Économique : structures (ateliers chantiers d\'insertion, entreprises d\'insertion…) qui emploient et accompagnent des personnes très éloignées de l\'emploi vers une insertion durable.', ref: 'P7·C2' },
     { t: 'Intercommunalité', d: 'Coopération entre communes au sein d\'un EPCI pour exercer certaines compétences à une échelle pertinente (urbanisme, déchets, transport, développement économique…).', ref: 'P1·C4' },
 
@@ -77,6 +85,7 @@
     { t: 'Jurisprudence', d: 'Ensemble des décisions rendues par les tribunaux qui interprètent et précisent le droit. Source indirecte du droit, notamment dans le droit administratif (ex : arrêts du Conseil d\'État).', ref: 'P2·C1' },
 
     /* L */
+    { t: 'Laïcité', d: 'Principe constitutionnel de neutralité de l\'État à l\'égard des religions (art. 1 Constitution). Dans la FPT : obligation pour les agents de ne pas manifester leurs convictions religieuses en service. Enjeu croissant de management public.', ref: 'P6·C2' },
     { t: 'Légalité (principe de)', d: 'L\'administration ne peut agir que si un texte l\'y autorise. Toute action administrative doit avoir une base légale. Fondement de l\'État de droit et du contrôle du juge administratif.', ref: 'P2·C1' },
     { t: 'Liste d\'aptitude', d: 'Liste sur laquelle est inscrit le lauréat d\'un concours FPT. Il peut être recruté par une collectivité dans un délai de 3 ans (renouvelable deux fois). Sans recrutement, radiation de la liste.', ref: 'P4·C1' },
     { t: 'Loi organique', d: 'Loi relative à l\'organisation des pouvoirs publics, soumise obligatoirement au Conseil constitutionnel avant promulgation. Hiérarchiquement supérieure aux lois ordinaires.', ref: 'P2·C1' },
@@ -89,6 +98,7 @@
     { t: 'Montagne Pelée', d: 'Volcan de la Martinique dont l\'éruption du 8 mai 1902 a détruit Saint-Pierre et tué ~30 000 personnes. Classée UNESCO (patrimoine mondial) en 2023 avec les Pitons du Carbet.', ref: 'P8·C1' },
 
     /* N */
+    { t: 'NOTRe (loi)', d: 'Loi du 7 août 2015 portant Nouvelle Organisation Territoriale de la République. Clarifie les compétences (suppression de la clause générale de compétence des régions et départements), renforce les intercommunalités.', ref: 'P1·C5' },
     { t: 'Neutralité', d: 'Principe du service public : les agents ne doivent pas manifester leurs opinions politiques, religieuses ou syndicales dans l\'exercice de leurs fonctions. Lié au principe de laïcité.', ref: 'P1·C1' },
     { t: 'Note administrative', d: 'Document opérationnel rédigé à l\'usage d\'un supérieur ou décideur. Présente une analyse et des propositions sur un sujet. Différent de la dissertation ou du résumé.', ref: 'P5·C1' },
 
@@ -113,12 +123,21 @@
     { t: 'QPV', d: 'Quartier Prioritaire de la politique de la Ville : zonage fondé sur un critère de revenu, délimitant les territoires bénéficiant des dispositifs de la politique de la ville.', ref: 'P7·C2' },
 
     /* R */
+    { t: 'Réserve (devoir de)', d: 'Obligation pour les fonctionnaires de s\'exprimer avec modération et retenue en public sur les affaires de l\'administration, notamment envers leurs supérieurs et la politique gouvernementale. S\'apprécie selon le grade et la fonction.', ref: 'P6·C2' },
+    { t: 'Risque majeur', d: 'Événement d\'origine naturelle (cyclone, séisme, éruption volcanique, inondation) ou technologique pouvant causer des dommages importants. En Martinique : risque sismique, cyclonique et volcanique (Montagne Pelée).', ref: 'P7·C3' },
+    { t: 'RPS', d: 'Risques Psycho-Sociaux : stress, burn-out, harcèlement moral ou sexuel au travail. Obligation de prévention pour l\'employeur territorial (DUERP). Enjeu de management bienveillant et de qualité de vie au travail.', ref: 'P4·C3' },
     { t: 'REP', d: 'Recours pour Excès de Pouvoir : recours contentieux devant le tribunal administratif visant l\'annulation d\'un acte administratif illégal. Délai de 2 mois. Ouvert sans avocat obligatoire.', ref: 'P2·C4' },
     { t: 'Régie directe', d: 'Mode de gestion d\'un service public où la collectivité l\'assure elle-même avec son personnel et ses moyens, sans recourir à un opérateur externe.', ref: 'P5·C3' },
     { t: 'RSA', d: 'Revenu de Solidarité Active : allocation différentielle versée aux personnes à faibles ressources. Géré et financé par le département (ou CTM en Martinique).', ref: 'P7·C2' },
     { t: 'RUP', d: 'Région Ultrapériphérique de l\'Union Européenne : statut de la Martinique (et 7 autres régions). Bénéficie de fonds structurels bonifiés (FEDER, FSE+, FEADER…) et d\'adaptations du droit européen.', ref: 'P8·C2' },
 
     /* S */
+    { t: 'SCOT', d: 'Schéma de Cohérence Territoriale : document d\'urbanisme stratégique intercommunal. Encadre PLU, PDU, PLH. Opposable aux documents inférieurs. En Martinique, le PADDM joue un rôle équivalent.', ref: 'P1·C4' },
+    { t: 'SEM', d: 'Société d\'Économie Mixte : société anonyme dont une collectivité détient entre 34% et 85% du capital. Permet à la collectivité de s\'associer avec des partenaires privés pour gérer un service ou réaliser un projet.', ref: 'P4·C4' },
+    { t: 'Séparation des pouvoirs', d: 'Principe fondamental (Montesquieu) distinguant pouvoir législatif (parlement), exécutif (gouvernement) et judiciaire (tribunaux). Garantit contre l\'arbitraire. Appliqué avec nuances dans le système français (régime semi-présidentiel).', ref: 'P2·C2' },
+    { t: 'Service public', d: 'Activité d\'intérêt général assurée ou contrôlée par une personne publique. Soumis aux lois de Rolland : continuité, égalité, adaptabilité (mutabilité). Peut être géré en régie ou délégué.', ref: 'P1·C1' },
+    { t: 'SPL', d: 'Société Publique Locale : société anonyme dont le capital appartient à 100% à des collectivités territoriales. Peut se voir confier des délégations de service public sans mise en concurrence, car considérée "in-house".', ref: 'P4·C4' },
+    { t: 'SRADDET', d: 'Schéma Régional d\'Aménagement, de Développement Durable et d\'Égalité des Territoires : document de planification régionale pour les régions métropolitaines. Équivalent du PADDM pour la CTM.', ref: 'P1·C5' },
     { t: 'SMART', d: 'Méthode de fixation d\'objectifs : Spécifique, Mesurable, Atteignable, Réaliste, Temporellement défini. Outil clé du management par objectifs.', ref: 'P4·C4' },
     { t: 'SRDEII', d: 'Schéma Régional de Développement Économique, d\'Innovation et d\'Internationalisation : document de planification économique régionale. Pour la CTM, il cible l\'emploi, les filières locales et l\'innovation.', ref: 'P8·C1' },
     { t: 'Stage (FPT)', d: 'Période probatoire d\'1 an (en général) à l\'issue du recrutement sur concours. À la fin du stage, l\'agent est titularisé, son stage prolongé, ou il est licencié.', ref: 'P4·C1' },
@@ -129,10 +148,14 @@
     { t: 'Traité de Maastricht', d: 'Traité de 1992 fondant l\'Union Européenne. Crée la citoyenneté européenne, l\'union économique et monétaire (euro). La Martinique, en tant que RUP, est pleinement intégrée à l\'UE.', ref: 'P8·C2' },
     { t: 'Tribunal administratif', d: 'Juridiction administrative de droit commun de première instance. Juge les litiges entre les administrés et l\'administration (excès de pouvoir, responsabilité…).', ref: 'P2·C4' },
 
+    /* T */
+    { t: 'Transparence administrative', d: 'Obligation pour l\'administration de communiquer ses documents sur demande (loi CADA 1978) et d\'informer les citoyens. Renforcée par les obligations d\'open data et de publication des données de subventions.', ref: 'P7·C1' },
+
     /* U */
     { t: 'Universalité (principe)', d: 'Principe budgétaire : toutes les recettes et toutes les dépenses doivent figurer au budget. Interdit la contraction (compenser une dépense par une recette) et l\'affectation sans texte.', ref: 'P3·C1' },
 
     /* V */
+    { t: 'Vœux de mutation', d: 'Procédure permettant à un fonctionnaire de demander une mutation vers un autre poste ou une autre collectivité. Gérée via la bourse de l\'emploi du CDG ou directement entre collectivités.', ref: 'P4·C2' },
     { t: 'Voie de fait', d: 'Illégalité manifeste de l\'administration portant gravement atteinte à une liberté fondamentale ou à la propriété privée. Exception permettant au juge judiciaire d\'intervenir dans une affaire administrative.', ref: 'P2·C4' },
 
     /* Z */

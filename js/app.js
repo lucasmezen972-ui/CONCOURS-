@@ -70,12 +70,11 @@
       if (list) list.classList.toggle('open');
     }
 
-    if (e.target.closest('.hamburger')) {
-      document.querySelector('.sidebar').classList.toggle('open');
-    }
-
     if (e.target.closest('.chapter-link') && window.innerWidth < 900) {
-      document.querySelector('.sidebar').classList.remove('open');
+      const sb = document.querySelector('.sidebar');
+      const ov = document.getElementById('sidebar-overlay');
+      if (sb) sb.classList.remove('open');
+      if (ov) ov.classList.remove('active');
     }
   });
 
@@ -729,6 +728,102 @@
       e.preventDefault();
       showPage(btn.dataset.page);
     }
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     SCROLL-TO-TOP + BARRE DE LECTURE
+  ────────────────────────────────────────────────────────── */
+  (function () {
+    const btn = document.createElement('button');
+    btn.id = 'scroll-top-btn';
+    btn.title = 'Retour en haut';
+    btn.setAttribute('aria-label', 'Retour en haut');
+    btn.textContent = '↑';
+    document.body.appendChild(btn);
+
+    const bar = document.createElement('div');
+    bar.id = 'reading-progress';
+    document.body.appendChild(bar);
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', function () {
+      const sy = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (dh > 0 ? Math.min(100, Math.round(sy / dh * 100)) : 0) + '%';
+      btn.classList.toggle('visible', sy > 300);
+    }, { passive: true });
+  }());
+
+  /* ──────────────────────────────────────────────────────────
+     SIDEBAR OVERLAY (fermeture mobile par clic extérieur)
+  ────────────────────────────────────────────────────────── */
+  (function () {
+    const overlay = document.createElement('div');
+    overlay.id = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+
+    /* Bouton fermeture dans la sidebar */
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'sidebar-close-btn';
+    closeBtn.title = 'Fermer le menu';
+    closeBtn.setAttribute('aria-label', 'Fermer le menu');
+    closeBtn.textContent = '✕';
+    sidebar.insertBefore(closeBtn, sidebar.firstChild);
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    }
+    function openSidebar() {
+      sidebar.classList.add('open');
+      overlay.classList.add('active');
+    }
+
+    closeBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    /* Patch le handler hamburger existant */
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.hamburger')) {
+        if (sidebar.classList.contains('open')) { closeSidebar(); }
+        else { openSidebar(); }
+      }
+    });
+  }());
+
+  /* ──────────────────────────────────────────────────────────
+     BOUTON IMPRESSION PAR CHAPITRE
+  ────────────────────────────────────────────────────────── */
+  window.addEventListener('load', function () {
+    document.querySelectorAll('.page-section').forEach(function (sec) {
+      if (sec.id === 'home' || sec.id === 'dashboard') return;
+      const h1 = sec.querySelector('h1');
+      if (!h1 || sec.querySelector('.print-btn')) return;
+      const btn = document.createElement('button');
+      btn.className = 'print-btn';
+      btn.title = 'Imprimer ce chapitre';
+      btn.innerHTML = '🖨️ Imprimer';
+      btn.addEventListener('click', function () {
+        /* Affiche uniquement la section active, puis imprime */
+        document.querySelectorAll('.page-section').forEach(function(s) {
+          s.dataset.printHide = s.id !== sec.id ? '1' : '';
+        });
+        document.querySelectorAll('[data-print-hide="1"]').forEach(function(s) {
+          s.style.setProperty('display', 'none', 'important');
+        });
+        window.print();
+        document.querySelectorAll('[data-print-hide="1"]').forEach(function(s) {
+          s.style.removeProperty('display');
+        });
+      });
+      h1.parentElement.insertBefore(btn, h1);
+    });
   });
 
 })();

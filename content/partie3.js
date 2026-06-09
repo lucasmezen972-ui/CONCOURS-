@@ -98,6 +98,14 @@
     <div class="jq-q">« Qu'est-ce que l'octroi de mer et pourquoi est-il important pour la Martinique ? »</div>
     <div class="jq-r">Taxe sur les marchandises importées en Martinique (et produites localement pour certains produits). Ressource fiscale majeure des collectivités martiniquaises (~200 M€/an). Protège la production locale. Autorisé par dérogation européenne jusqu'en 2027 (en négociation pour prolongation). Redistribué aux communes et à la CTM.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« La règle d'or s'applique-t-elle aux collectivités locales ? »</div>
+    <div class="jq-r">Oui, mais différemment de l'État. Les collectivités ne peuvent financer les dépenses courantes par l'emprunt : la section de fonctionnement doit être équilibrée et générer un excédent (autofinancement). L'emprunt est réservé à la section d'investissement. En cas de budget déséquilibré, le préfet peut saisir la CRC. Le ratio de désendettement (dette nette / CAF) doit rester idéalement en dessous de 10-12 ans.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que la péréquation fiscale et quel est son enjeu pour les collectivités ultramarines ? »</div>
+    <div class="jq-r">Mécanisme de redistribution pour réduire les inégalités de ressources entre collectivités. Péréquation verticale : dotations d'État ciblées (DSU, DSR). Péréquation horizontale : prélèvement sur collectivités riches reversé aux pauvres (FPIC). Pour les DOM comme la Martinique, les dotations intègrent des majorations spécifiques (rattrapage économique, insularité). L'enjeu est d'assurer un niveau minimal de service public malgré une base fiscale locale limitée.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p3c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -186,6 +194,14 @@
     <div class="jq-q">« Pourquoi sépare-t-on l'ordonnateur du comptable dans la comptabilité publique ? »</div>
     <div class="jq-r">Pour des raisons de contrôle mutuel et de sécurité des fonds publics. L'ordonnateur décide mais ne touche pas aux fonds. Le comptable vérifie les pièces justificatives et paie, mais ne décide pas la dépense. En cas d'irrégularité, le comptable peut suspendre le paiement (réquisition de l'ordonnateur nécessaire). Cette séparation limite les risques de fraude et d'erreur.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce qu'un budget participatif et comment peut-il être mis en place dans une collectivité ? »</div>
+    <div class="jq-r">Dispositif permettant aux citoyens de proposer et voter des projets financés sur une part du budget d'investissement. Étapes : définir l'enveloppe · appel à projets citoyen · filtre de faisabilité technique et juridique · vote des habitants · réalisation et suivi. Avantages : renforcement de la démocratie participative, appropriation du service public. Exemples : Paris (500 M€ cumulés), Poitiers, communes martiniquaises. Cadre légal facilité par la loi NOTRe (2015).</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quel est le rôle de la Chambre Régionale des Comptes en Martinique ? »</div>
+    <div class="jq-r">La CRAC (Chambre Régionale des Comptes) de Martinique contrôle la régularité, l'efficacité et l'économie de la gestion des collectivités (CTM, communes, établissements publics). Elle rend des rapports publics · peut formuler des recommandations · contrôle les comptes des comptables publics. Ses rapports sont précieux pour identifier les enjeux de gestion locale et constituer un argumentaire lors du concours. Elle est rattachée à la Cour des comptes nationale.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p3c2" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -260,6 +276,14 @@
   <div class="jq-item">
     <div class="jq-q">« Comment la CTM peut-elle favoriser les entreprises martiniquaises dans ses marchés publics sans violer les règles de concurrence ? »</div>
     <div class="jq-r">Via l'allotissement (petits lots accessibles aux PME) · clauses d'insertion professionnelle locale · critères environnementaux valorisant les produits locaux · sourçage préalable pour adapter les marchés aux capacités locales · SPASER intégrant des objectifs de développement local. Mais : pas de discrimination directe basée sur l'origine géographique (droit européen de la concurrence).</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quelles sont les grandes étapes de la passation d'un appel d'offres ouvert ? »</div>
+    <div class="jq-r">1. Définition du besoin et estimation du marché · 2. Rédaction du CCAP (Cahier des Clauses Administratives Particulières) et CCTP (technique) · 3. Publication de l'avis d'appel public à la concurrence (BOAMP + JOUE si &gt;215 000 €) · 4. Remise des offres dans le délai réglementaire · 5. Ouverture des plis en Commission d'Appel d'Offres (CAO) · 6. Analyse des offres selon les critères de sélection · 7. Attribution et notification au candidat retenu · 8. Publication de l'avis d'attribution.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que l'allotissement dans les marchés publics ? »</div>
+    <div class="jq-r">Principe (posé à l'art. L2113-10 CCP) selon lequel le marché est divisé en lots séparés. Objectif : faciliter l'accès des PME à la commande publique et introduire plus de concurrence. Chaque lot peut être attribué à un titulaire différent. Le pouvoir adjudicateur peut décider de ne pas allotir si l'allotissement est de nature à restreindre la concurrence ou rend l'exécution techniquement difficile. En Martinique, c'est un outil crucial pour permettre aux entreprises locales de répondre.</div>
   </div>
 </div>
 
