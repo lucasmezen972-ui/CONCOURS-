@@ -212,13 +212,14 @@
   });
 
   /* ──────────────────────────────────────────────────────────
-     SYNCHRONISATION SERVEUR – Cloudflare Worker + KV
+     SYNCHRONISATION SERVEUR – GitHub repository (branche data)
   ────────────────────────────────────────────────────────── */
-  const WORKER_URL_KEY = 'concours_worker_url';
+  const GH_PAT_KEY = 'concours_github_pat';
+  const GH_API = 'https://api.github.com/repos/lucasmezen972-ui/CONCOURS-/contents/progress.json';
   let _pushTimer = null;
 
-  function getWorkerUrl() {
-    return (localStorage.getItem(WORKER_URL_KEY) || '').replace(/\/$/, '');
+  function getGitHubPat() {
+    return localStorage.getItem(GH_PAT_KEY) || '';
   }
 
   function updateSyncStatus(state) {
@@ -229,14 +230,16 @@
     el.className = 'sync-status sync-' + state;
   }
 
-  async function syncFromWorker() {
-    const url = getWorkerUrl();
-    if (!url) return false;
+  async function syncFromGitHub() {
     updateSyncStatus('loading');
     try {
-      const r = await fetch(url + '/progress', { signal: AbortSignal.timeout(6000) });
+      const pat = getGitHubPat();
+      const headers = { Accept: 'application/vnd.github+json' };
+      if (pat) headers.Authorization = 'Bearer ' + pat;
+      const r = await fetch(GH_API + '?ref=data', { headers, signal: AbortSignal.timeout(8000) });
       if (!r.ok) { updateSyncStatus('error'); return false; }
-      const data = await r.json();
+      const file = await r.json();
+      const data = JSON.parse(atob(file.content.replace(/\n/g, '')));
       if (Array.isArray(data.done)) localStorage.setItem('concours_done', JSON.stringify(data.done));
       if (data.quiz && typeof data.quiz === 'object') localStorage.setItem('concours_quiz', JSON.stringify(data.quiz));
       if (Array.isArray(data.oral)) localStorage.setItem('concours_oral', JSON.stringify(data.oral));
@@ -251,9 +254,9 @@
     }
   }
 
-  async function pushToWorker() {
-    const url = getWorkerUrl();
-    if (!url) return;
+  async function pushToGitHub() {
+    const pat = getGitHubPat();
+    if (!pat) return;
     const payload = {
       done: JSON.parse(localStorage.getItem('concours_done') || '[]'),
       quiz: JSON.parse(localStorage.getItem('concours_quiz') || '{}'),
@@ -262,12 +265,26 @@
       visit_hist: JSON.parse(localStorage.getItem('concours_visit_hist') || '[]'),
       exam_date: localStorage.getItem('concours_exam_date') || '',
     };
+    const headers = {
+      Authorization: 'Bearer ' + pat,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    };
     try {
-      await fetch(url + '/progress', {
+      updateSyncStatus('loading');
+      const getRes = await fetch(GH_API + '?ref=data', { headers, signal: AbortSignal.timeout(8000) });
+      if (!getRes.ok) { updateSyncStatus('error'); return; }
+      const fileData = await getRes.json();
+      await fetch(GH_API, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(6000),
+        headers,
+        body: JSON.stringify({
+          message: '📚 sync progression',
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(payload)))),
+          sha: fileData.sha,
+          branch: 'data',
+        }),
+        signal: AbortSignal.timeout(10000),
       });
       updateSyncStatus('ok');
     } catch (e) {
@@ -277,7 +294,7 @@
 
   function debouncedPush() {
     clearTimeout(_pushTimer);
-    _pushTimer = setTimeout(pushToWorker, 800);
+    _pushTimer = setTimeout(pushToGitHub, 800);
   }
 
   /* Expose for content scripts */
@@ -288,12 +305,12 @@
     if (e.target.closest('#sync-url-save')) {
       const input = document.getElementById('sync-worker-url');
       if (!input) return;
-      localStorage.setItem(WORKER_URL_KEY, input.value.trim().replace(/\/$/, ''));
-      syncFromWorker().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
+      localStorage.setItem(GH_PAT_KEY, input.value.trim());
+      syncFromGitHub().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
       return;
     }
     if (e.target.closest('#sync-now-btn')) {
-      syncFromWorker().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
+      syncFromGitHub().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
       return;
     }
   });
@@ -527,9 +544,9 @@
         : '<p class="db-empty">Aucun chapitre faible détecté. Continuez les quiz !</p>';
     }
 
-    /* Sync settings – populate URL input if empty */
+    /* Sync settings – populate PAT input if empty */
     const syncInput = db.querySelector('#sync-worker-url');
-    if (syncInput && !syncInput.value) syncInput.value = getWorkerUrl();
+    if (syncInput && !syncInput.value) syncInput.value = getGitHubPat();
   }
 
   /* ──────────────────────────────────────────────────────────
@@ -862,7 +879,7 @@
     }
     loadProgress();
     /* Sync from server in background; reload progress if server has fresher data */
-    syncFromWorker().then(ok => { if (ok) loadProgress(); });
+    syncFromGitHub().then(ok => { if (ok) loadProgress(); });
     const firstPart = document.querySelector('.part-header');
     if (firstPart) {
       firstPart.classList.add('open');
