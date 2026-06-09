@@ -306,6 +306,26 @@
       else tip = '💡 Très bon niveau global ! Passez en mode révision intensive avec les annales.';
       tips.textContent = tip;
     }
+
+    /* Historique Examens Blancs */
+    const ebHist = db.querySelector('#db-examen-history');
+    if (ebHist) {
+      const ebData = JSON.parse(localStorage.getItem('concours_examen') || '[]');
+      if (ebData.length === 0) {
+        ebHist.innerHTML = '<p class="db-empty">Aucun examen blanc effectué pour l\'instant.</p>';
+      } else {
+        const recent = ebData.slice(-5).reverse();
+        ebHist.innerHTML = recent.map(e => {
+          const color = e.pct >= 70 ? 'var(--success)' : e.pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+          const date = new Date(e.date).toLocaleDateString('fr-FR');
+          return `<div class="db-hist-item">
+            <span class="db-hist-title">Examen blanc – ${e.total} questions</span>
+            <span class="db-hist-score" style="color:${color}">${e.score}/${e.total} · ${e.pct}%</span>
+            <span class="db-hist-date">${date}</span>
+          </div>`;
+        }).join('');
+      }
+    }
   }
 
   /* ──────────────────────────────────────────────────────────
