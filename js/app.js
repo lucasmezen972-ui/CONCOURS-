@@ -988,6 +988,11 @@
     function openSidebar() {
       sidebar.classList.add('open');
       overlay.classList.add('active');
+      /* Ensure the active chapter is visible in the sidebar */
+      setTimeout(function () {
+        var active = sidebar.querySelector('.chapter-link.active');
+        if (active) active.scrollIntoView({ block: 'nearest' });
+      }, 310);
     }
 
     closeBtn.addEventListener('click', closeSidebar);
