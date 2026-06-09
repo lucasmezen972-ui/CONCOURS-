@@ -184,12 +184,12 @@
       </div>
 
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-value">9</div><div class="stat-label">Parties</div></div>
-        <div class="stat-card"><div class="stat-value">38+</div><div class="stat-label">Chapitres</div></div>
-        <div class="stat-card"><div class="stat-value">127</div><div class="stat-label">Jours de révision</div></div>
-        <div class="stat-card"><div class="stat-value">50+</div><div class="stat-label">Mises en situation</div></div>
-        <div class="stat-card"><div class="stat-value">200+</div><div class="stat-label">Questions de quiz</div></div>
-        <div class="stat-card"><div class="stat-value">1h30</div><div class="stat-label">Par jour max.</div></div>
+        <div class="stat-card"><div class="stat-value">8</div><div class="stat-label">Parties</div></div>
+        <div class="stat-card"><div class="stat-value">27</div><div class="stat-label">Chapitres</div></div>
+        <div class="stat-card"><div class="stat-value">200+</div><div class="stat-label">Questions quiz</div></div>
+        <div class="stat-card"><div class="stat-value">70+</div><div class="stat-label">Fiches express</div></div>
+        <div class="stat-card"><div class="stat-value">80+</div><div class="stat-label">Termes glossaire</div></div>
+        <div class="stat-card"><div class="stat-value">25</div><div class="stat-label">Questions jury Martinique</div></div>
       </div>
 
       <div class="card">
@@ -248,7 +248,34 @@
           </ol>
           <div class="info-box">
             <div class="info-title">ℹ️ Structure de chaque chapitre</div>
-            Cours détaillé → Définitions clés → Fiche de synthèse → Points à retenir → Cas pratique martiniquais → Quiz (10+ questions) → Questions de jury → Réponses modèles
+            Cours détaillé → Définitions clés → Fiche de synthèse → Points à retenir → Cas pratique martiniquais → Quiz (8 questions) → Questions de jury → Réponses modèles
+          </div>
+          <h3 style="color:var(--primary);margin:20px 0 12px">🛠️ Outils disponibles</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>⚡ Fiches Express</strong><br>
+              <small style="color:var(--text-muted)">70+ flashcards cliquables avec mode solo aléatoire</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>📝 Examen Blanc</strong><br>
+              <small style="color:var(--text-muted)">20 questions tirées aléatoirement, chrono configurable</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>📖 Glossaire</strong><br>
+              <small style="color:var(--text-muted)">80+ termes clés avec recherche instantanée</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>🎤 Simulation orale</strong><br>
+              <small style="color:var(--text-muted)">Chronomètre + 210 questions de jury + auto-évaluation</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>🔍 Recherche globale</strong><br>
+              <small style="color:var(--text-muted)">Cherchez un terme dans tous les chapitres en temps réel</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>⌨️ Raccourcis clavier</strong><br>
+              <small style="color:var(--text-muted)">← → pour naviguer · Esc pour accueil · Filtrer la sidebar</small>
+            </div>
           </div>
         </div>
       </div>
@@ -675,6 +702,10 @@
       <div class="card">
         <div class="card-header"><h2>🕒 Historique des quiz récents</h2></div>
         <div class="card-body" id="db-quiz-history"><p style="color:var(--text-muted)">Aucun quiz effectué.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>📝 Historique des examens blancs</h2></div>
+        <div class="card-body" id="db-examen-history"><p style="color:var(--text-muted)">Aucun examen blanc effectué.</p></div>
       </div>
     </section>
 
