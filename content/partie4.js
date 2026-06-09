@@ -91,6 +91,10 @@
     <div class="jq-q">« Qu'est-ce que la protection fonctionnelle et dans quels cas s'applique-t-elle ? »</div>
     <div class="jq-r">Obligation de la collectivité de protéger ses agents contre les attaques (insultes, menaces, voies de fait, poursuites judiciaires) dans l'exercice de leurs fonctions. S'applique : agent attaqué par un usager · agent mis en examen pour faits de service. La collectivité prend en charge les frais de défense et les éventuelles indemnisations.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quelle est la différence entre un agent titulaire et un contractuel dans la FPT ? »</div>
+    <div class="jq-r">Titulaire : a réussi un concours · nommé dans un grade · titularisé après 1 an de stage · ne peut être licencié qu'en cas de faute ou suppression de poste (avec reclassement). Contractuel : embauché par contrat (CDD 1 an, renouvelable, CDI après 6 ans) · sur des emplois permanents si pas de cadre d'emplois correspondant ou recrutement direct (emploi de direction, emplois de cabinet). Moins de protection mais plus de flexibilité de recrutement.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p4c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -172,6 +176,10 @@
   <div class="jq-item">
     <div class="jq-q">« Comment conduire un entretien professionnel efficace avec un agent ? »</div>
     <div class="jq-r">Préparer : relire le CR N-1 · rassembler les éléments objectifs de performance. Conduire : bilan objectifs N · points positifs avant axes d'amélioration · fixer objectifs SMART pour N+1 · co-construire plan de formation. Conclusion : formaliser et signer le document. Écoute active et posture bienveillante mais exigeante.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que la GPEC et pourquoi est-elle importante dans la FPT ? »</div>
+    <div class="jq-r">Gestion Prévisionnelle des Emplois et des Compétences : anticiper les besoins en emplois et compétences à 3-5 ans pour adapter les ressources humaines aux évolutions des missions de la collectivité. Enjeux : vieillissement des agents, départs en retraite, nouvelles technologies (numérique), réorganisations. En Martinique : enjeu fort face aux difficultés de recrutement et à la nécessité de former les agents aux défis locaux (transition énergétique, tourisme durable, gestion de l'eau).</div>
   </div>
 </div>
 
@@ -255,6 +263,14 @@
   <div class="jq-item">
     <div class="jq-q">« Quelle est la différence entre le CST et l'ancienne CAP ? »</div>
     <div class="jq-r">CST = Comité Social Territorial : instance collective créée par loi 2019 (fusion CT + CHSCT) · traite des questions d'organisation, de conditions de travail et de politique RH. CAP = Commission Administrative Paritaire : traite des situations individuelles des agents (promotions, mutations, sanctions). Les deux coexistent.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quelle est la procédure disciplinaire applicable à un agent territorial qui commet une faute grave ? »</div>
+    <div class="jq-r">Procédure contradictoire obligatoire : 1. Information de l'agent des faits reprochés · 2. Droit à la communication du dossier · 3. Droit à un conseiller de défense · 4. Consultation de la CAP (obligatoire pour sanctions des groupes 2, 3, 4) · 5. Décision motivée notifiée à l'agent. Les 4 groupes de sanctions : groupe 1 (avertissement, blâme) sans CAP · groupe 2 (radiation tableau d'avancement, exclusion 1-15j) · groupe 3 (rétrogradation, exclusion 16j-2ans) · groupe 4 (mise à la retraite d'office, révocation).</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment gérer un conflit entre deux agents de votre équipe en tant qu'attaché territorial ? »</div>
+    <div class="jq-r">1. Écoute individuelle de chaque agent séparément (pas de prise de parti) · 2. Identifier l'origine du conflit (relationnel, organisationnel, lié au travail) · 3. Réunion tripartite de médiation si possible · 4. Clarifier les règles et les rôles si le conflit est organisationnel · 5. Documenter les démarches · 6. Si persistance : alerter le DRH ou faire appel à la cellule médiation · 7. Si faute : procédure disciplinaire. L'objectif est de préserver la qualité du service public et la cohésion d'équipe.</div>
   </div>
 </div>
 

@@ -837,3 +837,103 @@ kbd {
 .eb-corr-given { color: var(--danger); font-size: 0.88rem; margin-bottom: 4px; }
 .eb-corr-correct { color: var(--success); font-size: 0.88rem; margin-bottom: 6px; }
 .eb-corr-expl { font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 6px; }
+
+/* ── SCROLL-TO-TOP ───────────────────────────────────────── */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+#scroll-top-btn.visible { opacity: 1; transform: translateY(0); }
+#scroll-top-btn:hover { background: var(--primary-dark, #0d2e5a); }
+@media (max-width: 600px) {
+  #scroll-top-btn { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1.1rem; }
+}
+
+/* ── BARRE DE LECTURE ────────────────────────────────────── */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, var(--accent, #2196f3), var(--primary));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ── PRINT BUTTON ────────────────────────────────────────── */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  float: right;
+  margin-top: -4px;
+}
+.print-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+@media print {
+  .print-btn { display: none !important; }
+}
+
+/* ── SIDEBAR OVERLAY MOBILE ──────────────────────────────── */
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.42);
+  z-index: 149;
+  backdrop-filter: blur(1px);
+}
+@media (max-width: 900px) {
+  #sidebar-overlay.active { display: block; }
+}
+
+/* ── CLOSE SIDEBAR BTN (mobile) ──────────────────────────── */
+.sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.sidebar-close-btn:hover { background: rgba(255,255,255,0.28); }
+@media (max-width: 900px) {
+  .sidebar { position: relative; }
+  .sidebar-close-btn { display: flex; }
+}
