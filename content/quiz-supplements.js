@@ -3,6 +3,20 @@
 
   var QUIZ_DATA = {
 
+    'p1c1': {
+      titre: 'Organisation administrative française',
+      questions: [
+        { q: 'Quelle est la différence fondamentale entre déconcentration et décentralisation ?', opts: ['La déconcentration concerne les communes, la décentralisation l\'État', 'La déconcentration reste dans l\'État (délégation hiérarchique), la décentralisation crée des personnes morales distinctes', 'Les deux termes sont synonymes', 'La décentralisation ne concerne que les régions'], correct: 'b', expl: 'La déconcentration est interne à l\'État (même personne morale), la décentralisation crée des entités distinctes dotées de la personnalité morale.' },
+        { q: 'Quel article de la Constitution dispose que la France est décentralisée ?', opts: ['Article 72', 'Article 1er', 'Article 34', 'Article 20'], correct: 'b', expl: 'L\'article 1er dispose : « Son organisation est décentralisée. » L\'article 72 définit les collectivités territoriales et garantit leur libre administration.' },
+        { q: 'En quelle année la CTM de Martinique est-elle entrée en vigueur ?', opts: ['2010', '2011', '2015', '2020'], correct: 'c', expl: 'La CTM est opérationnelle depuis le 22 décembre 2015, suite aux élections territoriales inaugurales (loi du 27 juillet 2011).' },
+        { q: 'Qui représente l\'État en Martinique ?', opts: ['Le Président de l\'Assemblée de Martinique', 'Le Président du Conseil Exécutif de la CTM', 'Le Préfet de la Martinique', 'Le sous-préfet de l\'arrondissement'], correct: 'c', expl: 'Le préfet de la Martinique représente l\'État, veille au respect des lois et exerce le contrôle de légalité des actes de la CTM.' },
+        { q: 'La tutelle de l\'État sur les collectivités a été supprimée :', opts: ['Non, elle existe toujours', 'Oui, depuis la loi du 2 mars 1982', 'Oui, mais uniquement pour les communes', 'Non, elle a été renforcée en 2003'], correct: 'b', expl: 'La loi du 2 mars 1982 a supprimé la tutelle a priori et l\'a remplacée par un contrôle de légalité a posteriori exercé par le préfet devant le tribunal administratif.' },
+        { q: 'Combien y a-t-il de régions en France (y compris les DROM) ?', opts: ['13', '18', '22', '27'], correct: 'b', expl: '13 régions métropolitaines + 5 régions d\'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte) = 18 régions au total.' },
+        { q: 'Quel organisme contrôle les budgets des collectivités territoriales ?', opts: ['La Cour des comptes nationale', 'Le Tribunal Administratif', 'La Chambre Régionale des Comptes (CRC)', 'Le Ministère des Finances'], correct: 'c', expl: 'La CRC contrôle les comptes et la gestion des collectivités territoriales. Elle est la branche régionale de la Cour des comptes. En Martinique : la CRAC.' },
+        { q: 'L\'organisation administrative de la France repose sur les principes de :', opts: ['Centralisation uniquement', 'Décentralisation et déconcentration', 'Régionalisation et fédéralisme', 'Séparation des pouvoirs uniquement'], correct: 'b', expl: 'La France combine décentralisation (collectivités autonomes avec élus) et déconcentration (représentants de l\'État en région : préfets, recteurs, DRFIP…).' }
+      ]
+    },
+
     'p1c2': {
       titre: 'La décentralisation',
       questions: [
