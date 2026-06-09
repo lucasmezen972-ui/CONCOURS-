@@ -198,8 +198,15 @@
     const pct = document.querySelector('.progress-pct');
     const total = all.length;
     const doneN = done.length;
-    if (fill) fill.style.width = (total > 0 ? Math.round(doneN / total * 100) : 0) + '%';
+    const progPct = total > 0 ? Math.round(doneN / total * 100) : 0;
+    if (fill) fill.style.width = progPct + '%';
     if (pct) pct.textContent = `${doneN}/${total}`;
+    const hpcFill = document.getElementById('hpc-fill');
+    const hpcPct = document.getElementById('hpc-pct');
+    const hpcSub = document.getElementById('hpc-sub');
+    if (hpcFill) hpcFill.style.width = progPct + '%';
+    if (hpcPct) hpcPct.textContent = progPct + '%';
+    if (hpcSub) hpcSub.textContent = `${doneN} chapitre${doneN !== 1 ? 's' : ''} terminé${doneN !== 1 ? 's' : ''} sur ${total}`;
   }
 
   document.addEventListener('click', function (e) {
