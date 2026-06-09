@@ -974,7 +974,6 @@ kbd {
 }
 .sidebar-close-btn:hover { background: rgba(255,255,255,0.28); }
 @media (max-width: 900px) {
-  .sidebar { position: relative; }
   .sidebar-close-btn { display: flex; }
 }
 
