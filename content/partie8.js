@@ -172,6 +172,34 @@
   <li><strong>Biodiversité</strong> : forêt tropicale (Parc Naturel Régional de la Martinique) · récifs coralliens · mangroves</li>
 </ul>
 
+<h2 class="section-title">4. Événements marquants 2024</h2>
+
+<h3 class="sub-title">Mouvement social « vie chère » (septembre-octobre 2024)</h3>
+<p>La crise du coût de la vie a déclenché un mouvement social majeur baptisé <strong>« Rassemblement pou Pwoteksyon Pep Matinitjé »</strong> :</p>
+<ul>
+  <li>Les prix alimentaires sont en moyenne <strong>40-49% plus élevés</strong> qu'en métropole (INSEE 2023) malgré des revenus médians inférieurs</li>
+  <li>Blocages de routes, fermeture de supermarchés, tensions avec les forces de l'ordre pendant plusieurs semaines</li>
+  <li>Revendications : baisse des prix de 20% sur 54 produits de première nécessité, transparence des marges de la grande distribution</li>
+  <li><strong>Accord du 16 octobre 2024</strong> : encadrement des marges sur 54 produits · commission de suivi CTM/État/distributeurs · engagement d'un plan alimentaire local</li>
+  <li>Contexte structurel : 80% des aliments consommés sont importés · duopole de la grande distribution · déficit de production locale</li>
+</ul>
+
+<h3 class="sub-title">Plan eau d'urgence 2024</h3>
+<ul>
+  <li>Face à la persistance des coupures d'eau (50% de pertes en réseau), l'État et la CTM ont co-signé un plan pluriannuel d'urgence doté de <strong>200 millions d'euros</strong> (2024-2028)</li>
+  <li>Priorité : renouvellement des canalisations les plus vétustes (canalisations datant des années 1960 dans le Centre-Nord)</li>
+  <li>Gouvernance rationalisée : fusion des syndicats intercommunaux d'eau sous coordination CACEM/SMEAM</li>
+  <li>Enjeu de santé publique : contaminations ponctuelles + inégalité d'accès (zones rurales du Nord plus touchées)</li>
+</ul>
+
+<h3 class="sub-title">Débats sur l'autonomie (Acte IV de la décentralisation)</h3>
+<ul>
+  <li>En 2024, le Premier ministre a ouvert un débat national sur une éventuelle 4e étape de décentralisation</li>
+  <li>La CTM, sous l'impulsion de Serge Letchimy, plaide pour des <strong>habilitations normatives renforcées</strong> (art. 73 al. 3 Const.) permettant d'adapter les lois et règlements aux spécificités martiniquaises</li>
+  <li>Enjeux : fiscalité locale, politique agricole, eau, énergie, formation professionnelle</li>
+  <li>Résistances : certains élus craignent une fragmentation du droit républicain · État attentif à ne pas créer de disparités dans les droits des citoyens selon leur territoire</li>
+</ul>
+
 <div class="martinique-box">
   <h3 class="sub-title" style="margin-top:14px">Chiffres clés à connaître pour le jury</h3>
   <ul>
@@ -195,6 +223,7 @@
   <div class="fiche-item">Tourisme : 1er service export · ~1,5M visiteurs</div>
   <div class="fiche-item">Agriculture : banane (200K t.) · rhum AOC · maraîchage</div>
   <div class="fiche-item">Enjeux : énergie · eau · logement · mobilité · déchets · biodiversité</div>
+  <div class="fiche-item">2024 : vie chère (accord 16 oct.) · plan eau d'urgence 200 M€ · habilitations normatives art. 73</div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p8c2" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -212,7 +241,7 @@
   <div><div class="part-tag">Partie 8 – Martinique &amp; Outre-Mer</div>
   <h1>🎤 Réussir les questions du jury sur la Martinique</h1></div>
 </div>
-<div class="chapter-intro">Ce chapitre est votre passeport pour briller face au jury. Il compile les 25 questions les plus posées sur la Martinique, avec des réponses modèles précises, des chiffres clés et des formulations adaptées au registre d'un futur Attaché Territorial.</div>
+<div class="chapter-intro">Ce chapitre est votre passeport pour briller face au jury. Il compile les 30 questions les plus posées sur la Martinique, avec des réponses modèles précises, des chiffres clés et des formulations adaptées au registre d'un futur Attaché Territorial, incluant les actualités 2024 (vie chère, plan eau, France Travail, autonomie).</div>
 
 <div class="martinique-box">
   <h3 class="sub-title" style="margin-top:14px">LES CHIFFRES CLÉS À MÉMORISER</h3>
@@ -233,13 +262,16 @@
       <tr><td>Pertes eau réseau</td><td>&gt;50%</td></tr>
       <tr><td>Octroi de mer</td><td>~200 millions €/an</td></tr>
       <tr><td>Créé CTM</td><td>Loi 27 juillet 2011 · en vigueur 22 décembre 2015</td></tr>
+      <tr><td>Prix alimentaires</td><td>40-49% plus chers qu'en métropole (INSEE 2023)</td></tr>
+      <tr><td>Plan eau 2024</td><td>200 M€ sur 2024-2028 pour rénover les canalisations</td></tr>
+      <tr><td>Bénéficiaires RSA</td><td>~45 000 (CTM gestionnaire depuis 2016)</td></tr>
     </tbody>
   </table>
 </div>
 
 <h2 class="section-title">Questions institutionnelles</h2>
 <div class="jury-questions">
-  <div class="jq-title">🎤 25 Questions de jury sur la Martinique</div>
+  <div class="jq-title">🎤 30 Questions de jury sur la Martinique (dont 2024)</div>
 
   <div class="jq-item">
     <div class="jq-q">1. « Présentez l'organisation institutionnelle de la Martinique en 2 minutes. »</div>
@@ -365,6 +397,31 @@
     <div class="jq-q">25. « Que savez-vous de la Martinique de demain ? Quels sont vos espoirs pour ce territoire ? »</div>
     <div class="jq-r">La Martinique de demain peut s'appuyer sur des atouts réels : une identité culturelle forte, une biodiversité exceptionnelle, un rhum AOC mondialement reconnu, une position géographique stratégique au cœur de la Caraïbe, et un potentiel d'énergies renouvelables considérable. Mes espoirs : que la transition énergétique atteigne ses objectifs en 2030 et libère la Martinique de la dépendance aux hydrocarbures · que la crise de l'eau soit résolue durablement · que les jeunes trouvent des raisons de rester et de s'investir dans leur île · que la coopération caribéenne positionne la Martinique comme pôle régional d'excellence · que le développement économique bénéficie à l'ensemble de la population en réduisant les inégalités. C'est à cela que je souhaite contribuer en tant qu'Attaché Territorial.</div>
   </div>
+
+  <div class="jq-item">
+    <div class="jq-q">26. « Que pensez-vous du mouvement "vie chère" de 2024 et du rôle des institutions ? »</div>
+    <div class="jq-r">Le mouvement « vie chère » d'automne 2024 exprime une réalité sociale documentée : les prix alimentaires en Martinique sont 40 à 49% plus élevés qu'en métropole selon l'INSEE, pour des revenus médians inférieurs. Ce différentiel structurel tient à l'insularité, à la dépendance aux importations (80% des aliments) et aux marges de la grande distribution. L'accord du 16 octobre 2024 — réduction de prix sur 54 produits — est un premier pas, mais la solution durable passe par le développement de la production alimentaire locale : soutien à l'agriculture vivrière, diversification des filières, structuration de circuits courts. En tant qu'Attaché, je vois dans cet événement un signal fort pour accélérer la politique agricole de la CTM et la stratégie d'autonomie alimentaire.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">27. « Qu'est-ce que les habilitations normatives de l'article 73 et pourquoi la CTM les revendique-t-elle ? »</div>
+    <div class="jq-r">L'article 73 alinéa 3 de la Constitution permet aux assemblées des DROM de demander au Parlement l'autorisation d'adapter ou de fixer des règles locales dans des matières relevant normalement de la loi ou du règlement. La CTM utilise peu ce mécanisme mais revendique son extension dans le cadre des débats sur un éventuel Acte IV de la décentralisation (2024). Domaines ciblés : fiscalité (octroi de mer post-2027) · politique agricole adaptée (chlordécone, filière banane) · gestion de l'eau · formation professionnelle spécifique aux besoins martiniquais. L'enjeu : davantage d'autonomie normative sans remettre en cause le statut de DROM ni l'application du droit commun en matière de droits fondamentaux.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">28. « Qu'est-ce que le plan eau 2024-2028 et quels en sont les enjeux pour la CTM ? »</div>
+    <div class="jq-r">Le plan eau d'urgence signé en 2024 entre l'État et la CTM mobilise 200 millions d'euros sur 2024-2028 pour résoudre la crise chronique de l'eau en Martinique. Les priorités : renouvellement des canalisations les plus vétustes (certaines datent des années 1960) · rationalisation de la gouvernance en fusionnant les syndicats intercommunaux · réduction des pertes (actuellement >50%) · sécurisation de l'alimentation dans les zones rurales du Nord et du Nord-Caraïbe. Pour la CTM, cela représente un défi d'ingénierie, de coordination avec les communes et les EPCI, et de mobilisation des fonds européens (FEDER) pour co-financer les travaux. C'est aussi un enjeu de justice sociale : les populations les plus vulnérables sont les plus touchées par les coupures.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">29. « Comment la CTM articule-t-elle sa politique d'emploi avec la réforme France Travail de 2024 ? »</div>
+    <div class="jq-r">Depuis le 1er janvier 2024, France Travail (ex-Pôle Emploi) est le pivot d'un service public de l'emploi élargi : les 45 000 bénéficiaires du RSA martiniquais sont automatiquement inscrits et doivent signer un Contrat d'Engagement avec 15-20h d'activités hebdomadaires. La CTM, gestionnaire du RSA, doit articuler instruction des droits, suivi des engagements et financement des parcours en co-gestion avec France Travail. Défis opérationnels : réseau de Missions locales insuffisant pour le volume · zones rurales mal desservies · profils éloignés de l'emploi nécessitant un accompagnement renforcé. La CTM a renforcé sa direction de l'insertion et développe des partenariats avec les acteurs de l'IAE (Insertion par l'Activité Économique) pour compléter le dispositif.</div>
+  </div>
+
+  <div class="jq-item">
+    <div class="jq-q">30. « En tant que futur Attaché, comment aborderiez-vous une crise sociale soudaine comme la "vie chère" ? »</div>
+    <div class="jq-r">Face à une crise sociale soudaine, la posture d'un Attaché Territorial se construit sur trois axes : 1) Analyse et reporting rapide : remonter à la hiérarchie une synthèse claire des faits, des revendications et des leviers disponibles pour la CTM · 2) Appui à la cellule de crise : contribution logistique, juridique ou communicationnelle selon mes attributions, coordination avec les services concernés (action sociale, développement économique, communication) · 3) Proposition de solutions structurelles : au-delà de la gestion immédiate, formaliser des notes d'orientation sur les leviers durables (soutien à l'agriculture locale, circuits courts, encadrement des marges). Je veillerais aussi à maintenir le lien avec les agents de terrain et à assurer la continuité du service public pendant la période de tension.</div>
+  </div>
 </div>
 
 <div class="fiche-synthese">
@@ -375,6 +432,7 @@
   <div class="fiche-item">Défis : chômage 17% · eau (pertes &gt;50%) · chlordécone · énergie · logement</div>
   <div class="fiche-item">Risques : cyclone (zone 4) · séisme (zone 5) · Pelée (UNESCO 2023)</div>
   <div class="fiche-item">PADDM = équivalent SRADDET pour la CTM · opposable aux PLU/SCoT</div>
+  <div class="fiche-item">2024 : vie chère (accord 16 oct. · 54 produits) · plan eau 200 M€ · France Travail · habilitations normatives art. 73</div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p8c3" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
