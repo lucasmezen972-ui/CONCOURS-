@@ -166,6 +166,7 @@
     data[chapterId].push({ date: new Date().toISOString(), score, total, pct: Math.round(score / total * 100) });
     if (data[chapterId].length > 5) data[chapterId] = data[chapterId].slice(-5);
     localStorage.setItem('concours_quiz', JSON.stringify(data));
+    debouncedPush();
   }
 
   /* ──────────────────────────────────────────────────────────
@@ -184,7 +185,7 @@
 
   function markDone(id) {
     const done = JSON.parse(localStorage.getItem('concours_done') || '[]');
-    if (!done.includes(id)) { done.push(id); localStorage.setItem('concours_done', JSON.stringify(done)); }
+    if (!done.includes(id)) { done.push(id); localStorage.setItem('concours_done', JSON.stringify(done)); debouncedPush(); }
     const link = document.querySelector(`.chapter-link[data-page="${id}"]`);
     if (link) link.classList.add('done');
     updateProgressBar();
@@ -208,6 +209,93 @@
     btn.textContent = '✓ Chapitre terminé !';
     btn.disabled = true;
     btn.style.background = 'var(--success)';
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     SYNCHRONISATION SERVEUR – Cloudflare Worker + KV
+  ────────────────────────────────────────────────────────── */
+  const WORKER_URL_KEY = 'concours_worker_url';
+  let _pushTimer = null;
+
+  function getWorkerUrl() {
+    return (localStorage.getItem(WORKER_URL_KEY) || '').replace(/\/$/, '');
+  }
+
+  function updateSyncStatus(state) {
+    const el = document.getElementById('sync-status');
+    if (!el) return;
+    const labels = { loading: '🔄 Synchronisation…', ok: '✅ Synchronisé', error: '⚠️ Hors ligne – données locales utilisées', idle: '' };
+    el.textContent = labels[state] || '';
+    el.className = 'sync-status sync-' + state;
+  }
+
+  async function syncFromWorker() {
+    const url = getWorkerUrl();
+    if (!url) return false;
+    updateSyncStatus('loading');
+    try {
+      const r = await fetch(url + '/progress', { signal: AbortSignal.timeout(6000) });
+      if (!r.ok) { updateSyncStatus('error'); return false; }
+      const data = await r.json();
+      if (Array.isArray(data.done)) localStorage.setItem('concours_done', JSON.stringify(data.done));
+      if (data.quiz && typeof data.quiz === 'object') localStorage.setItem('concours_quiz', JSON.stringify(data.quiz));
+      if (Array.isArray(data.oral)) localStorage.setItem('concours_oral', JSON.stringify(data.oral));
+      if (Array.isArray(data.examen)) localStorage.setItem('concours_examen', JSON.stringify(data.examen));
+      if (Array.isArray(data.visit_hist)) localStorage.setItem('concours_visit_hist', JSON.stringify(data.visit_hist));
+      if (data.exam_date) localStorage.setItem('concours_exam_date', data.exam_date);
+      updateSyncStatus('ok');
+      return true;
+    } catch (e) {
+      updateSyncStatus('error');
+      return false;
+    }
+  }
+
+  async function pushToWorker() {
+    const url = getWorkerUrl();
+    if (!url) return;
+    const payload = {
+      done: JSON.parse(localStorage.getItem('concours_done') || '[]'),
+      quiz: JSON.parse(localStorage.getItem('concours_quiz') || '{}'),
+      oral: JSON.parse(localStorage.getItem('concours_oral') || '[]'),
+      examen: JSON.parse(localStorage.getItem('concours_examen') || '[]'),
+      visit_hist: JSON.parse(localStorage.getItem('concours_visit_hist') || '[]'),
+      exam_date: localStorage.getItem('concours_exam_date') || '',
+    };
+    try {
+      await fetch(url + '/progress', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(6000),
+      });
+      updateSyncStatus('ok');
+    } catch (e) {
+      updateSyncStatus('error');
+    }
+  }
+
+  function debouncedPush() {
+    clearTimeout(_pushTimer);
+    _pushTimer = setTimeout(pushToWorker, 800);
+  }
+
+  /* Expose for content scripts */
+  window._concoursPush = debouncedPush;
+
+  /* Sync settings button handlers */
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('#sync-url-save')) {
+      const input = document.getElementById('sync-worker-url');
+      if (!input) return;
+      localStorage.setItem(WORKER_URL_KEY, input.value.trim().replace(/\/$/, ''));
+      syncFromWorker().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
+      return;
+    }
+    if (e.target.closest('#sync-now-btn')) {
+      syncFromWorker().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
+      return;
+    }
   });
 
   /* ──────────────────────────────────────────────────────────
@@ -438,6 +526,10 @@
           }).join('')
         : '<p class="db-empty">Aucun chapitre faible détecté. Continuez les quiz !</p>';
     }
+
+    /* Sync settings – populate URL input if empty */
+    const syncInput = db.querySelector('#sync-worker-url');
+    if (syncInput && !syncInput.value) syncInput.value = getWorkerUrl();
   }
 
   /* ──────────────────────────────────────────────────────────
@@ -464,6 +556,7 @@
     const dateInput = document.getElementById('db-exam-date');
     if (!dateInput || !dateInput.value) return;
     localStorage.setItem('concours_exam_date', dateInput.value);
+    debouncedPush();
     refreshDashboard();
   });
 
@@ -738,6 +831,7 @@
     data.push({ date: new Date().toISOString(), score });
     if (data.length > 100) data.splice(0, data.length - 100);
     localStorage.setItem('concours_oral', JSON.stringify(data));
+    debouncedPush();
   }
 
   /* ──────────────────────────────────────────────────────────
@@ -767,6 +861,8 @@
       showPage('home');
     }
     loadProgress();
+    /* Sync from server in background; reload progress if server has fresher data */
+    syncFromWorker().then(ok => { if (ok) loadProgress(); });
     const firstPart = document.querySelector('.part-header');
     if (firstPart) {
       firstPart.classList.add('open');

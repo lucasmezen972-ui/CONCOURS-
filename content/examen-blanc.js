@@ -226,6 +226,7 @@
     history.push({ date: new Date().toISOString(), score: score, total: total, pct: pct });
     if (history.length > 20) history = history.slice(-20);
     localStorage.setItem('concours_examen', JSON.stringify(history));
+    if (window._concoursPush) window._concoursPush();
   }
 
   /* ── EVENT HANDLERS ── */

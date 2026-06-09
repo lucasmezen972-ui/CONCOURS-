@@ -1089,3 +1089,9 @@ html.dark .chapter-nav-btn:hover { background: var(--primary); color: #fff; bord
 html.dark .sommaire-card { background: var(--bg-white) !important; }
 html.dark .day-row { border-bottom-color: var(--border); }
 html.dark .stat-card { background: var(--bg-white); }
+
+/* Sync status */
+.sync-status { font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; min-height: 1.4em; }
+.sync-status.sync-loading { color: var(--primary-light); }
+.sync-status.sync-ok { color: var(--success); }
+.sync-status.sync-error { color: var(--danger); }
