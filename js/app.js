@@ -212,34 +212,29 @@
   });
 
   /* ──────────────────────────────────────────────────────────
-     SYNCHRONISATION SERVEUR – GitHub repository (branche data)
+     SYNCHRONISATION SERVEUR – KVdb.io (automatique)
   ────────────────────────────────────────────────────────── */
-  const GH_PAT_KEY = 'concours_github_pat';
-  const GH_API = 'https://api.github.com/repos/lucasmezen972-ui/CONCOURS-/contents/progress.json';
+  const _KV = 'https://kvdb.io/misty-king-bf56/progress';
+  const _KH = { Authorization: 'Bearer 6bf25e466d20d9bc7c9b15034f110875' };
   let _pushTimer = null;
-
-  function getGitHubPat() {
-    return localStorage.getItem(GH_PAT_KEY) || '';
-  }
 
   function updateSyncStatus(state) {
     const el = document.getElementById('sync-status');
     if (!el) return;
-    const labels = { loading: '🔄 Synchronisation…', ok: '✅ Synchronisé', error: '⚠️ Hors ligne – données locales utilisées', idle: '' };
+    const labels = { loading: '🔄 Sync…', ok: '✅ Synchronisé', error: '⚠️ Hors ligne', idle: '' };
     el.textContent = labels[state] || '';
     el.className = 'sync-status sync-' + state;
   }
 
-  async function syncFromGitHub() {
+  async function syncProgress() {
     updateSyncStatus('loading');
     try {
-      const pat = getGitHubPat();
-      const headers = { Accept: 'application/vnd.github+json' };
-      if (pat) headers.Authorization = 'Bearer ' + pat;
-      const r = await fetch(GH_API + '?ref=data', { headers, signal: AbortSignal.timeout(8000) });
+      const r = await fetch(_KV, { headers: _KH, signal: AbortSignal.timeout(8000) });
+      if (r.status === 404) { updateSyncStatus('ok'); return true; }
       if (!r.ok) { updateSyncStatus('error'); return false; }
-      const file = await r.json();
-      const data = JSON.parse(atob(file.content.replace(/\n/g, '')));
+      const text = await r.text();
+      if (!text || text === 'null') { updateSyncStatus('ok'); return true; }
+      const data = JSON.parse(text);
       if (Array.isArray(data.done)) localStorage.setItem('concours_done', JSON.stringify(data.done));
       if (data.quiz && typeof data.quiz === 'object') localStorage.setItem('concours_quiz', JSON.stringify(data.quiz));
       if (Array.isArray(data.oral)) localStorage.setItem('concours_oral', JSON.stringify(data.oral));
@@ -254,9 +249,7 @@
     }
   }
 
-  async function pushToGitHub() {
-    const pat = getGitHubPat();
-    if (!pat) return;
+  async function saveProgress() {
     const payload = {
       done: JSON.parse(localStorage.getItem('concours_done') || '[]'),
       quiz: JSON.parse(localStorage.getItem('concours_quiz') || '{}'),
@@ -265,25 +258,12 @@
       visit_hist: JSON.parse(localStorage.getItem('concours_visit_hist') || '[]'),
       exam_date: localStorage.getItem('concours_exam_date') || '',
     };
-    const headers = {
-      Authorization: 'Bearer ' + pat,
-      Accept: 'application/vnd.github+json',
-      'Content-Type': 'application/json',
-    };
     try {
       updateSyncStatus('loading');
-      const getRes = await fetch(GH_API + '?ref=data', { headers, signal: AbortSignal.timeout(8000) });
-      if (!getRes.ok) { updateSyncStatus('error'); return; }
-      const fileData = await getRes.json();
-      await fetch(GH_API, {
+      await fetch(_KV, {
         method: 'PUT',
-        headers,
-        body: JSON.stringify({
-          message: '📚 sync progression',
-          content: btoa(unescape(encodeURIComponent(JSON.stringify(payload)))),
-          sha: fileData.sha,
-          branch: 'data',
-        }),
+        headers: { ..._KH, 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload),
         signal: AbortSignal.timeout(10000),
       });
       updateSyncStatus('ok');
@@ -294,26 +274,11 @@
 
   function debouncedPush() {
     clearTimeout(_pushTimer);
-    _pushTimer = setTimeout(pushToGitHub, 800);
+    _pushTimer = setTimeout(saveProgress, 800);
   }
 
   /* Expose for content scripts */
   window._concoursPush = debouncedPush;
-
-  /* Sync settings button handlers */
-  document.addEventListener('click', function (e) {
-    if (e.target.closest('#sync-url-save')) {
-      const input = document.getElementById('sync-worker-url');
-      if (!input) return;
-      localStorage.setItem(GH_PAT_KEY, input.value.trim());
-      syncFromGitHub().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
-      return;
-    }
-    if (e.target.closest('#sync-now-btn')) {
-      syncFromGitHub().then(ok => { if (ok) { loadProgress(); refreshDashboard(); } });
-      return;
-    }
-  });
 
   /* ──────────────────────────────────────────────────────────
      TABLEAU DE BORD
@@ -544,9 +509,6 @@
         : '<p class="db-empty">Aucun chapitre faible détecté. Continuez les quiz !</p>';
     }
 
-    /* Sync settings – populate PAT input if empty */
-    const syncInput = db.querySelector('#sync-worker-url');
-    if (syncInput && !syncInput.value) syncInput.value = getGitHubPat();
   }
 
   /* ──────────────────────────────────────────────────────────
@@ -879,7 +841,7 @@
     }
     loadProgress();
     /* Sync from server in background; reload progress if server has fresher data */
-    syncFromGitHub().then(ok => { if (ok) loadProgress(); });
+    syncProgress().then(ok => { if (ok) loadProgress(); });
     const firstPart = document.querySelector('.part-header');
     if (firstPart) {
       firstPart.classList.add('open');
