@@ -36,7 +36,8 @@
         '<span id="eb-timer-display" style="font-size:1.6rem;font-weight:800;font-family:monospace;letter-spacing:2px"></span>' +
       '</div>' +
       '<div id="eb-question-area"></div>' +
-      '<div id="eb-nav" style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">' +
+      '<div id="eb-q-grid" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;padding:14px 0;border-top:1px solid var(--border)"></div>' +
+      '<div id="eb-nav" style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">' +
         '<button id="eb-validate-btn" style="background:var(--primary);color:#fff;border:none;padding:11px 26px;border-radius:8px;cursor:pointer;font-weight:700">✓ Valider</button>' +
         '<button id="eb-finish-btn" style="background:var(--warning);color:#fff;border:none;padding:11px 26px;border-radius:8px;cursor:pointer;font-weight:700;display:none">Terminer l\'examen</button>' +
       '</div>' +
@@ -98,6 +99,7 @@
     document.getElementById('eb-results').style.display = 'none';
 
     renderQuestion();
+    renderGrid();
     updateProgressLabel();
     updateTimerDisplay();
 
@@ -107,6 +109,22 @@
       updateTimerDisplay();
       if (ebSecsLeft <= 0) { clearInterval(ebTimerId); finishExam(); }
     }, 1000);
+  }
+
+  function renderGrid() {
+    var grid = document.getElementById('eb-q-grid');
+    if (!grid) return;
+    grid.innerHTML = ebQuestions.map(function(q, i) {
+      var isAnswered = ebAnswers[i] !== null;
+      var isCurrent = i === ebCurrent;
+      var bg = isCurrent ? 'var(--primary)' : isAnswered ? 'var(--success)' : '#e8ecf0';
+      var color = (isCurrent || isAnswered) ? '#fff' : 'var(--text-muted)';
+      var border = isCurrent ? '2px solid var(--primary)' : isAnswered ? '2px solid var(--success)' : '1px solid var(--border)';
+      return '<button class="eb-grid-dot" data-idx="' + i + '" style="' +
+        'width:32px;height:32px;border-radius:50%;border:' + border + ';background:' + bg + ';color:' + color + ';' +
+        'font-size:0.75rem;font-weight:700;cursor:pointer;transition:all 0.15s">' +
+        (i + 1) + '</button>';
+    }).join('');
   }
 
   function renderQuestion() {
@@ -216,11 +234,12 @@
 
     if (e.target.closest('#eb-validate-btn')) {
       saveCurrentAnswer();
-      updateProgressLabel();
       if (ebCurrent < ebQuestions.length - 1) {
         ebCurrent++;
         renderQuestion();
+        renderGrid();
         updateProgressLabel();
+        window.scrollTo({ top: document.getElementById('eb-header') ? document.getElementById('eb-header').offsetTop - 20 : 0, behavior: 'smooth' });
       }
       return;
     }
@@ -235,6 +254,17 @@
       saveCurrentAnswer();
       ebCurrent += parseInt(navBtn.dataset.go);
       renderQuestion();
+      renderGrid();
+      updateProgressLabel();
+      return;
+    }
+
+    var gridDot = e.target.closest('.eb-grid-dot');
+    if (gridDot && document.getElementById('eb-exam') && document.getElementById('eb-exam').style.display !== 'none') {
+      saveCurrentAnswer();
+      ebCurrent = parseInt(gridDot.dataset.idx);
+      renderQuestion();
+      renderGrid();
       updateProgressLabel();
       return;
     }

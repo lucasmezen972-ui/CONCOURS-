@@ -340,11 +340,6 @@
     (function () {
       const today = new Date().toISOString().slice(0, 10);
       const hist = JSON.parse(localStorage.getItem('concours_visit_hist') || '[]');
-      if (!hist.includes(today)) {
-        hist.push(today);
-        if (hist.length > 90) hist.splice(0, hist.length - 90);
-        localStorage.setItem('concours_visit_hist', JSON.stringify(hist));
-      }
       /* Calculer la streak */
       let streak = 0;
       const sorted = hist.slice().sort().reverse();
@@ -637,7 +632,18 @@
      tous les fichiers content/*.js aient injecté leurs sections
      avant que l'on tente la navigation par hash URL.
   ────────────────────────────────────────────────────────── */
+  function recordTodayVisit() {
+    const today = new Date().toISOString().slice(0, 10);
+    const hist = JSON.parse(localStorage.getItem('concours_visit_hist') || '[]');
+    if (!hist.includes(today)) {
+      hist.push(today);
+      if (hist.length > 90) hist.splice(0, hist.length - 90);
+      localStorage.setItem('concours_visit_hist', JSON.stringify(hist));
+    }
+  }
+
   function init() {
+    recordTodayVisit();
     const hash = window.location.hash.slice(1);
     if (hash) {
       const target = document.getElementById(hash);
