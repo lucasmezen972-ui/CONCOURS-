@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concours Attaché Territorial – Manuel Complet – Martinique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <script>if(localStorage.getItem('concours_dark_mode')==='1')document.documentElement.classList.add('dark');</script>
+  <script>if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(function(){});</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <button class="hamburger" aria-label="Menu">☰</button>
+  <div class="logo">
+    <span>🇲🇶</span>
+    <span>Attaché Territorial – Martinique</span>
+    <span class="badge">CAT. A</span>
+  </div>
+  <nav>
+    <a href="#" data-page="home" class="nav-home">Accueil</a>
+    <a href="#" data-page="planner">Planning</a>
+    <a href="#" data-page="dashboard" class="nav-badge">📊 Bord</a>
+    <a href="#" data-page="simulation-orale" class="nav-badge">🎤 Oral</a>
+  </nav>
+  <button id="dark-mode-toggle" title="Mode sombre / clair" aria-label="Basculer le mode sombre">🌙</button>
+  <div class="header-search-wrap">
+    <input id="global-search-input" type="text" placeholder="🔍 Rechercher…" autocomplete="off" spellcheck="false">
+    <div id="header-search-dropdown" class="header-search-dropdown"></div>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>Manuel de préparation</h3>
+      <p>Concours Attaché Territorial</p>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label">
+        <span>Progression</span>
+        <span class="progress-pct">0/0</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="sidebar-search-wrap">
+      <input id="sidebar-search" type="text" placeholder="🔍 Filtrer les chapitres…" autocomplete="off" spellcheck="false">
+    </div>
+    <ul class="nav-tree">
+      <li>
+        <div class="part-header" style="color:#2460a7">
+          <span class="part-icon">🏠</span> Accueil &amp; Planning
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list open">
+          <li><a class="chapter-link" href="#" data-page="home"><span class="check"></span>Présentation du manuel</a></li>
+          <li><a class="chapter-link" href="#" data-page="planner"><span class="check"></span>Planning jour par jour</a></li>
+          <li><a class="chapter-link" href="#" data-page="mises-en-situation"><span class="check"></span>50 Mises en situation</a></li>
+          <li><a class="chapter-link" href="#" data-page="dashboard"><span class="check"></span>📊 Tableau de bord</a></li>
+          <li><a class="chapter-link" href="#" data-page="recherche"><span class="check"></span>🔍 Recherche globale</a></li>
+          <li><a class="chapter-link" href="#" data-page="simulation-orale"><span class="check"></span>🎤 Simulation orale</a></li>
+          <li><a class="chapter-link" href="#" data-page="banque-jury"><span class="check"></span>🎯 Banque de questions jury</a></li>
+          <li><a class="chapter-link" href="#" data-page="annales"><span class="check"></span>📄 Annales corrigées</a></li>
+          <li><a class="chapter-link" href="#" data-page="fiches-express"><span class="check"></span>⚡ Fiches Express</a></li>
+          <li><a class="chapter-link" href="#" data-page="glossaire"><span class="check"></span>📖 Glossaire</a></li>
+          <li><a class="chapter-link" href="#" data-page="examen-blanc"><span class="check"></span>📝 Examen Blanc</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">🏛️</span> Partie 1 – Environnement territorial
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p1c1"><span class="check"></span>Ch.1 – Organisation administrative française</a></li>
+          <li><a class="chapter-link" href="#" data-page="p1c2"><span class="check"></span>Ch.2 – La décentralisation</a></li>
+          <li><a class="chapter-link" href="#" data-page="p1c3"><span class="check"></span>Ch.3 – Les collectivités territoriales</a></li>
+          <li><a class="chapter-link" href="#" data-page="p1c4"><span class="check"></span>Ch.4 – Communes &amp; intercommunalités</a></li>
+          <li><a class="chapter-link" href="#" data-page="p1c5"><span class="check"></span>Ch.5 – Départements &amp; régions</a></li>
+          <li><a class="chapter-link" href="#" data-page="p1c6"><span class="check"></span>Ch.6 – La Fonction Publique Territoriale</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">⚖️</span> Partie 2 – Droit public
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p2c1"><span class="check"></span>Ch.1 – Sources du droit &amp; Constitution</a></li>
+          <li><a class="chapter-link" href="#" data-page="p2c2"><span class="check"></span>Ch.2 – Institutions françaises</a></li>
+          <li><a class="chapter-link" href="#" data-page="p2c3"><span class="check"></span>Ch.3 – Actes administratifs</a></li>
+          <li><a class="chapter-link" href="#" data-page="p2c4"><span class="check"></span>Ch.4 – Responsabilité &amp; contentieux</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">💰</span> Partie 3 – Finances publiques
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p3c1"><span class="check"></span>Ch.1 – Budget local &amp; recettes</a></li>
+          <li><a class="chapter-link" href="#" data-page="p3c2"><span class="check"></span>Ch.2 – Dépenses &amp; comptabilité</a></li>
+          <li><a class="chapter-link" href="#" data-page="p3c3"><span class="check"></span>Ch.3 – Marchés publics</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">👥</span> Partie 4 – RH &amp; Management
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p4c1"><span class="check"></span>Ch.1 – Statut FPT &amp; recrutement</a></li>
+          <li><a class="chapter-link" href="#" data-page="p4c2"><span class="check"></span>Ch.2 – Carrière, formation, évaluation</a></li>
+          <li><a class="chapter-link" href="#" data-page="p4c3"><span class="check"></span>Ch.3 – Dialogue social &amp; discipline</a></li>
+          <li><a class="chapter-link" href="#" data-page="p4c4"><span class="check"></span>Ch.4 – Management &amp; gestion de projet</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">📝</span> Partie 5 – Méthodologie de la note
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p5c1"><span class="check"></span>Ch.1 – Comprendre l'épreuve</a></li>
+          <li><a class="chapter-link" href="#" data-page="p5c2"><span class="check"></span>Ch.2 – Analyser un dossier &amp; construire un plan</a></li>
+          <li><a class="chapter-link" href="#" data-page="p5c3"><span class="check"></span>Ch.3 – Rédiger &amp; gérer le temps</a></li>
+          <li><a class="chapter-link" href="#" data-page="p5c4"><span class="check"></span>Ch.4 – Annales corrigées</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">🎤</span> Partie 6 – Préparation à l'oral
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p6c1"><span class="check"></span>Ch.1 – Attentes du jury &amp; présentation</a></li>
+          <li><a class="chapter-link" href="#" data-page="p6c2"><span class="check"></span>Ch.2 – Questions classiques &amp; territoriales</a></li>
+          <li><a class="chapter-link" href="#" data-page="p6c3"><span class="check"></span>Ch.3 – Mises en situation orales</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">🌍</span> Partie 7 – Actualités territoriales
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p7c1"><span class="check"></span>Ch.1 – Transition écologique &amp; numérique</a></li>
+          <li><a class="chapter-link" href="#" data-page="p7c2"><span class="check"></span>Ch.2 – Cohésion sociale &amp; emploi</a></li>
+          <li><a class="chapter-link" href="#" data-page="p7c3"><span class="check"></span>Ch.3 – Attractivité &amp; gestion de crise</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="part-header">
+          <span class="part-icon">🇲🇶</span> Partie 8 – Martinique &amp; Outre-Mer
+          <span class="chevron">▶</span>
+        </div>
+        <ul class="chapter-list">
+          <li><a class="chapter-link" href="#" data-page="p8c1"><span class="check"></span>Ch.1 – Histoire &amp; organisation CTM</a></li>
+          <li><a class="chapter-link" href="#" data-page="p8c2"><span class="check"></span>Ch.2 – Développement économique &amp; enjeux</a></li>
+          <li><a class="chapter-link" href="#" data-page="p8c3"><span class="check"></span>Ch.3 – Réussir les questions jury sur la Martinique</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div id="breadcrumb" class="breadcrumb"></div>
+
+    <!-- ========== HOME ========== -->
+    <section id="home" class="page-section">
+      <div class="hero">
+        <div class="flag">🇲🇶</div>
+        <h1>Manuel Complet de Préparation<br>Concours d'Attaché Territorial</h1>
+        <p class="subtitle">Catégorie A – Fonction Publique Territoriale – Martinique</p>
+        <div class="hero-ctas">
+          <button class="btn btn-accent" onclick="(function(){const c=Array.from(document.querySelectorAll('.chapter-link')).find(l=>l.dataset.page&&l.dataset.page.match(/^p\d/)&&!l.classList.contains('done'));if(c)window._showPage(c.dataset.page);else window._showPage('p1c1');})()">▶ Reprendre ma progression</button>
+          <button class="btn btn-ghost" onclick="window._showPage('p1c1')">📚 Commencer la formation</button>
+        </div>
+        <div class="meta">
+          <span class="meta-item">📅 15 juin → 19 octobre</span>
+          <span class="meta-item">⏱️ 1h30 / jour</span>
+          <span class="meta-item">🎓 Bachelor RH</span>
+          <span class="meta-item">9 Parties • 38+ Chapitres</span>
+        </div>
+      </div>
+
+      <div class="home-progress-card">
+        <div class="hpc-left">
+          <div class="hpc-icon">📊</div>
+          <div>
+            <div class="hpc-title">Ma progression</div>
+            <div class="hpc-sub" id="hpc-sub">Chargement…</div>
+          </div>
+        </div>
+        <div class="hpc-right">
+          <div class="hpc-pct" id="hpc-pct">—</div>
+        </div>
+        <div class="hpc-bar-wrap">
+          <div class="hpc-bar">
+            <div class="hpc-fill" id="hpc-fill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-value">8</div><div class="stat-label">Parties</div></div>
+        <div class="stat-card"><div class="stat-value">30</div><div class="stat-label">Chapitres</div></div>
+        <div class="stat-card"><div class="stat-value">306</div><div class="stat-label">Questions quiz</div></div>
+        <div class="stat-card"><div class="stat-value">105+</div><div class="stat-label">Fiches express</div></div>
+        <div class="stat-card"><div class="stat-value">137+</div><div class="stat-label">Termes glossaire</div></div>
+        <div class="stat-card"><div class="stat-value">202+</div><div class="stat-label">Questions jury</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>📚 Sommaire général</h2><p>Cliquez sur une partie pour accéder directement au contenu</p></div>
+        <div class="card-body">
+          <div class="sommaire-grid">
+            <div class="sommaire-card sc-1" onclick="document.querySelector('[data-page=p1c1]').click()">
+              <div class="sc-header"><div class="sc-num">1</div><div class="sc-title">Comprendre l'environnement territorial</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Organisation administrative française</li><li>Décentralisation</li><li>Collectivités territoriales</li><li>FPT</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-2" onclick="document.querySelector('[data-page=p2c1]').click()">
+              <div class="sc-header"><div class="sc-num">2</div><div class="sc-title">Droit public</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Sources du droit &amp; Constitution</li><li>Institutions françaises</li><li>Actes administratifs</li><li>Contentieux</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-3" onclick="document.querySelector('[data-page=p3c1]').click()">
+              <div class="sc-header"><div class="sc-num">3</div><div class="sc-title">Finances publiques territoriales</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Budget local</li><li>Fiscalité locale</li><li>Marchés publics</li><li>Contrôle budgétaire</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-4" onclick="document.querySelector('[data-page=p4c1]').click()">
+              <div class="sc-header"><div class="sc-num">4</div><div class="sc-title">RH &amp; Management public</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Statut FPT</li><li>Recrutement &amp; carrière</li><li>Management d'équipe</li><li>Gestion de projet</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-5" onclick="document.querySelector('[data-page=p5c1]').click()">
+              <div class="sc-header"><div class="sc-num">5</div><div class="sc-title">Méthodologie de la note</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Comprendre l'épreuve</li><li>Analyser un dossier</li><li>Construire un plan</li><li>Annales corrigées</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-6" onclick="document.querySelector('[data-page=p6c1]').click()">
+              <div class="sc-header"><div class="sc-num">6</div><div class="sc-title">Préparation à l'oral</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Attentes du jury</li><li>Questions classiques</li><li>Mises en situation</li><li>Gestion du stress</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-7" onclick="document.querySelector('[data-page=p7c1]').click()">
+              <div class="sc-header"><div class="sc-num">7</div><div class="sc-title">Actualités territoriales</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Transition écologique</li><li>Numérique</li><li>Cohésion sociale</li><li>Gestion de crise</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-8" onclick="document.querySelector('[data-page=p8c1]').click()">
+              <div class="sc-header"><div class="sc-num">8</div><div class="sc-title">Martinique &amp; Outre-Mer</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>Histoire institutionnelle CTM</li><li>Enjeux martiniquais</li><li>Réussir les questions jury</li></ul></div>
+            </div>
+            <div class="sommaire-card sc-9" onclick="document.querySelector('[data-page=planner]').click()">
+              <div class="sc-header"><div class="sc-num">9</div><div class="sc-title">Programme jour par jour</div></div>
+              <div class="sc-body"><ul class="sc-chapters"><li>15 juin → 19 octobre</li><li>127 jours · 1h30/jour</li><li>5 phases de révision</li></ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>🎯 Comment utiliser ce manuel</h2></div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Commencez par le planning</strong> (Partie 9) pour visualiser votre progression sur 127 jours.</li>
+            <li><strong>Suivez les chapitres dans l'ordre</strong> : chaque chapitre contient cours, fiches, quiz et cas pratiques.</li>
+            <li><strong>Cochez chaque chapitre</strong> terminé via le bouton en bas de page – votre progression est sauvegardée localement.</li>
+            <li><strong>Entraînez-vous aux mises en situation</strong> régulièrement, notamment à partir de la phase 3.</li>
+            <li><strong>La Partie 8 sur la Martinique</strong> est essentielle : le jury valorise fortement la connaissance du territoire local.</li>
+          </ol>
+          <div class="info-box">
+            <div class="info-title">ℹ️ Structure de chaque chapitre</div>
+            Cours détaillé → Définitions clés → Fiche de synthèse → Points à retenir → Cas pratique martiniquais → Quiz (10 questions) → Questions de jury → Réponses modèles
+          </div>
+          <div class="info-box" style="background:#f0f7ff;border-left-color:var(--primary-light);color:var(--primary);margin-top:12px">
+            <div class="info-title">⌨️ Raccourcis clavier</div>
+            <strong>←/→</strong> Chapitre précédent/suivant &nbsp;·&nbsp; <strong>Esc</strong> Accueil &nbsp;·&nbsp; <strong>D</strong> Tableau de bord &nbsp;·&nbsp; <strong>O</strong> Oral &nbsp;·&nbsp; <strong>F</strong> Fiches Express &nbsp;·&nbsp; <strong>G</strong> Glossaire &nbsp;·&nbsp; <strong>E</strong> Examen Blanc &nbsp;·&nbsp; <strong>S</strong> Recherche &nbsp;·&nbsp; <strong>Q</strong> Banque jury
+          </div>
+          <h3 style="color:var(--primary);margin:20px 0 12px">🛠️ Outils disponibles</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>⚡ Fiches Express</strong><br>
+              <small style="color:var(--text-muted)">105+ flashcards · mode solo auto-évaluation · filtre par partie · actualités 2024</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>📝 Examen Blanc</strong><br>
+              <small style="color:var(--text-muted)">300 questions · tirage aléatoire · chrono configurable · corrigé</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>📖 Glossaire</strong><br>
+              <small style="color:var(--text-muted)">127+ termes · index alphabétique · recherche instantanée</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>🎤 Simulation orale</strong><br>
+              <small style="color:var(--text-muted)">280+ questions jury · chronomètre · auto-évaluation /20</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>🔍 Recherche globale</strong><br>
+              <small style="color:var(--text-muted)">Cherchez un terme dans tous les chapitres en temps réel</small>
+            </div>
+            <div style="background:#f0f4ff;border-radius:8px;padding:14px">
+              <strong>📊 Tableau de bord</strong><br>
+              <small style="color:var(--text-muted)">Streak · chapitres faibles · historique · progression par partie</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PLANNER ========== -->
+    <section id="planner" class="page-section">
+      <div class="planner-header">
+        <h1>📅 Programme de révision</h1>
+        <p>Du 15 juin au 19 octobre · 127 jours · 1h30 maximum par jour</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h2>Vue d'ensemble – 5 Phases</h2></div>
+        <div class="card-body">
+          <table>
+            <thead><tr><th>Phase</th><th>Période</th><th>Objectif</th><th>Contenu</th></tr></thead>
+            <tbody>
+              <tr><td><span class="phase-badge phase-1">Phase 1</span></td><td>15 juin – 13 juil.</td><td>Socle institutionnel</td><td>Parties 1 &amp; 2 (Environnement territorial + Droit public)</td></tr>
+              <tr><td><span class="phase-badge phase-2">Phase 2</span></td><td>14 juil. – 10 août</td><td>Finances &amp; RH</td><td>Parties 3 &amp; 4 (Finances publiques + RH Management)</td></tr>
+              <tr><td><span class="phase-badge phase-3">Phase 3</span></td><td>11 août – 7 sept.</td><td>Méthodologie</td><td>Partie 5 &amp; entraînements écrits</td></tr>
+              <tr><td><span class="phase-badge phase-4">Phase 4</span></td><td>8 sept. – 5 oct.</td><td>Oral + Martinique</td><td>Parties 6, 7 &amp; 8 + mises en situation</td></tr>
+              <tr><td><span class="phase-badge phase-5">Phase 5</span></td><td>6 oct. – 19 oct.</td><td>Révision finale</td><td>Fiches de synthèse + révisions express</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PHASE 1 -->
+      <div class="week-block" data-phase="1">
+        <div class="week-header"><span>📘 PHASE 1 – SOCLE INSTITUTIONNEL (15 juin – 13 juillet)</span><span class="week-num">SEMAINES 1–4</span></div>
+
+        <div class="day-row"><div><div class="day-label">Lundi</div><div class="day-date">16 juin</div></div><div class="day-content"><div class="day-theme">Lancement – Organisation administrative française</div><div class="day-detail">Lire Ch.1 Partie 1 · Fiche pyramide administrative · Quiz 10 questions</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mardi</div><div class="day-date">17 juin</div></div><div class="day-content"><div class="day-theme">La décentralisation – Principe &amp; histoire</div><div class="day-detail">Cours Ch.2 · Loi du 2 mars 1982 · Acte I, II, III décentralisation</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mercredi</div><div class="day-date">18 juin</div></div><div class="day-content"><div class="day-theme">Collectivités territoriales – Vue d'ensemble</div><div class="day-detail">Cours Ch.3 · Bloc de compétences · Art. 72 Constitution</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Jeudi</div><div class="day-date">19 juin</div></div><div class="day-content"><div class="day-theme">Les communes &amp; l'intercommunalité</div><div class="day-detail">Cours Ch.4 · EPCI · Métropoles · Communautés</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Vendredi</div><div class="day-date">20 juin</div></div><div class="day-content"><div class="day-theme">Départements &amp; régions</div><div class="day-detail">Cours Ch.5 · Compétences respectives · Chiffres clés</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row rest-day"><div><div class="day-label">Sam–Dim</div><div class="day-date">21–22 juin</div></div><div class="day-content"><div class="day-theme">Repos / Révision libre</div><div class="day-detail">Relecture fiches semaine 1 · Quiz de consolidation</div></div><div class="day-duration">30 min</div></div>
+
+        <div class="day-row"><div><div class="day-label">Lundi</div><div class="day-date">23 juin</div></div><div class="day-content"><div class="day-theme">La Fonction Publique Territoriale – Introduction</div><div class="day-detail">Cours Ch.6 · 3 versants FP · Spécificités FPT</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mardi</div><div class="day-date">24 juin</div></div><div class="day-content"><div class="day-theme">FPT – Filières &amp; cadres d'emplois</div><div class="day-detail">Filière administrative · Cadre d'emploi attaché · Grades</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mercredi</div><div class="day-date">25 juin</div></div><div class="day-content"><div class="day-theme">Sources du droit public – Hiérarchie des normes</div><div class="day-detail">Cours P2 Ch.1 · Bloc de constitutionnalité · Traités</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Jeudi</div><div class="day-date">26 juin</div></div><div class="day-content"><div class="day-theme">La Constitution de 1958</div><div class="day-detail">Contexte · Principes · Ve République · Titre XII</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Vendredi</div><div class="day-date">27 juin</div></div><div class="day-content"><div class="day-theme">Institutions françaises – Président &amp; Gouvernement</div><div class="day-detail">Rôles · Pouvoirs · Cohabitation · Art. 20-21</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row rest-day"><div><div class="day-label">Sam–Dim</div><div class="day-date">28–29 juin</div></div><div class="day-content"><div class="day-theme">Repos / Révision semaine 2</div><div class="day-detail">Fiches P1 complètes · Auto-évaluation quiz</div></div><div class="day-duration">30 min</div></div>
+
+        <div class="day-row"><div><div class="day-label">Lundi</div><div class="day-date">30 juin</div></div><div class="day-content"><div class="day-theme">Le Parlement – Rôle législatif</div><div class="day-detail">AN &amp; Sénat · Procédure législative · Lois de finances</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mardi</div><div class="day-date">1er juil.</div></div><div class="day-content"><div class="day-theme">Actes administratifs unilatéraux</div><div class="day-detail">Décrets · Arrêtés · Décisions · Régime juridique</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mercredi</div><div class="day-date">2 juil.</div></div><div class="day-content"><div class="day-theme">Contrats administratifs</div><div class="day-detail">Critères · Régime · DSP · Marchés publics</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Jeudi</div><div class="day-date">3 juil.</div></div><div class="day-content"><div class="day-theme">Police administrative</div><div class="day-detail">Ordre public · Pouvoirs de police · Maire &amp; préfet</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Vendredi</div><div class="day-date">4 juil.</div></div><div class="day-content"><div class="day-theme">Responsabilité &amp; contentieux administratif</div><div class="day-detail">TA · CAA · Conseil d'État · REP · Plein contentieux</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row rest-day"><div><div class="day-label">Sam–Dim</div><div class="day-date">5–6 juil.</div></div><div class="day-content"><div class="day-theme">Repos / Bilan Phase 1 intermédiaire</div><div class="day-detail">Quiz général Parties 1 &amp; 2</div></div><div class="day-duration">45 min</div></div>
+
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">7–11 juil.</div></div><div class="day-content"><div class="day-theme">Consolidation Parties 1 &amp; 2</div><div class="day-detail">Cas pratiques · Mises en situation RH (1-5) · Fiches synthèse</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Dim</div><div class="day-date">14 juil. – bilan</div></div><div class="day-content"><div class="day-theme">🎯 Bilan Phase 1 – Auto-évaluation</div><div class="day-detail">Test complet P1+P2 · Score objectif : 70% · Préparation Phase 2</div></div><div class="day-duration">1h30</div></div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="week-block" data-phase="2">
+        <div class="week-header"><span>📗 PHASE 2 – FINANCES &amp; RH (14 juillet – 10 août)</span><span class="week-num">SEMAINES 5–8</span></div>
+
+        <div class="day-row"><div><div class="day-label">Lun</div><div class="day-date">14 juil.</div></div><div class="day-content"><div class="day-theme">Budget local – Principes budgétaires</div><div class="day-detail">M14 / M57 · Annualité · Universalité · Sincérité</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mar</div><div class="day-date">15 juil.</div></div><div class="day-content"><div class="day-theme">Recettes territoriales – Fiscalité locale</div><div class="day-detail">Taxes foncières · CFE · Dotations État · CVAE</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Mer</div><div class="day-date">16 juil.</div></div><div class="day-content"><div class="day-theme">Dépenses territoriales – Sections</div><div class="day-detail">Section fonctionnement / investissement · Mandatement</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Jeu</div><div class="day-date">17 juil.</div></div><div class="day-content"><div class="day-theme">Comptabilité publique – Acteurs</div><div class="day-detail">Ordonnateur / comptable · Séparation des fonctions · DDFIP</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Ven</div><div class="day-date">18 juil.</div></div><div class="day-content"><div class="day-theme">Contrôle budgétaire – CRC</div><div class="day-detail">Chambre Régionale des Comptes · Contrôle de légalité · Préfet</div></div><div class="day-duration">1h30</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">21–25 juil.</div></div><div class="day-content"><div class="day-theme">Marchés publics – Commande publique</div><div class="day-detail">Seuils · Procédures · MAPA · Appel d'offres · CCAG</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">28 juil.–1er août</div></div><div class="day-content"><div class="day-theme">Statut FPT – Droits &amp; obligations</div><div class="day-detail">Loi 84-53 · Droits fondamentaux · Obligations · Incompatibilités</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">4–8 août</div></div><div class="day-content"><div class="day-theme">Recrutement, carrière &amp; évaluation</div><div class="day-detail">Concours · Détachement · Promotion · CREA · Entretien pro.</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Dim</div><div class="day-date">11–13 août</div></div><div class="day-content"><div class="day-theme">🎯 Bilan Phase 2 – Auto-évaluation</div><div class="day-detail">Test complet P3+P4 · Score objectif : 70% · Préparation Phase 3</div></div><div class="day-duration">1h30</div></div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="week-block" data-phase="3">
+        <div class="week-header"><span>📙 PHASE 3 – MÉTHODOLOGIE ÉCRIT (11 août – 7 sept.)</span><span class="week-num">SEMAINES 9–12</span></div>
+
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">11–15 août</div></div><div class="day-content"><div class="day-theme">Comprendre l'épreuve écrite</div><div class="day-detail">Note de synthèse · Rapport · Dissertation · Critères d'évaluation jury</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">18–22 août</div></div><div class="day-content"><div class="day-theme">Analyser un dossier – Identifier les enjeux</div><div class="day-detail">Lecture active · Hiérarchisation docs · Plan détaillé</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">25–29 août</div></div><div class="day-content"><div class="day-theme">Entraînement note de synthèse × 2</div><div class="day-detail">Annales 2022 + 2023 · Corrigé détaillé · Auto-correction</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Dim</div><div class="day-date">1–7 sept.</div></div><div class="day-content"><div class="day-theme">Consolidation méthodologique + mises en situation 6-15</div><div class="day-detail">Budget · Projet · Conflit · Dialogue social · Gestion de crise</div></div><div class="day-duration">1h30/j</div></div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="week-block" data-phase="4">
+        <div class="week-header"><span>📕 PHASE 4 – ORAL + MARTINIQUE (8 sept. – 5 oct.)</span><span class="week-num">SEMAINES 13–16</span></div>
+
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">8–12 sept.</div></div><div class="day-content"><div class="day-theme">Préparation orale – Présentation personnelle</div><div class="day-detail">5 min de présentation · Valoriser Bachelor RH · Discours structuré</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">15–19 sept.</div></div><div class="day-content"><div class="day-theme">Actualités territoriales – Partie 7</div><div class="day-detail">Écologie · Numérique · Social · Attractivité</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Ven</div><div class="day-date">22–26 sept.</div></div><div class="day-content"><div class="day-theme">Martinique – CTM, enjeux, chiffres clés</div><div class="day-detail">Histoire CTM · Compétences · Politiques publiques · Chiffres</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun-Dim</div><div class="day-date">29 sept.–5 oct.</div></div><div class="day-content"><div class="day-theme">Simulations orales complètes + mises en situation 16-30</div><div class="day-detail">Questions jury Martinique · Réponses modèles · Enregistrement</div></div><div class="day-duration">1h30/j</div></div>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="week-block" data-phase="5">
+        <div class="week-header"><span>🔴 PHASE 5 – RÉVISION FINALE (6–19 octobre)</span><span class="week-num">SEMAINES 17–18</span></div>
+
+        <div class="day-row"><div><div class="day-label">Lun–Mer</div><div class="day-date">6–8 oct.</div></div><div class="day-content"><div class="day-theme">Révision express P1 + P2 – Fiches seules</div><div class="day-detail">Uniquement fiches de synthèse · 30 questions flash</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Jeu–Sam</div><div class="day-date">9–11 oct.</div></div><div class="day-content"><div class="day-theme">Révision express P3 + P4 – Fiches seules</div><div class="day-detail">Chiffres clés finances · Points RH essentiels</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Lun–Mer</div><div class="day-date">13–15 oct.</div></div><div class="day-content"><div class="day-theme">Révision express Martinique + oral</div><div class="day-detail">20 questions jury · 10 réponses modèles · Mises en situation finales</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row"><div><div class="day-label">Jeu–Sam</div><div class="day-date">16–18 oct.</div></div><div class="day-content"><div class="day-theme">Simulation complète écrit + oral</div><div class="day-detail">Dossier complet 3h · Oral simulé 20 min · Auto-correction</div></div><div class="day-duration">1h30/j</div></div>
+        <div class="day-row" style="background:#fff3e0"><div><div class="day-label" style="color:#e65100">Dim</div><div class="day-date" style="color:#e65100">19 oct.</div></div><div class="day-content"><div class="day-theme" style="color:#e65100">🎯 DATE CIBLE – Prêt pour le concours !</div><div class="day-detail">Repos total · Confiance · Relecture légère des 3 fiches essentielles</div></div><div class="day-duration" style="background:#fff3e0;color:#e65100">Repos</div></div>
+      </div>
+    </section>
+
+    <!-- ========== PARTIE 1 CH1 ========== -->
+    <section id="p1c1" class="page-section">
+      <div class="breadcrumb"><a href="#" data-page="home">Accueil</a><span class="sep">›</span><span>Partie 1</span><span class="sep">›</span><span>Chapitre 1</span></div>
+      <div class="chapter-title">
+        <div class="num">P1·C1</div>
+        <div>
+          <div class="part-tag">Partie 1 – Environnement territorial</div>
+          <h1>L'organisation administrative française</h1>
+        </div>
+      </div>
+
+      <div class="chapter-intro">
+        Comprendre l'architecture administrative française est indispensable pour tout Attaché Territorial. Ce chapitre pose les bases conceptuelles de l'organisation de l'État et des collectivités, en distinguant administration centrale, déconcentrée et décentralisée.
+      </div>
+
+      <h2 class="section-title">1. La dualité de l'organisation administrative</h2>
+      <p>L'administration française repose sur deux grands principes d'organisation territoriale : la <strong>déconcentration</strong> et la <strong>décentralisation</strong>. Ces deux mécanismes coexistent et se complètent pour permettre une gestion efficace du territoire national.</p>
+
+      <div class="definition-box">
+        <div class="def-title">📖 Définition – Déconcentration</div>
+        La déconcentration est le transfert de pouvoirs de décision à des agents de l'État placés à la tête de circonscriptions administratives locales (préfets, recteurs, DREETS…), tout en maintenant un lien hiérarchique avec l'autorité centrale. L'État reste unique, mais il délègue à des représentants territoriaux.
+      </div>
+
+      <div class="definition-box">
+        <div class="def-title">📖 Définition – Décentralisation</div>
+        La décentralisation est le transfert de compétences de l'État vers des personnes morales de droit public distinctes — les collectivités territoriales — dotées de la personnalité juridique, d'un budget propre et d'organes élus. L'État exerce un contrôle de légalité a posteriori (et non de tutelle).
+      </div>
+
+      <h2 class="section-title">2. La pyramide administrative</h2>
+      <p>L'administration française s'organise selon une architecture à plusieurs niveaux :</p>
+
+      <div class="org-chart">
+        <div class="org-node">ÉTAT (Administration centrale – Paris)</div>
+        <div class="org-line"></div>
+        <div class="org-row">
+          <div class="org-col">
+            <div class="org-node secondary">Régions (18)</div>
+            <div class="org-line"></div>
+            <div class="org-node tertiary">Préfets de région<br><small>DREAL, DREETS…</small></div>
+          </div>
+          <div class="org-col">
+            <div class="org-node secondary">Départements (101)</div>
+            <div class="org-line"></div>
+            <div class="org-node tertiary">Préfets de département<br><small>DDT, DDFIP…</small></div>
+          </div>
+        </div>
+        <div class="org-line"></div>
+        <div class="org-node secondary">Arrondissements → Cantons → Communes (34 946)</div>
+      </div>
+
+      <h2 class="section-title">3. L'administration centrale de l'État</h2>
+      <p>L'administration centrale regroupe les services des ministères installés à Paris (ou en région parisienne). Elle élabore la politique nationale, prépare la réglementation et coordonne son application.</p>
+      <ul>
+        <li><strong>Les ministères</strong> : chacun dispose d'une direction générale, de directions et de sous-directions.</li>
+        <li><strong>Les services à compétence nationale (SCN)</strong> : à mi-chemin entre administration centrale et services déconcentrés.</li>
+        <li><strong>Les opérateurs de l'État</strong> : CNAF, CNAM, Pôle Emploi (France Travail), établissements publics nationaux.</li>
+      </ul>
+
+      <h2 class="section-title">4. L'administration déconcentrée</h2>
+      <p>Les services déconcentrés de l'État représentent l'État dans les territoires. Ils sont placés sous l'autorité du préfet (au niveau régional et départemental).</p>
+      <table>
+        <thead><tr><th>Niveau</th><th>Représentant État</th><th>Principaux services</th></tr></thead>
+        <tbody>
+          <tr><td>Région</td><td>Préfet de région</td><td>DREAL, DREETS, DRAAF, DRAC, ARS</td></tr>
+          <tr><td>Département</td><td>Préfet de département</td><td>DDT(M), DDFIP, DDPP</td></tr>
+          <tr><td>Arrondissement</td><td>Sous-préfet</td><td>—</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <div class="info-title">ℹ️ Réforme de l'organisation territoriale de l'État (OTE 2020)</div>
+        La circulaire du 12 juin 2019 a réorganisé les services déconcentrés de l'État au niveau régional. Désormais, chaque région métropolitaine dispose d'un préfet de région chef de file, avec regroupement de services en directions régionales unifiées (ex. DREETS = ancienne DIRECCTE + DRJSCS).
+      </div>
+
+      <h2 class="section-title">5. Les circonscriptions administratives</h2>
+      <p>L'État découpe le territoire en circonscriptions qui servent de cadre à l'action des services déconcentrés :</p>
+      <ul>
+        <li><strong>La région</strong> : 18 régions (13 métropolitaines + 5 DROM)</li>
+        <li><strong>Le département</strong> : 101 départements (96 métropolitains + 5 DROM)</li>
+        <li><strong>L'arrondissement</strong> : 332 en France</li>
+        <li><strong>Le canton</strong> : circonscription électorale (conseiller départemental)</li>
+        <li><strong>La commune</strong> : 34 946 communes (collectivité de base)</li>
+      </ul>
+
+      <div class="martinique-box">
+        <h3 class="sub-title" style="margin-top:14px">La Martinique dans l'organisation administrative française</h3>
+        <p>La Martinique constitue un cas particulier : c'est à la fois un <strong>département</strong> (97) et une <strong>région</strong> (01) depuis 1974. Mais depuis la loi du <strong>27 juillet 2011</strong>, elle est dotée d'une <strong>collectivité territoriale unique (CTM)</strong>, qui a fusionné les anciens Conseil Général et Conseil Régional.</p>
+        <p>La CTM est entrée en vigueur le <strong>22 décembre 2015</strong> à la suite des élections territoriales inaugurales.</p>
+        <ul>
+          <li>Préfet de la Martinique : représentant de l'État</li>
+          <li>Siège préfectoral : Fort-de-France</li>
+          <li>Superficie : 1 128 km²</li>
+          <li>Population : env. 360 000 habitants</li>
+          <li>34 communes</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">6. Le contrôle de l'État sur les collectivités</h2>
+      <p>Depuis 1982, la tutelle préfectorale a été supprimée. Le contrôle s'exerce désormais a posteriori, par deux biais :</p>
+      <ul>
+        <li><strong>Contrôle de légalité</strong> : le préfet peut déférer au tribunal administratif tout acte qu'il estime illégal.</li>
+        <li><strong>Contrôle budgétaire</strong> : la Chambre Régionale des Comptes (CRC) intervient si le budget n'est pas voté ou est en déséquilibre.</li>
+      </ul>
+
+      <div class="fiche-synthese">
+        <h3>📋 FICHE DE SYNTHÈSE – Organisation administrative française</h3>
+        <div class="fiche-item">France = État unitaire + organisation décentralisée (art. 1 Constitution)</div>
+        <div class="fiche-item">Déconcentration : délégation hiérarchique au sein de l'État (préfets)</div>
+        <div class="fiche-item">Décentralisation : transfert à des personnes morales distinctes (collectivités)</div>
+        <div class="fiche-item">Niveaux : État / Région / Département / Commune (+ EPCI)</div>
+        <div class="fiche-item">18 régions · 101 départements · 34 946 communes</div>
+        <div class="fiche-item">Martinique = CTM depuis 2015 (loi du 27 juillet 2011)</div>
+        <div class="fiche-item">Contrôle a posteriori : légalité (préfet/TA) + budgétaire (CRC)</div>
+      </div>
+
+      <div class="key-points">
+        <div class="kp-title">✅ Points à retenir absolument</div>
+        <ul>
+          <li>L'article 1er de la Constitution : « La France est une République indivisible… Son organisation est décentralisée. »</li>
+          <li>Distinguer déconcentration (même personne morale = l'État) et décentralisation (personnes morales distinctes)</li>
+          <li>Le préfet est le représentant de l'État, pas le supérieur hiérarchique du président de collectivité</li>
+          <li>La CTM de Martinique est une collectivité à statut particulier (art. 73 Constitution)</li>
+        </ul>
+      </div>
+
+      <div class="cas-pratique">
+        <div class="cas-header">🏝️ Cas pratique – Martinique</div>
+        <div class="cas-body">
+          <div class="cas-context"><strong>Contexte :</strong> Vous êtes attaché territorial à la CTM. Le préfet de la Martinique conteste par lettre une délibération de l'Assemblée de Martinique portant sur une aide économique aux agriculteurs locaux. Il estime que cette aide dépasse les compétences de la CTM et constitue une distorsion de concurrence.</div>
+          <div class="cas-mission">🎯 Mission : Expliquez la procédure qui peut s'ouvrir et les arguments que la CTM peut faire valoir.</div>
+          <button class="cas-corrige-toggle">▼ Voir le corrigé</button>
+          <div class="cas-corrige">
+            <strong>Éléments de réponse :</strong>
+            <p>1. <strong>La procédure</strong> : Le préfet dispose d'un droit de déféré préfectoral (art. L.2131-1 CGCT). Il peut saisir le Tribunal Administratif de Fort-de-France dans un délai de 2 mois suivant la transmission de l'acte. L'acte reste exécutoire jusqu'à ce que le TA statue (caractère non suspensif en principe).</p>
+            <p>2. <strong>Arguments de la CTM</strong> : La CTM dispose de compétences économiques élargies du fait de son statut de collectivité unique (art. L.7222-1 CGCT). Elle peut attribuer des aides aux entreprises dans le cadre du développement économique local. Le régime des aides d'État relève du droit européen, mais les collectivités peuvent agir si les conditions du RGEC (Règlement Général d'Exemption par Catégorie) sont respectées.</p>
+            <p>3. <strong>Issue possible</strong> : La CTM peut modifier la délibération pour la mettre en conformité, ou défendre sa légalité devant le TA. Le préfet peut aussi retirer son déféré après dialogue.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-section">
+        <h3>🧠 Quiz – Chapitre 1 (10 questions)</h3>
+
+        <div class="quiz-question">
+          <div class="quiz-q">1. Quelle est la différence fondamentale entre déconcentration et décentralisation ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q1" value="a"> a) La déconcentration concerne les communes, la décentralisation l'État</label></li>
+            <li><label><input type="radio" name="q1" value="b"> b) La déconcentration reste dans l'État (délégation hiérarchique), la décentralisation crée des personnes morales distinctes</label></li>
+            <li><label><input type="radio" name="q1" value="c"> c) Les deux termes sont synonymes</label></li>
+            <li><label><input type="radio" name="q1" value="d"> d) La décentralisation ne concerne que les régions</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="b"><span class="correct">✅ Bonne réponse : B.</span> La déconcentration est interne à l'État (même personne morale), la décentralisation crée des entités distinctes dotées de la personnalité morale.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">2. Combien de communes la France métropolitaine compte-t-elle approximativement ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q2" value="a"> a) 10 000</label></li>
+            <li><label><input type="radio" name="q2" value="b"> b) 22 000</label></li>
+            <li><label><input type="radio" name="q2" value="c"> c) 34 946</label></li>
+            <li><label><input type="radio" name="q2" value="d"> d) 50 000</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="c"><span class="correct">✅ Bonne réponse : C.</span> La France compte environ 34 946 communes (dont 96 en métropole + DROM).</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">3. Quel article de la Constitution consacre la décentralisation ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q3" value="a"> a) Article 72</label></li>
+            <li><label><input type="radio" name="q3" value="b"> b) Article 1er</label></li>
+            <li><label><input type="radio" name="q3" value="c"> c) Article 34</label></li>
+            <li><label><input type="radio" name="q3" value="d"> d) Article 20</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="b"><span class="correct">✅ Bonne réponse : B.</span> L'article 1er dispose : « Son organisation est décentralisée. » L'article 72 définit les collectivités territoriales.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">4. En quelle année la CTM de Martinique est-elle entrée en vigueur ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q4" value="a"> a) 2010</label></li>
+            <li><label><input type="radio" name="q4" value="b"> b) 2011</label></li>
+            <li><label><input type="radio" name="q4" value="c"> c) 2015</label></li>
+            <li><label><input type="radio" name="q4" value="d"> d) 2020</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="c"><span class="correct">✅ Bonne réponse : C.</span> La CTM est opérationnelle depuis le 22 décembre 2015, suite aux élections territoriales inaugurales (loi du 27 juillet 2011).</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">5. Qui représente l'État en Martinique ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q5" value="a"> a) Le Président de l'Assemblée de Martinique</label></li>
+            <li><label><input type="radio" name="q5" value="b"> b) Le Président du Conseil Exécutif de la CTM</label></li>
+            <li><label><input type="radio" name="q5" value="c"> c) Le Préfet de la Martinique</label></li>
+            <li><label><input type="radio" name="q5" value="d"> d) Le sous-préfet</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="c"><span class="correct">✅ Bonne réponse : C.</span> Le préfet de la Martinique représente l'État, veille au respect des lois et exerce le contrôle de légalité.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">6. Que signifie le sigle DREETS ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q6" value="a"> a) Direction Régionale de l'Économie, de l'Emploi, du Travail et des Solidarités</label></li>
+            <li><label><input type="radio" name="q6" value="b"> b) Direction Régionale des Études et des Échanges Territoriaux et Sociaux</label></li>
+            <li><label><input type="radio" name="q6" value="c"> c) Département Régional des Établissements et Entreprises du Territoire et du Social</label></li>
+            <li><label><input type="radio" name="q6" value="d"> d) Direction des Relations État-Entreprises et Territoires Sociaux</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="a"><span class="correct">✅ Bonne réponse : A.</span> La DREETS (issue de la fusion DIRECCTE + DRJSCS en 2021) pilote les politiques d'emploi, de travail et de cohésion sociale au niveau régional.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">7. La tutelle de l'État sur les collectivités territoriales a-t-elle été supprimée ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q7" value="a"> a) Non, elle existe toujours</label></li>
+            <li><label><input type="radio" name="q7" value="b"> b) Oui, depuis la loi du 2 mars 1982</label></li>
+            <li><label><input type="radio" name="q7" value="c"> c) Oui, mais seulement pour les communes</label></li>
+            <li><label><input type="radio" name="q7" value="d"> d) Non, elle a été renforcée en 2003</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="b"><span class="correct">✅ Bonne réponse : B.</span> La loi du 2 mars 1982 a substitué au contrôle a priori (tutelle) un contrôle a posteriori de légalité exercé par le préfet devant le TA.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">8. Combien y a-t-il de régions en France (y compris DROM) ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q8" value="a"> a) 13</label></li>
+            <li><label><input type="radio" name="q8" value="b"> b) 18</label></li>
+            <li><label><input type="radio" name="q8" value="c"> c) 22</label></li>
+            <li><label><input type="radio" name="q8" value="d"> d) 27</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="b"><span class="correct">✅ Bonne réponse : B.</span> 13 régions métropolitaines + 5 régions d'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte) = 18.</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">9. Quel organisme contrôle les budgets des collectivités territoriales ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q9" value="a"> a) La Cour des comptes</label></li>
+            <li><label><input type="radio" name="q9" value="b"> b) Le Tribunal Administratif</label></li>
+            <li><label><input type="radio" name="q9" value="c"> c) La Chambre Régionale des Comptes (CRC)</label></li>
+            <li><label><input type="radio" name="q9" value="d"> d) Le Ministère des Finances</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="c"><span class="correct">✅ Bonne réponse : C.</span> La CRC (Chambre Régionale des Comptes) contrôle les comptes et la gestion des collectivités territoriales. En Martinique : la CRAC (Chambre Régionale des Comptes de la Martinique).</div>
+        </div>
+
+        <div class="quiz-question">
+          <div class="quiz-q">10. La CTM de Martinique est une collectivité relevant de quel article de la Constitution ?</div>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q10" value="a"> a) Article 74 (collectivité d'outre-mer)</label></li>
+            <li><label><input type="radio" name="q10" value="b"> b) Article 73 (DROM)</label></li>
+            <li><label><input type="radio" name="q10" value="c"> c) Article 72 al. 1</label></li>
+            <li><label><input type="radio" name="q10" value="d"> d) Article 72-3</label></li>
+          </ul>
+          <div class="quiz-answer" data-correct="b"><span class="correct">✅ Bonne réponse : B.</span> La Martinique est régie par l'article 73 de la Constitution (DROM). La CTM est une collectivité à statut particulier créée par la loi du 27 juillet 2011, tout en restant dans le cadre de l'article 73.</div>
+        </div>
+
+        <button class="quiz-btn">Vérifier mes réponses</button>
+        <button class="quiz-replay-btn">↺ Rejouer ce quiz</button>
+        <div class="score-display" style="display:none">
+          <div class="score-num">0/10</div>
+          <div class="score-label">Score</div>
+          <div class="score-msg"></div>
+        </div>
+      </div>
+
+      <div class="jury-questions">
+        <div class="jq-title">🎤 Questions de jury – Oral</div>
+        <div class="jq-item">
+          <div class="jq-q">« Expliquez-moi la différence entre déconcentration et décentralisation. »</div>
+          <div class="jq-r">Répondre en 2 min max : définir chacun, donner des exemples (préfet = déconcentration / commune = décentralisation), souligner la complémentarité.</div>
+        </div>
+        <div class="jq-item">
+          <div class="jq-q">« En quoi la CTM de Martinique est-elle différente d'une région ordinaire ? »</div>
+          <div class="jq-r">Mentionner : collectivité unique, fusion CR+CG, statut art. 73, compétences élargies, Assemblée de Martinique + Conseil Exécutif, date 2015.</div>
+        </div>
+        <div class="jq-item">
+          <div class="jq-q">« Comment l'État contrôle-t-il les actes des collectivités sans exercer de tutelle ? »</div>
+          <div class="jq-r">Déféré préfectoral devant le TA · délai 2 mois · acte exécutoire en attendant · contrôle budgétaire par la CRC.</div>
+        </div>
+      </div>
+
+      <button class="mark-done-btn" data-chapter="p1c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
+
+      <div class="chapter-nav">
+        <a href="#" data-page="home" class="chapter-nav-btn">← Accueil</a>
+        <a href="#" data-page="p1c2" class="chapter-nav-btn next">Chapitre 2 : La décentralisation →</a>
+      </div>
+    </section>
+
+    <!-- Inclusion des autres chapitres via fichiers séparés -->
+    <!-- Les sections suivantes sont chargées dynamiquement -->
+
+    <!-- ========== TABLEAU DE BORD ========== -->
+    <section id="dashboard" class="page-section">
+      <div class="db-header">
+        <h1>📊 Tableau de bord</h1>
+        <p>Suivez votre progression en temps réel sur les 127 jours de préparation</p>
+        <div id="sync-status" class="sync-status"></div>
+      </div>
+      <div id="db-tips" class="db-tip-card">Chargement de votre progression…</div>
+      <div class="db-main-card">
+        <div class="db-main-info">
+          <div class="db-main-pct" id="db-pct">0%</div>
+          <div class="db-main-label">Progression globale</div>
+        </div>
+        <div class="db-main-bar"><div class="db-main-fill" style="width:0%"></div></div>
+      </div>
+      <div class="db-stats-grid">
+        <div class="db-stat-card"><div class="db-stat-icon">📚</div><div class="db-stat-val" id="db-done">0/0</div><div class="db-stat-label">Chapitres terminés</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">✅</div><div class="db-stat-val" id="db-quiz-ok" style="color:var(--success)">0</div><div class="db-stat-label">Quiz réussis (≥70%)</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">❌</div><div class="db-stat-val" id="db-quiz-ko" style="color:var(--danger)">0</div><div class="db-stat-label">Quiz à retravailler</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">📈</div><div class="db-stat-val" id="db-avg-quiz">—</div><div class="db-stat-label">Moyenne quiz</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">⏱️</div><div class="db-stat-val" id="db-temps">—</div><div class="db-stat-label">Temps restant estimé</div></div>
+        <div class="db-stat-card"><div class="db-stat-icon">🎤</div><div class="db-stat-val" id="db-oral-avg">—</div><div class="db-stat-label">Simulation orale</div></div>
+      </div>
+      <div class="db-niveau-card">
+        <span class="db-niveau-label">Niveau estimé :</span>
+        <span id="db-niveau" class="db-niveau-val">—</span>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>📊 Progression par partie</h2></div>
+        <div class="card-body" id="db-parts-chart"><p style="color:var(--text-muted)">Chargement…</p></div>
+      </div>
+      <div class="db-streak-row">
+        <div class="db-streak-card">
+          <span class="db-streak-icon">🔥</span>
+          <span id="db-streak-val" class="db-streak-val">—</span>
+          <span class="db-streak-label">jours consécutifs</span>
+        </div>
+        <div class="db-streak-card">
+          <span class="db-streak-icon">📅</span>
+          <span id="db-last-visit" class="db-streak-val">—</span>
+          <span class="db-streak-label">dernière révision</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>🎯 Compte à rebours</h2><p>Définissez la date de votre concours</p></div>
+        <div class="card-body">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+            <input type="date" id="db-exam-date" style="padding:8px 12px;border:2px solid var(--border);border-radius:8px;font-size:0.9rem;flex:1;min-width:160px">
+            <button id="db-exam-date-save" style="background:var(--primary);color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.9rem;white-space:nowrap">✓ Enregistrer</button>
+          </div>
+          <div id="db-countdown-display" style="display:none;text-align:center;padding:16px 0">
+            <div style="font-size:3rem;font-weight:900;color:var(--primary);line-height:1" id="db-days-left">—</div>
+            <div style="font-size:1rem;color:var(--text-muted);margin-top:4px" id="db-days-label">jours avant le concours</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>📖 Mot du jour</h2><p>Un terme clé à mémoriser aujourd'hui</p></div>
+        <div class="card-body" id="db-mot-du-jour"><p style="color:var(--text-muted)">Chargement…</p></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>⚠️ Chapitres à revoir</h2></div>
+        <div class="card-body" id="db-weak-chapters"><p style="color:var(--text-muted)">Faites des quiz pour identifier les points faibles.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>🕒 Historique des quiz récents</h2></div>
+        <div class="card-body" id="db-quiz-history"><p style="color:var(--text-muted)">Aucun quiz effectué.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>📝 Historique des examens blancs</h2></div>
+        <div class="card-body" id="db-examen-history"><p style="color:var(--text-muted)">Aucun examen blanc effectué.</p></div>
+      </div>
+    </section>
+
+    <!-- ========== RECHERCHE ========== -->
+    <section id="recherche" class="page-section">
+      <div class="search-page-header">
+        <h1>🔍 Moteur de recherche</h1>
+        <p>Retrouvez instantanément n'importe quelle notion, définition, question de jury ou cas pratique du manuel</p>
+      </div>
+      <div class="search-page-bar">
+        <input id="search-page-input" type="text" placeholder="Ex : déconcentration, CTM, chlordécone, marchés publics, ordonnateur…" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="search-results-container"></div>
+    </section>
+
+    <!-- ========== SIMULATION ORALE ========== -->
+    <section id="simulation-orale" class="page-section">
+      <div class="oral-sim-header">
+        <h1>🎤 Simulation d'oral</h1>
+        <p>Préparez votre passage devant le jury · Questions tirées aléatoirement de la banque de 225+ questions</p>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>⏱️ Chronomètre</h2><p>Simulez la durée réelle de votre réponse</p></div>
+        <div class="card-body oral-timer-section">
+          <div id="oral-timer-display" class="oral-timer-display">02:00</div>
+          <div class="oral-timer-controls">
+            <select id="oral-duration-select">
+              <option value="120">2 min – Réponse à une question</option>
+              <option value="300">5 min – Présentation personnelle</option>
+              <option value="600">10 min – Exposé thématique</option>
+              <option value="1200">20 min – Oral complet</option>
+            </select>
+            <button id="oral-start-btn" class="oral-btn primary">▶ Démarrer</button>
+            <button id="oral-pause-btn" class="oral-btn">⏸ Pause</button>
+            <button id="oral-reset-btn" class="oral-btn">↺ Réinitialiser</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>🎲 Tirage aléatoire de question</h2><p>Simulez les questions du jury</p></div>
+        <div class="card-body">
+          <div class="oral-controls">
+            <select id="oral-category-select">
+              <option value="all">Toutes les catégories</option>
+              <option value="motivation">Motivation &amp; projet professionnel</option>
+              <option value="territorial">Environnement territorial</option>
+              <option value="martinique">Martinique &amp; CTM</option>
+              <option value="rh">RH &amp; Management</option>
+              <option value="finances">Finances publiques</option>
+              <option value="actualite">Actualités territoriales</option>
+              <option value="situation">Mises en situation</option>
+            </select>
+            <button id="oral-draw-btn" class="oral-btn primary">🎲 Tirer une question</button>
+          </div>
+          <div id="oral-question-display" class="oral-question-display">
+            <p class="oral-intro">Sélectionnez une catégorie et cliquez sur « Tirer une question » pour commencer votre simulation d'oral.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h2>💡 Conseils pour l'oral</h2></div>
+        <div class="card-body">
+          <div class="oral-tips-grid">
+            <div class="oral-tip"><div class="oral-tip-icon">🎯</div><div class="oral-tip-title">Structurez votre réponse</div><p>Répondez en 3 temps : Situation → Analyse → Proposition. Évitez le hors-sujet et les longues digressions.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">👁️</div><div class="oral-tip-title">Contact visuel</div><p>Regardez chaque juré à tour de rôle. Le contact visuel inspire confiance. Ne fixez pas vos notes.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🗣️</div><div class="oral-tip-title">Maîtrisez votre voix</div><p>Parlez clairement, pas trop vite. Faites des pauses. Articulez les chiffres et les sigles.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">💼</div><div class="oral-tip-title">Posture professionnelle</div><p>Asseyez-vous droit, mains visibles. Pas de gestes parasites. Restez naturel et détendu.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🇲🇶</div><div class="oral-tip-title">Valorisez la Martinique</div><p>Citez des exemples locaux concrets (CTM, chlordécone, emploi…). Le jury valorise la connaissance locale.</p></div>
+            <div class="oral-tip"><div class="oral-tip-icon">🎓</div><div class="oral-tip-title">Valorisez votre Bachelor RH</div><p>Faites le lien entre votre formation en RH et les missions concrètes d'un Attaché Territorial.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script src="content/banque-jury.js"></script>
+<script src="content/annales.js"></script>
+<script src="content/partie1.js"></script>
+<script src="content/partie2.js"></script>
+<script src="content/partie3.js"></script>
+<script src="content/partie4.js"></script>
+<script src="content/partie5.js"></script>
+<script src="content/partie6.js"></script>
+<script src="content/partie7.js"></script>
+<script src="content/partie8.js"></script>
+<script src="content/mises-en-situation.js"></script>
+<script src="content/quiz-supplements.js"></script>
+<script src="content/fiches-express.js"></script>
+<script src="content/glossaire.js"></script>
+<script src="content/examen-blanc.js"></script>
+</body>
+</html>
