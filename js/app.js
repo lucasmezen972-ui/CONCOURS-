@@ -248,6 +248,7 @@
       if (Array.isArray(data.examen)) localStorage.setItem('concours_examen', JSON.stringify(data.examen));
       if (Array.isArray(data.visit_hist)) localStorage.setItem('concours_visit_hist', JSON.stringify(data.visit_hist));
       if (data.exam_date) localStorage.setItem('concours_exam_date', data.exam_date);
+      if (data.sr && typeof data.sr === 'object') localStorage.setItem('concours_sr', JSON.stringify(data.sr));
       updateSyncStatus('ok');
       return true;
     } catch (e) {
@@ -264,6 +265,7 @@
       examen: JSON.parse(localStorage.getItem('concours_examen') || '[]'),
       visit_hist: JSON.parse(localStorage.getItem('concours_visit_hist') || '[]'),
       exam_date: localStorage.getItem('concours_exam_date') || '',
+      sr: JSON.parse(localStorage.getItem('concours_sr') || '{}'),
     };
     try {
       updateSyncStatus('loading');
