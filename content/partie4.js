@@ -227,7 +227,7 @@
   <tbody>
     <tr><td>Groupe 1</td><td>Avertissement · Blâme</td><td>Information simple · pas de CAP</td></tr>
     <tr><td>Groupe 2</td><td>Radiation tableau avancement · Abaissement échelon · Exclusion temporaire 1-3 jours</td><td>Communication dossier · CAP consultée</td></tr>
-    <tr><td>Groupe 3</td><td>Rétrogradation · Exclusion 4-15 jours</td><td>CAP obligatoire</td></tr>
+    <tr><td>Groupe 3</td><td>Rétrogradation · Exclusion 4 j à 2 ans</td><td>CAP obligatoire</td></tr>
     <tr><td>Groupe 4</td><td>Mise à la retraite d'office · Révocation</td><td>CAP obligatoire · conseil de discipline</td></tr>
   </tbody>
 </table>
@@ -243,7 +243,7 @@
       <p><strong>Fautes identifiées</strong> : 1) Absence injustifiée (manquement à l'obligation de service) · 2) Exercice d'une activité privée rémunérée pendant le temps de service (cumul d'activités prohibé sauf exceptions + déloyauté envers la collectivité).</p>
       <p><strong>Étape 2 – Convocation</strong> : convoquer l'agent à un entretien de procédure contradictoire · informer des faits reprochés · donner accès au dossier au moins 5 jours avant.</p>
       <p><strong>Étape 3 – Entretien contradictoire</strong> : laisser l'agent s'expliquer · acte l'entretien.</p>
-      <p><strong>Sanctions envisageables</strong> : vu la gravité des faits (cumul de deux manquements, dont un cumul d'activités illicite), la sanction se situe en groupe 2 à 3 minimum. Une exclusion temporaire de 4 à 15 jours est appropriée si c'est un premier manquement. En cas de récidive ou de circonstances aggravantes : révocation possible.</p>
+      <p><strong>Sanctions envisageables</strong> : vu la gravité des faits (cumul de deux manquements, dont un cumul d'activités illicite), la sanction se situe en groupe 3 minimum (rétrogradation ou exclusion temporaire de 4 j à 2 ans). En cas de récidive ou de circonstances aggravantes : révocation (groupe 4) possible.</p>
       <p><strong>Étape 4 – CAP</strong> : obligatoire pour toute sanction du groupe 2 et au-delà. Saisie du conseil de discipline si sanction groupe 4 envisagée.</p>
     </div>
   </div>
@@ -266,7 +266,7 @@
   </div>
   <div class="jq-item">
     <div class="jq-q">« Quelle est la procédure disciplinaire applicable à un agent territorial qui commet une faute grave ? »</div>
-    <div class="jq-r">Procédure contradictoire obligatoire : 1. Information de l'agent des faits reprochés · 2. Droit à la communication du dossier · 3. Droit à un conseiller de défense · 4. Consultation de la CAP (obligatoire pour sanctions des groupes 2, 3, 4) · 5. Décision motivée notifiée à l'agent. Les 4 groupes de sanctions : groupe 1 (avertissement, blâme) sans CAP · groupe 2 (radiation tableau d'avancement, exclusion 1-15j) · groupe 3 (rétrogradation, exclusion 16j-2ans) · groupe 4 (mise à la retraite d'office, révocation).</div>
+    <div class="jq-r">Procédure contradictoire obligatoire : 1. Information de l'agent des faits reprochés · 2. Droit à la communication du dossier · 3. Droit à un conseiller de défense · 4. Consultation de la CAP (obligatoire pour sanctions des groupes 2, 3, 4) · 5. Décision motivée notifiée à l'agent. Les 4 groupes de sanctions : groupe 1 (avertissement, blâme) sans CAP · groupe 2 (radiation tableau d'avancement, exclusion max 3 j) · groupe 3 (rétrogradation, exclusion 4j-2 ans) · groupe 4 (mise à la retraite d'office, révocation).</div>
   </div>
   <div class="jq-item">
     <div class="jq-q">« Comment gérer un conflit entre deux agents de votre équipe en tant qu'attaché territorial ? »</div>
