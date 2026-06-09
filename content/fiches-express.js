@@ -67,7 +67,42 @@
     { part: 'P8', tag: 'Martinique', q: 'Qu\'est-ce que le PADDM ?', r: 'Plan d\'Aménagement et de Développement Durable de la Martinique : équivalent du SRADDET pour la CTM. Document de planification stratégique opposable aux PLU. Horizon 2030-2040.' },
     { part: 'P8', tag: 'Martinique', q: 'Principaux risques naturels en Martinique', r: 'Cyclones (saison juin-novembre) · Séismes (zone de subduction) · Éruption volcanique (Montagne Pelée) · Tsunamis · Inondations · Sargasses (risque sanitaire et économique).' },
     { part: 'P8', tag: 'Martinique', q: 'Problème du chlordécone en Martinique', r: 'Pesticide utilisé 1972-1993 dans les bananeraies. Contamine durablement les sols (centaines d\'années) et eaux. Surrisque de cancer de la prostate. Plan Chlordécone IV en cours.' },
-    { part: 'P8', tag: 'Martinique', q: 'Qu\'est-ce que les fonds européens pour la Martinique ?', r: 'En tant que RUP (Région Ultrapériphérique), la Martinique bénéficie de FEDER, FSE+, FEADER, FEAMPA avec des taux de cofinancement bonifiés pour compenser ses handicaps structurels.' }
+    { part: 'P8', tag: 'Martinique', q: 'Qu\'est-ce que les fonds européens pour la Martinique ?', r: 'En tant que RUP (Région Ultrapériphérique), la Martinique bénéficie de FEDER, FSE+, FEADER, FEAMPA avec des taux de cofinancement bonifiés pour compenser ses handicaps structurels.' },
+
+    /* ── COMPLÉMENTS P1 ── */
+    { part: 'P1', tag: 'Organisation', q: 'Qu\'est-ce que le CGCT ?', r: 'Code Général des Collectivités Territoriales : principal texte législatif régissant l\'organisation, les compétences et le fonctionnement des collectivités locales en France.' },
+    { part: 'P1', tag: 'Organisation', q: 'Différence SCoT / PLU / PLUi', r: '<strong>SCoT</strong> : schéma de cohérence à l\'échelle intercommunale. <strong>PLU</strong> : plan local d\'urbanisme (commune). <strong>PLUi</strong> : PLU intercommunal géré par l\'EPCI. Le SCoT est opposable aux PLU.' },
+    { part: 'P1', tag: 'Organisation', q: 'Rôle du préfet vis-à-vis des collectivités', r: 'Représentant de l\'État : contrôle de légalité des actes · peut déférer au TA · coordonne les services de l\'État · porte-parole du gouvernement. Il N\'est PAS le supérieur hiérarchique des élus.' },
+
+    /* ── COMPLÉMENTS P2 ── */
+    { part: 'P2', tag: 'Droit', q: 'Qu\'est-ce qu\'un acte unilatéral (décision exécutoire) ?', r: 'Acte de l\'administration pris sans l\'accord du destinataire et s\'imposant à lui. Exemples : arrêté municipal, décret, arrêté préfectoral. Présomption de légalité sauf annulation par le juge.' },
+    { part: 'P2', tag: 'Droit', q: 'Qu\'est-ce que le Défenseur des droits ?', r: 'Autorité indépendante créée en 2011 (art. 71-1 Constitution) : protège les droits des citoyens face à l\'administration, lutte contre les discriminations, défend les droits de l\'enfant. Saisi directement par tout citoyen.' },
+
+    /* ── COMPLÉMENTS P3 ── */
+    { part: 'P3', tag: 'Finances', q: 'Section de fonctionnement vs section d\'investissement', r: '<strong>Fonctionnement</strong> : dépenses et recettes courantes (salaires, fournitures, subventions, DGF). <strong>Investissement</strong> : dépenses et recettes durables (emprunts, remboursement capital, équipements). Règle : l\'excédent de fonctionnement peut financer l\'investissement.' },
+    { part: 'P3', tag: 'Finances', q: 'Qu\'est-ce que le vote du budget par chapitres ?', r: 'Le budget est voté par chapitre (ensemble de crédits de même nature). Les virements entre chapitres nécessitent une délibération. Les virements au sein d\'un même chapitre relèvent des pouvoirs propres de l\'exécutif.' },
+
+    /* ── COMPLÉMENTS P4 ── */
+    { part: 'P4', tag: 'RH', q: 'Qu\'est-ce que le GPEC dans la FPT ?', r: 'Gestion Prévisionnelle des Emplois et des Compétences (rebaptisée GEPP) : anticiper les besoins en compétences de la collectivité à moyen terme. Obligation pour les collectivités >200 agents de mettre en œuvre un plan pluriannuel de GPEC.' },
+    { part: 'P4', tag: 'RH', q: 'Qu\'est-ce que la promotion interne dans la FPT ?', r: 'Dispositif permettant à un agent de changer de cadre d\'emplois par examen professionnel ou au choix, sans passer de concours externe. Elle est contingentée par un quota (1 nomination par promotion interne pour X nominations externes).' },
+    { part: 'P4', tag: 'Management', q: 'Qu\'est-ce que le projet de service dans une collectivité ?', r: 'Document stratégique qui définit les orientations d\'un service pour 3-5 ans : missions, valeurs, objectifs, organisation, axes d\'amélioration. Outil de management participatif, il donne du sens au travail de l\'équipe.' },
+
+    /* ── COMPLÉMENTS P5 ── */
+    { part: 'P5', tag: 'Méthodo', q: 'Comment introduire une note administrative ?', r: 'L\'introduction doit : 1) Contextualiser le sujet (cadre légal ou événement déclencheur) · 2) Poser la problématique en 1-2 phrases · 3) Annoncer le plan en 2-3 parties. Elle représente environ 10% de la longueur totale.' },
+    { part: 'P5', tag: 'Méthodo', q: 'Règles d\'or de la rédaction administrative', r: '1. Phrase courte (20 mots max) · 2. Vocabulaire précis et sobre · 3. Neutralité (pas de jugement) · 4. Lisibilité (titres, listes) · 5. Ne pas paraphraser les documents · 6. Citer les sources sans les copier.' },
+
+    /* ── COMPLÉMENTS P6 ── */
+    { part: 'P6', tag: 'Oral', q: 'Méthode LSCAP pour répondre aux questions complexes', r: '<strong>L</strong>ire/écouter attentivement · <strong>S</strong>tructure en 2-3 points · <strong>C</strong>adre juridique cité · <strong>A</strong>ctions concrètes · <strong>P</strong>récautions/limites mentionnées. Montre la maîtrise et l\'esprit critique.' },
+    { part: 'P6', tag: 'Oral', q: 'Que signifie « obligation de réserve » pour un futur attaché ?', r: 'Ne pas exprimer publiquement des opinions politiques contraires à la neutralité du service. S\'applique hors service (réseaux sociaux, médias). Plus stricte pour les cadres. ≠ liberté d\'opinion personnelle qui est protégée.' },
+
+    /* ── COMPLÉMENTS P7 ── */
+    { part: 'P7', tag: 'Actualités', q: 'Qu\'est-ce que la sobriété numérique ?', r: 'Réduction de l\'impact environnemental du numérique (énergie, matériaux). Collectivités : allonger durée de vie équipements · achats reconditionnés · réduction serveurs · sensibilisation agents. Le numérique = 4% des GES mondiaux.' },
+    { part: 'P7', tag: 'Actualités', q: 'Qu\'est-ce que le SPASER ?', r: 'Schéma de Promotion des Achats Publics Socialement et Écologiquement Responsables : obligatoire pour les collectivités >100 M€ d\'achats annuels. Intègre critères environnementaux et clauses d\'insertion dans les marchés.' },
+
+    /* ── COMPLÉMENTS P8 ── */
+    { part: 'P8', tag: 'Martinique', q: 'Qu\'est-ce que le rhum AOC Martinique ?', r: 'Seul rhum français à bénéficier d\'une AOC (1996). Produit à partir de vesou (jus canne fraîche). 9 distilleries actives. ~50 000 hl exportés/an. Produit d\'excellence mondial, ambassadeur de la Martinique.' },
+    { part: 'P8', tag: 'Martinique', q: 'Crise de l\'eau en Martinique : causes et solutions', r: '<strong>Causes</strong> : réseau vétuste (50+ ans), pertes >50%, gouvernance fragmentée (SMEAM). <strong>Solutions</strong> : renouvellement canalisations (fonds EU + État), rationalisation gouvernance, retenues collinaires.' },
+    { part: 'P8', tag: 'Martinique', q: 'Qu\'est-ce que le CESECEM ?', r: 'Conseil Économique, Social, Environnemental, de la Culture et de l\'Éducation de Martinique. Assemblée consultative de la CTM (équivalent CESER). Consultation obligatoire sur le budget et les grands projets.' }
   ];
 
   var html = '<section id="fiches-express" class="page-section">\n' +
@@ -75,18 +110,31 @@
     '  <h1>⚡ Fiches Express</h1>\n' +
     '  <p style="color:var(--text-muted)">Cliquez sur une carte pour révéler la réponse. Idéal pour la révision rapide.</p>\n' +
     '</div>\n' +
-    '<div class="fe-filters">\n' +
-    '  <button class="fe-filter-btn active" data-fe-filter="all">Toutes (' + FICHES.length + ')</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P1">P1 – Organisation</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P2">P2 – Droit</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P3">P3 – Finances</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P4">P4 – RH</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P5">P5 – Méthodo</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P6">P6 – Oral</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P7">P7 – Actu</button>\n' +
-    '  <button class="fe-filter-btn" data-fe-filter="P8">P8 – Martinique</button>\n' +
+    '<div class="fe-toolbar">\n' +
+    '  <div class="fe-filters">\n' +
+    '    <button class="fe-filter-btn active" data-fe-filter="all">Toutes (' + FICHES.length + ')</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P1">P1 – Organisation</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P2">P2 – Droit</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P3">P3 – Finances</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P4">P4 – RH</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P5">P5 – Méthodo</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P6">P6 – Oral</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P7">P7 – Actu</button>\n' +
+    '    <button class="fe-filter-btn" data-fe-filter="P8">P8 – Martinique</button>\n' +
+    '  </div>\n' +
+    '  <button id="fe-shuffle-btn" style="background:var(--primary);color:#fff;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;font-weight:600;font-size:0.88rem;white-space:nowrap">🔀 Mode Solo</button>\n' +
     '</div>\n' +
     '<p id="fe-count" style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px">' + FICHES.length + ' fiches</p>\n' +
+    '<div id="fe-solo-mode" style="display:none;text-align:center;margin-bottom:24px;padding:20px;background:#f8faff;border-radius:12px;border:1px solid var(--border)">\n' +
+    '  <div id="fe-solo-card" style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px"></div>\n' +
+    '  <div id="fe-solo-answer" style="display:none;padding:16px;background:#fff;border-radius:8px;margin:16px 0;text-align:left;border-left:4px solid var(--primary)"></div>\n' +
+    '  <div class="fe-solo-controls">\n' +
+    '    <button id="fe-solo-reveal" style="background:var(--primary);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">💡 Voir la réponse</button>\n' +
+    '    <button id="fe-solo-next" style="background:var(--success);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600;display:none">→ Suivante</button>\n' +
+    '    <button id="fe-solo-exit" style="background:var(--border);color:var(--text);border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">✕ Quitter le mode solo</button>\n' +
+    '  </div>\n' +
+    '  <p id="fe-solo-progress" style="color:var(--text-muted);font-size:0.85rem;margin-top:12px"></p>\n' +
+    '</div>\n' +
     '<div class="fe-grid" id="fe-grid">\n';
 
   FICHES.forEach(function (f, i) {
@@ -136,5 +184,84 @@
       var back = document.getElementById('fe-back-' + idx);
       if (back) back.classList.toggle('show');
     }
+
+    /* Solo mode launch */
+    if (e.target.closest('#fe-shuffle-btn')) {
+      startSoloMode();
+      return;
+    }
+
+    /* Solo mode controls */
+    if (e.target.closest('#fe-solo-reveal')) {
+      document.getElementById('fe-solo-answer').style.display = 'block';
+      document.getElementById('fe-solo-reveal').style.display = 'none';
+      document.getElementById('fe-solo-next').style.display = 'inline-block';
+      return;
+    }
+    if (e.target.closest('#fe-solo-next')) {
+      soloNextCard();
+      return;
+    }
+    if (e.target.closest('#fe-solo-exit')) {
+      exitSoloMode();
+      return;
+    }
   });
+
+  /* ── SOLO MODE ── */
+  var soloQueue = [], soloIdx = 0;
+
+  function shuffleArr(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function startSoloMode() {
+    var activeFilter = (document.querySelector('.fe-filter-btn.active') || {}).dataset;
+    var filter = activeFilter ? activeFilter.feFilter : 'all';
+    soloQueue = shuffleArr(
+      filter === 'all' ? FICHES : FICHES.filter(function(f){ return f.part === filter; })
+    );
+    soloIdx = 0;
+    document.getElementById('fe-grid').style.display = 'none';
+    document.getElementById('fe-solo-mode').style.display = 'block';
+    document.getElementById('fe-shuffle-btn').textContent = '🔀 Mode Solo (actif)';
+    showSoloCard();
+  }
+
+  function showSoloCard() {
+    if (soloIdx >= soloQueue.length) {
+      document.getElementById('fe-solo-card').innerHTML = '<strong>🎉 Toutes les fiches vues !</strong><br><span style="color:var(--text-muted)">Recommencez pour réviser à nouveau.</span>';
+      document.getElementById('fe-solo-answer').style.display = 'none';
+      document.getElementById('fe-solo-reveal').style.display = 'none';
+      document.getElementById('fe-solo-next').style.display = 'none';
+      document.getElementById('fe-solo-progress').textContent = soloQueue.length + ' / ' + soloQueue.length;
+      return;
+    }
+    var f = soloQueue[soloIdx];
+    document.getElementById('fe-solo-card').innerHTML =
+      '<span style="font-size:0.8rem;background:var(--primary);color:#fff;border-radius:4px;padding:2px 8px">' + f.part + ' · ' + f.tag + '</span>' +
+      '<div style="font-size:1.1rem;font-weight:700;color:var(--primary);margin-top:8px;max-width:480px">' + f.q + '</div>';
+    document.getElementById('fe-solo-answer').innerHTML = f.r;
+    document.getElementById('fe-solo-answer').style.display = 'none';
+    document.getElementById('fe-solo-reveal').style.display = 'inline-block';
+    document.getElementById('fe-solo-next').style.display = 'none';
+    document.getElementById('fe-solo-progress').textContent = (soloIdx + 1) + ' / ' + soloQueue.length;
+  }
+
+  function soloNextCard() {
+    soloIdx++;
+    showSoloCard();
+  }
+
+  function exitSoloMode() {
+    document.getElementById('fe-solo-mode').style.display = 'none';
+    document.getElementById('fe-grid').style.display = '';
+    document.getElementById('fe-shuffle-btn').textContent = '🔀 Mode Solo';
+    soloQueue = []; soloIdx = 0;
+  }
 })();
