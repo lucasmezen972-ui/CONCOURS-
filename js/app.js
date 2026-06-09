@@ -108,6 +108,15 @@
         const sel = q.querySelector('input[type="radio"]:checked');
         const cor = q.querySelector('.quiz-answer');
         if (sel && cor && sel.value === cor.dataset.correct) score++;
+        if (cor) {
+          const correctLetter = cor.dataset.correct;
+          q.querySelectorAll('input[type="radio"]').forEach(inp => {
+            const lbl = inp.closest('label');
+            if (!lbl) return;
+            if (inp.value === correctLetter) lbl.classList.add('quiz-opt-correct');
+            else if (inp.checked) lbl.classList.add('quiz-opt-wrong');
+          });
+        }
       });
 
       const pct = total > 0 ? Math.round(score / total * 100) : 0;
@@ -139,6 +148,7 @@
       if (!qs) return;
       qs.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
       qs.querySelectorAll('.quiz-answer').forEach(a => a.classList.remove('show'));
+      qs.querySelectorAll('.quiz-opt-correct, .quiz-opt-wrong').forEach(l => l.classList.remove('quiz-opt-correct', 'quiz-opt-wrong'));
       const scoreEl = qs.querySelector('.score-display');
       if (scoreEl) scoreEl.style.display = 'none';
       const sub = qs.querySelector('.quiz-btn');

@@ -558,6 +558,19 @@
 }
 .quiz-answer.show { display: block; }
 .quiz-answer .correct { color: var(--success); font-weight: 700; display: block; margin-bottom: 4px; }
+.quiz-opt-correct {
+  background: rgba(76,175,80,0.18) !important;
+  border: 1px solid rgba(76,175,80,0.45);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+.quiz-opt-wrong {
+  background: rgba(244,67,54,0.12) !important;
+  border: 1px solid rgba(244,67,54,0.35);
+  border-radius: var(--radius-sm);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
 .quiz-actions { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .quiz-btn {
   padding: 10px 22px;
