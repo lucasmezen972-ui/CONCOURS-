@@ -501,7 +501,7 @@
 <ul>
   <li>Catégorie : <strong>A</strong></li>
   <li>Filière : <strong>Administrative</strong></li>
-  <li>Grades : Attaché principal · Attaché · (Directeur territorial)</li>
+  <li>Grades : Attaché (1er grade) · Attaché principal (2e grade)</li>
   <li>Missions : Direction d'un service · Chef de projet · Conseil juridique · Ressources humaines · Budget · Communication</li>
   <li>Recrutement concours : externe (Bac+3 minimum) · interne · 3e voie</li>
   <li>Corps de débouché : Directeur territorial (cat. A+)</li>
