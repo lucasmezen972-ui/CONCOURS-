@@ -170,6 +170,33 @@
   color: #1b5e20;
 }
 
+/* ── STREAK ROW ──────────────────────────────────────────── */
+.db-streak-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.db-streak-card {
+  flex: 1;
+  min-width: 140px;
+  background: linear-gradient(135deg, #ff6b35, #e65100);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+.db-streak-icon { font-size: 1.8rem; flex-shrink: 0; }
+.db-streak-val { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+.db-streak-label { font-size: 0.78rem; opacity: 0.88; margin-top: 2px; }
+@media (max-width: 480px) {
+  .db-streak-card { padding: 12px 16px; }
+  .db-streak-val { font-size: 1.4rem; }
+}
+
 @media (max-width: 600px) {
   .dbc-label { width: 100px; font-size: 0.75rem; }
   .db-main-pct { font-size: 2.2rem; }

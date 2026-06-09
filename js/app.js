@@ -325,6 +325,58 @@
         }).join('');
       }
     }
+
+    /* Streak et dernière visite */
+    (function () {
+      const today = new Date().toISOString().slice(0, 10);
+      const hist = JSON.parse(localStorage.getItem('concours_visit_hist') || '[]');
+      if (!hist.includes(today)) {
+        hist.push(today);
+        if (hist.length > 90) hist.splice(0, hist.length - 90);
+        localStorage.setItem('concours_visit_hist', JSON.stringify(hist));
+      }
+      /* Calculer la streak */
+      let streak = 0;
+      const sorted = hist.slice().sort().reverse();
+      let prev = today;
+      for (const d of sorted) {
+        const diff = (new Date(prev) - new Date(d)) / 86400000;
+        if (diff <= 1) { streak++; prev = d; }
+        else break;
+      }
+      const sv = db.querySelector('#db-streak-val');
+      const lv = db.querySelector('#db-last-visit');
+      if (sv) sv.textContent = streak;
+      if (lv) {
+        const last = sorted[0];
+        const daysAgo = Math.round((new Date(today) - new Date(last)) / 86400000);
+        lv.textContent = daysAgo === 0 ? "Aujourd'hui" : daysAgo === 1 ? 'Hier' : `il y a ${daysAgo}j`;
+      }
+    }());
+
+    /* Chapitres faibles */
+    const weak = db.querySelector('#db-weak-chapters');
+    if (weak) {
+      const weakList = [];
+      Object.entries(quizData).forEach(([chapId, results]) => {
+        if (!results.length) return;
+        const last = results[results.length - 1];
+        if (last.pct < 70) {
+          const lnk = document.querySelector(`[data-page="${chapId}"]`);
+          weakList.push({ chapId, title: lnk ? lnk.textContent.trim() : chapId, pct: last.pct });
+        }
+      });
+      weakList.sort((a, b) => a.pct - b.pct);
+      weak.innerHTML = weakList.length
+        ? weakList.slice(0, 6).map(e => {
+            const color = e.pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+            return `<div class="db-hist-item">
+              <a href="#" data-page="${e.chapId}" class="db-hist-title">${e.title}</a>
+              <span class="db-hist-score" style="color:${color}">Score : ${e.pct}%</span>
+            </div>`;
+          }).join('')
+        : '<p class="db-empty">Aucun chapitre faible détecté. Continuez les quiz !</p>';
+    }
   }
 
   /* ──────────────────────────────────────────────────────────

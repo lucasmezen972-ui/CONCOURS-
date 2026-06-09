@@ -90,6 +90,14 @@
     <div class="jq-q">« Un délibération de l'Assemblée de Martinique peut-elle déroger à une loi nationale ? »</div>
     <div class="jq-r">En principe non. Mais l'art. 73 al. 3 permet à la CTM d'être habilitée par la loi pour adapter localement certains textes. Ce pouvoir d'habilitation est encadré et ne peut porter atteinte aux droits fondamentaux.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quelle est la valeur juridique d'un règlement de la CTM par rapport à une loi nationale ? »</div>
+    <div class="jq-r">Un règlement local (délibération, arrêté) est inférieur à la loi dans la hiérarchie des normes. Il ne peut donc pas l'abroger ni y déroger sauf habilitation législative expresse (art. 73 al. 3 pour les DROM). En pratique, la CTM peut édicter des règlements dans le champ de ses compétences, mais toujours dans le respect des lois nationales.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que la Question Prioritaire de Constitutionnalité (QPC) ? »</div>
+    <div class="jq-r">Mécanisme introduit par la révision constitutionnelle de 2008 (en vigueur depuis 2010). Permet à tout justiciable de contester la constitutionnalité d'une disposition législative lors d'un procès en cours. La question est transmise au Conseil constitutionnel via le Conseil d'État ou la Cour de cassation. Si inconstitutionnelle, la loi est abrogée. Démocratise le contrôle de constitutionnalité qui était jusque-là réservé aux institutions politiques.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p2c1" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -170,6 +178,14 @@
     <div class="jq-q">« Pourquoi les projets de loi sur les collectivités sont-ils soumis en premier au Sénat ? »</div>
     <div class="jq-r">Art. 24 Constitution : le Sénat représente les collectivités territoriales. En tant qu'assemblée représentative des élus locaux (grands électeurs), il doit être consulté en premier sur tout texte les concernant. Cela garantit une prise en compte des réalités locales dans la production législative.</div>
   </div>
+  <div class="jq-item">
+    <div class="jq-q">« Quel est le rôle du Conseil d'État dans le droit français ? »</div>
+    <div class="jq-r">Double rôle : 1. Conseiller juridique du gouvernement (avis sur les projets de loi et d'ordonnance, avis sur les décrets les plus importants) · 2. Juridiction suprême administrative : juge en cassation les décisions des cours administratives d'appel. Il peut aussi être juge de premier et dernier ressort pour certains actes réglementaires nationaux. Ses arrêts (ex : CE Blanco 1873) ont construit le droit administratif français.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Comment le contrôle de légalité exercé par le préfet fonctionne-t-il sur les actes de la CTM ? »</div>
+    <div class="jq-r">La CTM transmet ses actes les plus importants (délibérations, marchés publics >40 000 €, décisions individuelles défavorables…) au représentant de l'État (préfet de région) dans un délai de 15 jours après adoption. Le préfet dispose de 2 mois pour saisir le tribunal administratif (déféré préfectoral) s'il estime l'acte illégal. Il peut aussi demander une suspension en référé. Ce contrôle a posteriori (pas a priori) respecte la libre administration des collectivités.</div>
+  </div>
 </div>
 
 <button class="mark-done-btn" data-chapter="p2c2" style="background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;margin-top:16px">✓ Marquer ce chapitre comme terminé</button>
@@ -241,6 +257,14 @@
   <div class="jq-item">
     <div class="jq-q">« Quelles sont les conditions de légalité d'un acte administratif ? »</div>
     <div class="jq-r">5 conditions : compétence de l'auteur · respect des procédures préalables · forme (motivation si décision défavorable) · but conforme (pas de détournement) · contenu conforme aux normes supérieures.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce que le principe du contradictoire dans la procédure administrative ? »</div>
+    <div class="jq-r">Principe fondamental de l'État de droit : avant toute décision administrative défavorable (sanction, refus, retrait d'autorisation), l'administré doit être informé des griefs et avoir la possibilité de présenter ses observations. Fondé sur la loi du 11 juillet 1979 (motivation) et la loi DCRA 2000 (droits des citoyens dans leurs relations avec l'administration). Garantit les droits de la défense et prévient l'arbitraire.</div>
+  </div>
+  <div class="jq-item">
+    <div class="jq-q">« Qu'est-ce qu'un vice de procédure et quelles en sont les conséquences ? »</div>
+    <div class="jq-r">Irrégularité dans les étapes préalables à l'adoption d'un acte administratif (consultation obligatoire omise, délai non respecté, procédure contradictoire absente). Conséquence : l'acte peut être annulé par le juge administratif. Depuis la jurisprudence Danthony (CE 2011), tous les vices de procédure n'entraînent plus l'annulation : seuls ceux qui ont privé l'administré d'une garantie ou influencé le sens de la décision sont retenus.</div>
   </div>
 </div>
 
