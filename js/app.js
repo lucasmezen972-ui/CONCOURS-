@@ -388,6 +388,33 @@
       }
     }());
 
+    /* Mot du jour */
+    (function () {
+      const mdj = db.querySelector('#db-mot-du-jour');
+      if (!mdj) return;
+      const termes = document.querySelectorAll('#glossaire .glossaire-item');
+      if (!termes.length) { mdj.innerHTML = '<p class="db-empty">Ouvrez le glossaire pour charger les termes.</p>'; return; }
+      const todayKey = new Date().toISOString().slice(0, 10);
+      const saved = JSON.parse(localStorage.getItem('concours_mot_jour') || '{}');
+      let idx = saved[todayKey];
+      if (idx === undefined) {
+        idx = Math.floor(Math.random() * termes.length);
+        const obj = {}; obj[todayKey] = idx;
+        localStorage.setItem('concours_mot_jour', JSON.stringify(obj));
+      }
+      const item = termes[Math.min(idx, termes.length - 1)];
+      if (!item) return;
+      const term = item.querySelector('.glossaire-term');
+      const def = item.querySelector('.glossaire-def');
+      const ref = item.querySelector('.glossaire-ref');
+      mdj.innerHTML = `<div style="background:#f8faff;border-radius:8px;padding:16px 20px;border-left:4px solid var(--primary-light)">
+        <div style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:8px">${term ? term.textContent : '—'}</div>
+        <div style="font-size:0.9rem;color:var(--text);line-height:1.65">${def ? def.textContent : ''}</div>
+        ${ref ? `<div style="font-size:0.78rem;color:var(--primary-light);margin-top:8px">${ref.textContent}</div>` : ''}
+        <a href="#" data-page="glossaire" style="font-size:0.82rem;color:var(--primary-light);display:inline-block;margin-top:10px">Voir le glossaire complet →</a>
+      </div>`;
+    }());
+
     /* Chapitres faibles */
     const weak = db.querySelector('#db-weak-chapters');
     if (weak) {
@@ -628,7 +655,24 @@
   }
 
   document.addEventListener('click', function (e) {
-    if (e.target.closest('#oral-draw-btn')) { drawOralQuestion(); return; }
+    if (e.target.closest('#oral-draw-btn')) {
+      drawOralQuestion();
+      /* Auto-start timer when drawing a question */
+      const sel = document.getElementById('oral-duration-select');
+      oralSecsLeft = sel ? parseInt(sel.value) : 120;
+      oralPaused = false;
+      clearInterval(oralTimerId);
+      updateTimerDisplay();
+      oralTimerId = setInterval(() => {
+        if (oralPaused) return;
+        oralSecsLeft--;
+        updateTimerDisplay();
+        if (oralSecsLeft <= -30) clearInterval(oralTimerId);
+      }, 1000);
+      const pb = document.getElementById('oral-pause-btn');
+      if (pb) pb.textContent = '⏸ Pause';
+      return;
+    }
 
     if (e.target.closest('#oral-start-btn')) {
       const sel = document.getElementById('oral-duration-select');
