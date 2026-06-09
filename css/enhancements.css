@@ -977,3 +977,116 @@ kbd {
   .sidebar { position: relative; }
   .sidebar-close-btn { display: flex; }
 }
+
+/* ── DARK MODE TOGGLE BUTTON ─────────────────────────────── */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.85);
+  font-size: 1.15rem;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+#dark-mode-toggle:hover { background: rgba(255,255,255,0.15); }
+
+/* ── DARK MODE ───────────────────────────────────────────── */
+html.dark {
+  --bg: #0f172a;
+  --bg-white: #1e293b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --shadow: 0 2px 12px rgba(0,0,0,0.50);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.70);
+}
+
+/* Sidebar */
+html.dark .sidebar { background: #162032; border-right-color: var(--border); }
+html.dark .progress-bar-wrap { background: #0f172a; }
+html.dark .nav-tree .part-header { background: #0f172a; color: #93c5fd; border-bottom-color: var(--border); }
+html.dark .nav-tree .part-header:hover { background: #1e3a5f; }
+html.dark .chapter-link { color: var(--text-muted); }
+html.dark .chapter-link:hover { background: rgba(148,163,184,0.1); color: var(--text); }
+html.dark .chapter-link.active { background: rgba(96,165,250,0.15); color: #93c5fd; }
+html.dark .chapter-link.done::before { color: #4ade80; }
+html.dark .chapter-list { background: #162032; }
+
+/* Cards and content areas */
+html.dark .card { background: var(--bg-white); border-color: var(--border); }
+html.dark .card-header { border-bottom-color: var(--border); }
+html.dark .info-box { background: #162032; border-color: var(--border); }
+
+/* Tables */
+html.dark table { background: var(--bg-white); }
+html.dark th { background: var(--primary) !important; }
+html.dark td { border-color: var(--border); }
+html.dark tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+
+/* Inputs and selects */
+html.dark input:not([type="radio"]):not([type="checkbox"]):not([type="date"]),
+html.dark select,
+html.dark textarea {
+  background: #0f172a !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+html.dark input[type="date"] { background: #0f172a; color: var(--text); border-color: var(--border); }
+html.dark input::placeholder, html.dark select::placeholder { color: var(--text-muted) !important; }
+
+/* Quiz */
+html.dark .quiz-section { background: var(--bg-white); }
+html.dark .quiz-question { background: #162032; border-left-color: var(--border); }
+html.dark .quiz-answer { background: #1a3a2a; border-left-color: var(--success); }
+
+/* Fiches Express */
+html.dark .fe-card { background: var(--bg-white); box-shadow: var(--shadow); }
+html.dark .fe-card-back { background: #162032; border-top-color: var(--border); }
+html.dark #fe-solo-mode { background: #162032; border-color: var(--border); }
+html.dark #fe-solo-answer { background: #0f172a; }
+
+/* Glossaire */
+html.dark .glossaire-item { border-bottom-color: var(--border); }
+html.dark .glossaire-letter-btn { background: #162032; color: var(--text-muted); border-color: var(--border); }
+html.dark .glossaire-letter-btn:hover,
+html.dark .glossaire-letter-btn.active { background: var(--primary); color: #fff; }
+
+/* Banque de jury */
+html.dark .bj-item { background: var(--bg-white); border-color: var(--border); }
+html.dark .bj-item-header:hover { background: #162032; }
+html.dark .bj-answer { background: #162032; border-top-color: var(--border); }
+
+/* Annales */
+html.dark .annale-card { background: var(--bg-white); }
+html.dark .annale-detail { background: var(--bg-white); }
+html.dark .annale-sujet-box { background: #1a1a0a; border-color: var(--accent); }
+html.dark .annale-corrige { background: #162032; border-left-color: var(--primary-light); }
+
+/* Dashboard */
+html.dark .db-stat-card { background: var(--bg-white); }
+html.dark .db-niveau-card { background: var(--bg-white); }
+html.dark .db-tip-card { background: #1a3a2a; border-left-color: var(--success); color: #a7f3d0; }
+html.dark .db-hist-item { border-bottom-color: var(--border); }
+
+/* Examen blanc */
+html.dark .eb-qcard { background: var(--bg-white); }
+html.dark .eb-opt-label { border-color: var(--border); }
+html.dark .eb-opt-label:hover { background: rgba(96,165,250,0.1); }
+
+/* Oral / Banque jury answer */
+html.dark .oral-q-block { background: #162032; border-color: var(--primary-light); }
+html.dark .oral-answer-block { background: var(--bg-white); }
+html.dark .oral-exemple { background: #0f172a; }
+
+/* Summary/misc */
+html.dark .srg { background: var(--bg-white); }
+html.dark .srg-item { border-bottom-color: var(--border); }
+html.dark .annale-card-body { background: var(--bg-white); }
+html.dark .chapter-nav-btn { background: #162032; border-color: var(--border); color: var(--text-muted); }
+html.dark .chapter-nav-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+html.dark .sommaire-card { background: var(--bg-white) !important; }
+html.dark .day-row { border-bottom-color: var(--border); }
+html.dark .stat-card { background: var(--bg-white); }

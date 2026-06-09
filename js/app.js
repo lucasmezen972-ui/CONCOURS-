@@ -411,6 +411,22 @@
   }
 
   /* ──────────────────────────────────────────────────────────
+     DARK MODE
+  ────────────────────────────────────────────────────────── */
+  (function () {
+    const btn = document.getElementById('dark-mode-toggle');
+    if (!btn) return;
+    const isDark = () => document.documentElement.classList.contains('dark');
+    btn.textContent = isDark() ? '☀️' : '🌙';
+    btn.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      const dark = isDark();
+      localStorage.setItem('concours_dark_mode', dark ? '1' : '0');
+      btn.textContent = dark ? '☀️' : '🌙';
+    });
+  }());
+
+  /* ──────────────────────────────────────────────────────────
      DASHBOARD – Sauvegarde date concours
   ────────────────────────────────────────────────────────── */
   document.addEventListener('click', function (e) {
