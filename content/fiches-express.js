@@ -157,14 +157,17 @@
     '</div>\n' +
     '<p id="fe-count" style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px">' + FICHES.length + ' fiches</p>\n' +
     '<div id="fe-solo-mode" style="display:none;text-align:center;margin-bottom:24px;padding:20px;background:#f8faff;border-radius:12px;border:1px solid var(--border)">\n' +
+    '  <div style="width:100%;max-width:480px;margin:0 auto 14px"><div style="background:var(--border);border-radius:20px;height:6px;overflow:hidden"><div id="fe-solo-pbar" style="height:100%;background:var(--primary);border-radius:20px;transition:width 0.4s ease;width:0%"></div></div></div>\n' +
     '  <div id="fe-solo-card" style="min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px"></div>\n' +
     '  <div id="fe-solo-answer" style="display:none;padding:16px;background:#fff;border-radius:8px;margin:16px 0;text-align:left;border-left:4px solid var(--primary)"></div>\n' +
     '  <div class="fe-solo-controls">\n' +
     '    <button id="fe-solo-reveal" style="background:var(--primary);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">💡 Voir la réponse</button>\n' +
-    '    <button id="fe-solo-next" style="background:var(--success);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600;display:none">→ Suivante</button>\n' +
-    '    <button id="fe-solo-exit" style="background:var(--border);color:var(--text);border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">✕ Quitter le mode solo</button>\n' +
+    '    <button id="fe-solo-known" style="background:var(--success);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:700;display:none">✓ Je savais</button>\n' +
+    '    <button id="fe-solo-unknown" style="background:#e65100;color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:700;display:none">✗ À revoir</button>\n' +
+    '    <button id="fe-solo-exit" style="background:var(--border);color:var(--text);border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">✕ Quitter</button>\n' +
     '  </div>\n' +
     '  <p id="fe-solo-progress" style="color:var(--text-muted);font-size:0.85rem;margin-top:12px"></p>\n' +
+    '  <p style="color:var(--text-muted);font-size:0.78rem;margin-top:4px">Raccourcis : <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">Espace</kbd> révéler · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">→</kbd> je savais · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">←</kbd> à revoir · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">Esc</kbd> quitter</p>\n' +
     '</div>\n' +
     '<div class="fe-grid" id="fe-grid">\n';
 
@@ -226,10 +229,18 @@
     if (e.target.closest('#fe-solo-reveal')) {
       document.getElementById('fe-solo-answer').style.display = 'block';
       document.getElementById('fe-solo-reveal').style.display = 'none';
-      document.getElementById('fe-solo-next').style.display = 'inline-block';
+      document.getElementById('fe-solo-known').style.display = 'inline-block';
+      document.getElementById('fe-solo-unknown').style.display = 'inline-block';
       return;
     }
-    if (e.target.closest('#fe-solo-next')) {
+    if (e.target.closest('#fe-solo-known')) {
+      soloKnown++;
+      soloNextCard();
+      return;
+    }
+    if (e.target.closest('#fe-solo-unknown')) {
+      soloUnknown++;
+      if (soloIdx < soloQueue.length) failedCards.push(soloQueue[soloIdx]);
       soloNextCard();
       return;
     }
@@ -237,10 +248,17 @@
       exitSoloMode();
       return;
     }
+    if (e.target.closest('#fe-solo-replay-failed')) {
+      var failed = failedCards.slice();
+      soloQueue = shuffleArr(failed);
+      soloIdx = 0; soloKnown = 0; soloUnknown = 0; failedCards = [];
+      showSoloCard();
+      return;
+    }
   });
 
   /* ── SOLO MODE ── */
-  var soloQueue = [], soloIdx = 0;
+  var soloQueue = [], soloIdx = 0, soloKnown = 0, soloUnknown = 0, failedCards = [], soloActive = false;
 
   function shuffleArr(arr) {
     var a = arr.slice();
@@ -257,7 +275,8 @@
     soloQueue = shuffleArr(
       filter === 'all' ? FICHES : FICHES.filter(function(f){ return f.part === filter; })
     );
-    soloIdx = 0;
+    soloIdx = 0; soloKnown = 0; soloUnknown = 0; failedCards = [];
+    soloActive = true;
     document.getElementById('fe-grid').style.display = 'none';
     document.getElementById('fe-solo-mode').style.display = 'block';
     document.getElementById('fe-shuffle-btn').textContent = '🔀 Mode Solo (actif)';
@@ -265,23 +284,41 @@
   }
 
   function showSoloCard() {
+    var pbar = document.getElementById('fe-solo-pbar');
+    var progEl = document.getElementById('fe-solo-progress');
+
     if (soloIdx >= soloQueue.length) {
-      document.getElementById('fe-solo-card').innerHTML = '<strong>🎉 Toutes les fiches vues !</strong><br><span style="color:var(--text-muted)">Recommencez pour réviser à nouveau.</span>';
+      var pct = soloQueue.length > 0 ? Math.round(soloKnown / soloQueue.length * 100) : 0;
+      var scoreColor = pct >= 70 ? 'var(--success)' : pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+      document.getElementById('fe-solo-card').innerHTML =
+        '<div style="font-size:2.2rem;margin-bottom:4px">🎉</div>' +
+        '<strong style="font-size:1.1rem">Paquet terminé !</strong>' +
+        '<div style="display:flex;gap:24px;margin:8px 0">' +
+          '<span style="color:var(--success);font-weight:700;font-size:1rem">✓ ' + soloKnown + ' connues</span>' +
+          '<span style="color:#e65100;font-weight:700;font-size:1rem">✗ ' + soloUnknown + ' à revoir</span>' +
+        '</div>' +
+        '<div style="font-size:2rem;font-weight:900;color:' + scoreColor + '">' + pct + '%</div>' +
+        (failedCards.length > 0 ? '<button id="fe-solo-replay-failed" style="background:#e65100;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700;margin-top:12px">🔁 Reprendre les ' + failedCards.length + ' fiches non maîtrisées</button>' : '');
       document.getElementById('fe-solo-answer').style.display = 'none';
       document.getElementById('fe-solo-reveal').style.display = 'none';
-      document.getElementById('fe-solo-next').style.display = 'none';
-      document.getElementById('fe-solo-progress').textContent = soloQueue.length + ' / ' + soloQueue.length;
+      document.getElementById('fe-solo-known').style.display = 'none';
+      document.getElementById('fe-solo-unknown').style.display = 'none';
+      if (pbar) pbar.style.width = '100%';
+      if (progEl) progEl.textContent = soloQueue.length + ' / ' + soloQueue.length;
       return;
     }
+
     var f = soloQueue[soloIdx];
     document.getElementById('fe-solo-card').innerHTML =
       '<span style="font-size:0.8rem;background:var(--primary);color:#fff;border-radius:4px;padding:2px 8px">' + f.part + ' · ' + f.tag + '</span>' +
-      '<div style="font-size:1.1rem;font-weight:700;color:var(--primary);margin-top:8px;max-width:480px">' + f.q + '</div>';
+      '<div style="font-size:1.1rem;font-weight:700;color:var(--primary);margin-top:8px;max-width:480px;line-height:1.5">' + f.q + '</div>';
     document.getElementById('fe-solo-answer').innerHTML = f.r;
     document.getElementById('fe-solo-answer').style.display = 'none';
     document.getElementById('fe-solo-reveal').style.display = 'inline-block';
-    document.getElementById('fe-solo-next').style.display = 'none';
-    document.getElementById('fe-solo-progress').textContent = (soloIdx + 1) + ' / ' + soloQueue.length;
+    document.getElementById('fe-solo-known').style.display = 'none';
+    document.getElementById('fe-solo-unknown').style.display = 'none';
+    if (pbar) pbar.style.width = (soloQueue.length > 0 ? Math.round(soloIdx / soloQueue.length * 100) : 0) + '%';
+    if (progEl) progEl.textContent = (soloIdx + 1) + ' / ' + soloQueue.length + ' · ✓ ' + soloKnown + ' · ✗ ' + soloUnknown;
   }
 
   function soloNextCard() {
@@ -293,6 +330,33 @@
     document.getElementById('fe-solo-mode').style.display = 'none';
     document.getElementById('fe-grid').style.display = '';
     document.getElementById('fe-shuffle-btn').textContent = '🔀 Mode Solo';
-    soloQueue = []; soloIdx = 0;
+    soloQueue = []; soloIdx = 0; soloKnown = 0; soloUnknown = 0; failedCards = [];
+    soloActive = false;
   }
+
+  /* Keyboard navigation for solo mode */
+  document.addEventListener('keydown', function(e) {
+    if (!soloActive) return;
+    var tag = document.activeElement ? document.activeElement.tagName : '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+    if (e.key === ' ') {
+      e.preventDefault();
+      var revealBtn = document.getElementById('fe-solo-reveal');
+      if (revealBtn && revealBtn.style.display !== 'none') { revealBtn.click(); return; }
+    }
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      var knownBtn = document.getElementById('fe-solo-known');
+      if (knownBtn && knownBtn.style.display !== 'none') knownBtn.click();
+      return;
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      var unknownBtn = document.getElementById('fe-solo-unknown');
+      if (unknownBtn && unknownBtn.style.display !== 'none') unknownBtn.click();
+      return;
+    }
+    if (e.key === 'Escape') { exitSoloMode(); }
+  });
 })();
