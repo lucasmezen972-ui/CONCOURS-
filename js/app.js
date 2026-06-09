@@ -867,6 +867,29 @@
         showPage(prev);
         showKbdHint('← Chapitre précédent');
       }
+      return;
+    }
+
+    /* Raccourcis lettre pour les sections principales */
+    const shortcuts = {
+      'd': 'dashboard', 'D': 'dashboard',
+      'o': 'simulation-orale', 'O': 'simulation-orale',
+      'f': 'fiches-express', 'F': 'fiches-express',
+      'g': 'glossaire', 'G': 'glossaire',
+      'e': 'examen-blanc', 'E': 'examen-blanc',
+      's': 'recherche', 'S': 'recherche',
+      'q': 'banque-jury', 'Q': 'banque-jury'
+    };
+    if (shortcuts[e.key] && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      const labels = {
+        'dashboard': '📊 Tableau de bord', 'simulation-orale': '🎤 Oral',
+        'fiches-express': '⚡ Fiches Express', 'glossaire': '📖 Glossaire',
+        'examen-blanc': '📝 Examen Blanc', 'recherche': '🔍 Recherche',
+        'banque-jury': '🎯 Banque jury'
+      };
+      showPage(shortcuts[e.key]);
+      showKbdHint(labels[shortcuts[e.key]] || shortcuts[e.key]);
     }
   });
 
