@@ -205,7 +205,7 @@ window.BANQUE_JURY = [
   { cat:'situation', diff:2, question:'Vous êtes chargé de réduire les délais de traitement des demandes d\'APA (Allocation Personnalisée d\'Autonomie). Comment y parvenir ?', tips:['Cartographie du processus actuel : identifier les goulots d\'étranglement','Délai légal de l\'APA : 2 mois (alerte si dépassement)','Ressources supplémentaires : renforts humains, outils dématérialisés','Formation des instructeurs','Coordination avec les équipes médico-sociales (EMS)','Indicateurs de suivi hebdomadaire et objectifs clairs'] },
   { cat:'situation', diff:2, question:'Comment établiriez-vous un plan de continuité d\'activité (PCA) pour votre service ?', tips:['Identification des activités critiques (ne pouvant pas s\'interrompre)','Scénarios de crise : cyberattaque, catastrophe naturelle, pandémie','Mesures de continuité : procédures manuelles, télétravail, sites de repli','Ressources minimales nécessaires (personnel, informatique)','Test du PCA (exercice simulé 1× par an)','Mise à jour annuelle'] },
   { cat:'situation', diff:3, question:'Un journaliste vous interroge sur un scandale potentiel dans votre direction. Comment répondez-vous ?', tips:['Ne pas improviser : recueillir les faits avant toute communication','Informer le DGS et le cabinet du président','Communication officielle coordonnée avec le service presse','Principe : transparence sur les faits avérés, silence sur ce qui est sous enquête','Pas de déclaration personnelle : la collectivité parle d\'une voix','Si enquête judiciaire : "ne pas commenter une affaire judiciaire en cours"'] },
-  { cat:'situation', diff:2, question:'Vous devez organiser des élections des délégués du personnel au CST. Quelle procédure ?', tips:['Affichage des dates d\'élection 60 jours avant','Listes électorales : agents titulaires et contractuels de droit public éligibles','Dépôt de listes syndicales 35 jours avant','Matériel de vote : préparation et envoi par voie électronique ou papier','Dépouillement : représentants employeur + représentants syndicaux','Proclamation des résultats et transmission au préfet'] }
+  { cat:'situation', diff:2, question:'Vous devez organiser des élections des délégués du personnel au CST. Quelle procédure ?', tips:['Affichage des dates d\'élection 60 jours avant','Listes électorales : agents titulaires et contractuels de droit public éligibles','Dépôt de listes syndicales 35 jours avant','Matériel de vote : préparation et envoi par voie électronique ou papier','Dépouillement : représentants employeur + représentants syndicaux','Proclamation des résultats et transmission au préfet'] },
 
   /* ── QUESTIONS 2024-2025 – Actualités & thèmes émergents ── */
 
@@ -242,7 +242,7 @@ window.BANQUE_JURY = [
   if (!container) return;
 
   const categories = [
-    { val: 'all', label: 'Toutes (210)' },
+    { val: 'all', label: 'Toutes (202)' },
     { val: 'motivation', label: 'Motivation & projet' },
     { val: 'territorial', label: 'Environnement territorial' },
     { val: 'martinique', label: 'Martinique & CTM' },
