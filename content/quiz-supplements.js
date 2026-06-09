@@ -380,4 +380,7 @@
     markDoneBtn.insertAdjacentHTML('beforebegin', buildQuizHtml(chapId, data));
   });
 
+  /* Expose globally for the Examen Blanc feature */
+  window.QUIZ_DATA = QUIZ_DATA;
+
 })();
