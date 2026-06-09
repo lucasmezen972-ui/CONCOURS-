@@ -746,6 +746,25 @@
         <div class="card-header"><h2>📝 Historique des examens blancs</h2></div>
         <div class="card-body" id="db-examen-history"><p style="color:var(--text-muted)">Aucun examen blanc effectué.</p></div>
       </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>☁️ Synchronisation serveur</h2>
+          <p>Sauvegarde automatique de votre progression en ligne — accessible depuis n'importe quel appareil</p>
+        </div>
+        <div class="card-body">
+          <div id="sync-status" class="sync-status"></div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+            <input type="url" id="sync-worker-url"
+                   placeholder="https://concours-progress-api.VOTRE-SOUS-DOMAINE.workers.dev"
+                   style="padding:8px 12px;border:2px solid var(--border);border-radius:8px;font-size:0.85rem;flex:1;min-width:200px;background:var(--surface);color:var(--text)">
+            <button id="sync-url-save" style="background:var(--primary);color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.9rem;white-space:nowrap">✓ Enregistrer</button>
+          </div>
+          <button id="sync-now-btn" style="background:var(--primary-light);color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.9rem">🔄 Synchroniser maintenant</button>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:12px;line-height:1.6">
+            Après le déploiement du Worker Cloudflare, collez son URL ci-dessus et cliquez <em>Enregistrer</em>. Votre progression sera synchronisée automatiquement à chaque modification.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- ========== RECHERCHE ========== -->
