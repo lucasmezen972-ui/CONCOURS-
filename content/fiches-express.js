@@ -145,6 +145,64 @@
     { part: 'P8', tag: 'Martinique 2024', q: 'Logement social en Martinique (SIMAR)', r: '<strong>SIMAR</strong> (Société Immobilière de la Martinique) : bailleur social CTM, ~17 000 logements HLM. 80 000+ logements dégradés. Opérations ANRU : Trénelle-Citron + Volga-Plage à Fort-de-France. Défi : normes parasismiques (zone 5) + ZAN + foncier rare.' }
   ];
 
+  /* ── RÉPÉTITION ESPACÉE – SM-2 ── */
+  function srLoad() {
+    try { return JSON.parse(localStorage.getItem('concours_sr') || '{}'); } catch(e) { return {}; }
+  }
+  function srSave(data) {
+    localStorage.setItem('concours_sr', JSON.stringify(data));
+    if (window._concoursPush) window._concoursPush();
+  }
+  function sm2Calc(card, grade) {
+    var c = { ef: card.ef || 2.5, interval: card.interval || 1, reps: card.reps || 0 };
+    if (grade < 3) {
+      c.reps = 0; c.interval = 1;
+    } else {
+      if (c.reps === 0) c.interval = 1;
+      else if (c.reps === 1) c.interval = 6;
+      else c.interval = Math.round(c.interval * c.ef);
+      c.reps++;
+    }
+    c.ef = Math.max(1.3, c.ef + 0.1 - (5 - grade) * (0.08 + (5 - grade) * 0.02));
+    var d = new Date(); d.setDate(d.getDate() + c.interval);
+    c.nextReview = d.toISOString().slice(0, 10);
+    return c;
+  }
+  function srDueCount(filter) {
+    var data = srLoad();
+    var today = new Date().toISOString().slice(0, 10);
+    var n = 0;
+    FICHES.forEach(function(f, i) {
+      if (filter && filter !== 'all' && f.part !== filter) return;
+      var c = data[i];
+      if (!c || c.nextReview <= today) n++;
+    });
+    return n;
+  }
+  function srBuildQueue(filter) {
+    var data = srLoad();
+    var today = new Date().toISOString().slice(0, 10);
+    var due = [], fresh = [];
+    FICHES.forEach(function(f, i) {
+      if (filter && filter !== 'all' && f.part !== filter) return;
+      var c = data[i];
+      if (!c) fresh.push(i);
+      else if (c.nextReview <= today) due.push(i);
+    });
+    function shuffle(a) {
+      for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; }
+      return a;
+    }
+    return shuffle(due).concat(shuffle(fresh));
+  }
+  function srUpdateBtn() {
+    var btn = document.getElementById('fe-sr-btn');
+    if (!btn) return;
+    var filter = (document.querySelector('.fe-filter-btn.active') || {dataset:{}}).dataset.feFilter || 'all';
+    var n = srDueCount(filter);
+    btn.innerHTML = '🧠 Révision espacée' + (n > 0 ? ' <span style="background:rgba(255,255,255,0.3);border-radius:10px;padding:1px 7px;font-size:0.78rem">' + n + '</span>' : '');
+  }
+
   var html = '<section id="fiches-express" class="page-section">\n' +
     '<div class="fe-header">\n' +
     '  <h1>⚡ Fiches Express</h1>\n' +
@@ -163,6 +221,7 @@
     '    <button class="fe-filter-btn" data-fe-filter="P8">P8 – Martinique</button>\n' +
     '  </div>\n' +
     '  <button id="fe-shuffle-btn" style="background:var(--primary);color:#fff;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;font-weight:600;font-size:0.88rem;white-space:nowrap">🔀 Mode Solo</button>\n' +
+    '  <button id="fe-sr-btn" style="background:#7c3aed;color:#fff;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;font-weight:600;font-size:0.88rem;white-space:nowrap">🧠 Révision espacée</button>\n' +
     '</div>\n' +
     '<p id="fe-count" style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px">' + FICHES.length + ' fiches</p>\n' +
     '<div id="fe-solo-mode" style="display:none;text-align:center;margin-bottom:24px;padding:20px;background:#f8faff;border-radius:12px;border:1px solid var(--border)">\n' +
@@ -175,6 +234,13 @@
     '    <button id="fe-solo-unknown" style="background:#e65100;color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:700;display:none">✗ À revoir</button>\n' +
     '    <button id="fe-solo-exit" style="background:var(--border);color:var(--text);border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600">✕ Quitter</button>\n' +
     '  </div>\n' +
+    '  <div id="fe-sr-rating" style="display:none;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px">\n' +
+    '    <button id="fe-sr-diff" style="background:#dc2626;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700">❌ Difficile</button>\n' +
+    '    <button id="fe-sr-ok" style="background:#d97706;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700">🤔 Hésitant</button>\n' +
+    '    <button id="fe-sr-good" style="background:#16a34a;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:700">✅ Maîtrisé</button>\n' +
+    '    <button id="fe-sr-exit" style="background:var(--border);color:var(--text);border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:600">✕ Quitter</button>\n' +
+    '  </div>\n' +
+    '  <p id="fe-sr-interval-hint" style="color:var(--text-muted);font-size:0.78rem;margin-top:8px;display:none"></p>\n' +
     '  <p id="fe-solo-progress" style="color:var(--text-muted);font-size:0.85rem;margin-top:12px"></p>\n' +
     '  <p style="color:var(--text-muted);font-size:0.78rem;margin-top:4px">Raccourcis : <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">Espace</kbd> révéler · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">→</kbd> je savais · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">←</kbd> à revoir · <kbd style="background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px">Esc</kbd> quitter</p>\n' +
     '</div>\n' +
@@ -217,6 +283,7 @@
       });
       var countEl = document.getElementById('fe-count');
       if (countEl) countEl.textContent = visible + ' fiche' + (visible > 1 ? 's' : '');
+      srUpdateBtn();
       return;
     }
 
@@ -263,6 +330,35 @@
       soloIdx = 0; soloKnown = 0; soloUnknown = 0; failedCards = [];
       showSoloCard();
       return;
+    }
+
+    /* SR mode launch */
+    if (e.target.closest('#fe-sr-btn')) { startSrMode(); return; }
+
+    /* SR reveal — reuse solo reveal but show SR buttons */
+    if (e.target.closest('#fe-solo-reveal') && srActive) {
+      document.getElementById('fe-solo-answer').style.display = 'block';
+      document.getElementById('fe-solo-reveal').style.display = 'none';
+      document.getElementById('fe-sr-rating').style.display = 'flex';
+      var hint = document.getElementById('fe-sr-interval-hint');
+      var data = srLoad(); var c = data[srQueue[srQueueIdx]] || {};
+      if (hint) {
+        var ef = (c.ef || 2.5).toFixed(1);
+        hint.style.display = 'block';
+        hint.textContent = '❌ → 1 jour · 🤔 → ' + (c.reps >= 2 ? Math.round((c.interval || 1) * ef) : c.reps === 1 ? 6 : 1) + ' jours · ✅ → ' + (c.reps >= 2 ? Math.round((c.interval || 1) * ef) : c.reps === 1 ? 6 : 1) + ' jours';
+        hint.textContent = '❌ 1j · 🤔 revu bientôt · ✅ espacé plus longtemps';
+      }
+      return;
+    }
+
+    /* SR ratings */
+    if (srActive) {
+      var grade = -1;
+      if (e.target.closest('#fe-sr-diff')) grade = 1;
+      if (e.target.closest('#fe-sr-ok'))   grade = 3;
+      if (e.target.closest('#fe-sr-good')) grade = 5;
+      if (grade >= 0) { applySrRating(grade); return; }
+      if (e.target.closest('#fe-sr-exit')) { exitSrMode(); return; }
     }
   });
 
@@ -343,9 +439,94 @@
     soloActive = false;
   }
 
-  /* Keyboard navigation for solo mode */
+  /* ── SR MODE ── */
+  var srQueue = [], srQueueIdx = 0, srActive = false, srCorrect = 0, srTotal = 0;
+
+  function startSrMode() {
+    var filter = (document.querySelector('.fe-filter-btn.active') || {dataset:{}}).dataset.feFilter || 'all';
+    srQueue = srBuildQueue(filter);
+    if (srQueue.length === 0) {
+      alert('Aucune carte à réviser maintenant. Revenez demain !');
+      return;
+    }
+    srQueueIdx = 0; srCorrect = 0; srTotal = 0;
+    srActive = true; soloActive = false;
+    document.getElementById('fe-grid').style.display = 'none';
+    document.getElementById('fe-solo-mode').style.display = 'block';
+    document.getElementById('fe-shuffle-btn').textContent = '🔀 Mode Solo';
+    document.getElementById('fe-sr-btn').textContent = '🧠 SR (actif)';
+    showSrCard();
+  }
+
+  function showSrCard() {
+    var pbar = document.getElementById('fe-solo-pbar');
+    var progEl = document.getElementById('fe-solo-progress');
+    var hint = document.getElementById('fe-sr-interval-hint');
+
+    if (srQueueIdx >= srQueue.length) {
+      var pct = srTotal > 0 ? Math.round(srCorrect / srTotal * 100) : 0;
+      var col = pct >= 70 ? 'var(--success)' : pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+      document.getElementById('fe-solo-card').innerHTML =
+        '<div style="font-size:2.2rem;margin-bottom:4px">🎉</div>' +
+        '<strong style="font-size:1.1rem">Session terminée !</strong>' +
+        '<div style="display:flex;gap:24px;margin:8px 0">' +
+          '<span style="color:var(--success);font-weight:700">✅ ' + srCorrect + ' maîtrisées</span>' +
+          '<span style="color:#d97706;font-weight:700">🔄 ' + (srTotal - srCorrect) + ' à revoir</span>' +
+        '</div>' +
+        '<div style="font-size:2rem;font-weight:900;color:' + col + '">' + pct + '%</div>' +
+        '<p style="font-size:0.82rem;color:var(--text-muted);margin-top:8px">La prochaine session s\'adaptera automatiquement.</p>';
+      document.getElementById('fe-solo-answer').style.display = 'none';
+      document.getElementById('fe-solo-reveal').style.display = 'none';
+      document.getElementById('fe-sr-rating').style.display = 'none';
+      if (hint) hint.style.display = 'none';
+      if (pbar) pbar.style.width = '100%';
+      if (progEl) progEl.textContent = srQueue.length + ' / ' + srQueue.length;
+      srUpdateBtn();
+      return;
+    }
+
+    var cardIdx = srQueue[srQueueIdx];
+    var f = FICHES[cardIdx];
+    var data = srLoad();
+    var c = data[cardIdx];
+    var isNew = !c;
+    var badge = isNew
+      ? '<span style="font-size:0.72rem;background:#7c3aed;color:#fff;border-radius:4px;padding:1px 7px;margin-left:6px">Nouveau</span>'
+      : '';
+
+    document.getElementById('fe-solo-card').innerHTML =
+      '<span style="font-size:0.8rem;background:var(--primary);color:#fff;border-radius:4px;padding:2px 8px">' + f.part + ' · ' + f.tag + '</span>' + badge +
+      '<div style="font-size:1.1rem;font-weight:700;color:var(--primary);margin-top:8px;max-width:480px;line-height:1.5">' + f.q + '</div>';
+    document.getElementById('fe-solo-answer').innerHTML = f.r;
+    document.getElementById('fe-solo-answer').style.display = 'none';
+    document.getElementById('fe-solo-reveal').style.display = 'inline-block';
+    document.getElementById('fe-sr-rating').style.display = 'none';
+    if (hint) hint.style.display = 'none';
+    if (pbar) pbar.style.width = (srQueue.length > 0 ? Math.round(srQueueIdx / srQueue.length * 100) : 0) + '%';
+    if (progEl) progEl.textContent = (srQueueIdx + 1) + ' / ' + srQueue.length;
+  }
+
+  function applySrRating(grade) {
+    var cardIdx = srQueue[srQueueIdx];
+    var data = srLoad();
+    data[cardIdx] = sm2Calc(data[cardIdx] || {}, grade);
+    srSave(data);
+    if (grade >= 4) srCorrect++;
+    srTotal++;
+    srQueueIdx++;
+    showSrCard();
+  }
+
+  function exitSrMode() {
+    document.getElementById('fe-solo-mode').style.display = 'none';
+    document.getElementById('fe-grid').style.display = '';
+    srActive = false; srQueue = []; srQueueIdx = 0;
+    srUpdateBtn();
+  }
+
+  /* Keyboard navigation for solo + SR mode */
   document.addEventListener('keydown', function(e) {
-    if (!soloActive) return;
+    if (!soloActive && !srActive) return;
     var tag = document.activeElement ? document.activeElement.tagName : '';
     if (tag === 'INPUT' || tag === 'TEXTAREA') return;
 
@@ -353,6 +534,16 @@
       e.preventDefault();
       var revealBtn = document.getElementById('fe-solo-reveal');
       if (revealBtn && revealBtn.style.display !== 'none') { revealBtn.click(); return; }
+    }
+    if (srActive) {
+      var rating = document.getElementById('fe-sr-rating');
+      if (rating && rating.style.display !== 'none') {
+        if (e.key === 'ArrowRight' || e.key === '3') { e.preventDefault(); applySrRating(5); return; }
+        if (e.key === 'ArrowLeft'  || e.key === '1') { e.preventDefault(); applySrRating(1); return; }
+        if (e.key === '2')                           { e.preventDefault(); applySrRating(3); return; }
+      }
+      if (e.key === 'Escape') { exitSrMode(); return; }
+      return;
     }
     if (e.key === 'ArrowRight') {
       e.preventDefault();
@@ -368,4 +559,7 @@
     }
     if (e.key === 'Escape') { exitSoloMode(); }
   });
+
+  /* Update SR badge on load */
+  setTimeout(srUpdateBtn, 200);
 })();
