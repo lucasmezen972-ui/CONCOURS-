@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concours Attaché Territorial – Manuel Complet – Martinique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/enhancements.css">
   <script>if(localStorage.getItem('concours_dark_mode')==='1')document.documentElement.classList.add('dark');</script>
@@ -177,11 +180,33 @@
         <div class="flag">🇲🇶</div>
         <h1>Manuel Complet de Préparation<br>Concours d'Attaché Territorial</h1>
         <p class="subtitle">Catégorie A – Fonction Publique Territoriale – Martinique</p>
+        <div class="hero-ctas">
+          <button class="btn btn-accent" onclick="(function(){const c=Array.from(document.querySelectorAll('.chapter-link')).find(l=>l.dataset.page&&l.dataset.page.match(/^p\d/)&&!l.classList.contains('done'));if(c)window._showPage(c.dataset.page);else window._showPage('p1c1');})()">▶ Reprendre ma progression</button>
+          <button class="btn btn-ghost" onclick="window._showPage('p1c1')">📚 Commencer la formation</button>
+        </div>
         <div class="meta">
           <span class="meta-item">📅 15 juin → 19 octobre</span>
           <span class="meta-item">⏱️ 1h30 / jour</span>
           <span class="meta-item">🎓 Bachelor RH</span>
           <span class="meta-item">9 Parties • 38+ Chapitres</span>
+        </div>
+      </div>
+
+      <div class="home-progress-card">
+        <div class="hpc-left">
+          <div class="hpc-icon">📊</div>
+          <div>
+            <div class="hpc-title">Ma progression</div>
+            <div class="hpc-sub" id="hpc-sub">Chargement…</div>
+          </div>
+        </div>
+        <div class="hpc-right">
+          <div class="hpc-pct" id="hpc-pct">—</div>
+        </div>
+        <div class="hpc-bar-wrap">
+          <div class="hpc-bar">
+            <div class="hpc-fill" id="hpc-fill" style="width:0%"></div>
+          </div>
         </div>
       </div>
 

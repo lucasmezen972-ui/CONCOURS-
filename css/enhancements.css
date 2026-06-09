@@ -440,8 +440,8 @@
 .annale-detail li { font-size: 0.9rem; margin-bottom: 6px; line-height: 1.6; }
 .annale-close { display: inline-block; margin-bottom: 20px; color: var(--primary-light); cursor: pointer; font-size: 0.9rem; text-decoration: underline; }
 .annale-sujet-box {
-  background: #fff9e6;
-  border: 2px solid var(--accent);
+  background: var(--primary-50);
+  border: 2px solid var(--primary-100);
   border-radius: var(--radius-sm);
   padding: 16px 20px;
   margin: 16px 0;
@@ -543,7 +543,7 @@
   border-radius: var(--radius-sm);
   transition: background 0.15s;
 }
-.quiz-options li label:hover { background: rgba(36,96,167,0.07); }
+.quiz-options li label:hover { background: rgba(30,64,175,0.07); }
 .quiz-options li input[type="radio"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--primary-light); }
 .quiz-answer {
   display: none;
@@ -817,14 +817,14 @@ kbd {
   border-radius: 20px;
   font-size: 0.82rem;
   outline: none;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
+  background: var(--surface-2);
+  color: var(--text);
   transition: border 0.2s, background 0.2s;
 }
-.sidebar-search-wrap input::placeholder { color: rgba(255,255,255,0.5); }
+.sidebar-search-wrap input::placeholder { color: var(--text-light); }
 .sidebar-search-wrap input:focus {
-  background: rgba(255,255,255,0.14);
-  border-color: var(--accent-light);
+  background: #fff;
+  border-color: var(--primary-light);
 }
 .chapter-link.hidden { display: none !important; }
 
@@ -836,7 +836,7 @@ kbd {
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  background: #1a3a5c;
+  background: var(--primary);
   color: #fff;
   padding: 4px 10px;
   border-radius: 4px;
