@@ -862,17 +862,21 @@
       btn.title = 'Imprimer ce chapitre';
       btn.innerHTML = '🖨️ Imprimer';
       btn.addEventListener('click', function () {
-        /* Affiche uniquement la section active, puis imprime */
+        function restoreSections() {
+          document.querySelectorAll('[data-print-hide="1"]').forEach(function(s) {
+            s.style.removeProperty('display');
+          });
+        }
         document.querySelectorAll('.page-section').forEach(function(s) {
           s.dataset.printHide = s.id !== sec.id ? '1' : '';
         });
         document.querySelectorAll('[data-print-hide="1"]').forEach(function(s) {
           s.style.setProperty('display', 'none', 'important');
         });
+        window.onafterprint = function() { restoreSections(); window.onafterprint = null; };
         window.print();
-        document.querySelectorAll('[data-print-hide="1"]').forEach(function(s) {
-          s.style.removeProperty('display');
-        });
+        /* Fallback pour navigateurs sans onafterprint */
+        setTimeout(restoreSections, 2000);
       });
       h1.parentElement.insertBefore(btn, h1);
     });
