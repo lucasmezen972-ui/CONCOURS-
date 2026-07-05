@@ -1,5 +1,5 @@
 /* Service Worker – Concours Attaché Territorial */
-const CACHE = 'concours-v3';
+const CACHE = 'concours-v4';
 
 const PRECACHE = [
   './',

@@ -27,6 +27,13 @@
     '}\n' +
     '</style>\n';
 
+  function videoLink(url, title, desc, tag) {
+    return '<a href="' + url + '" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
+      '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
+      '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">' + title + '</div><div style="font-size:.82rem;color:var(--text-muted)">' + tag + ' · ' + desc + '</div></div>\n' +
+      '</a>\n';
+  }
+
   /* ── BANNER ── */
   html += '<div style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-radius:14px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden">\n' +
     '<div style="position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)"></div>\n' +
@@ -58,6 +65,26 @@
     '<div style="background:#eff6ff;border-radius:10px;padding:16px;border-top:3px solid var(--primary)"><strong>Lundi 6 juillet</strong><br><small style="color:var(--text-muted)">④ Questions jury (lire toutes)<br>⑤ Préparer ma présentation<br>⑥ S\'entraîner à voix haute x3</small></div>\n' +
     '<div style="background:#f0fdf4;border-radius:10px;padding:16px;border-top:3px solid var(--success)"><strong>Mardi 7 juillet (veille)</strong><br><small style="color:var(--text-muted)">⑦ Relire les 10 questions clés<br>⑧ Répéter la présentation<br>⑨ Préparer la tenue & dormir tôt</small></div>\n' +
     '<div style="background:#fff7ed;border-radius:10px;padding:16px;border-top:3px solid #d97706"><strong>Mercredi 8 juillet matin</strong><br><small style="color:var(--text-muted)">⑩ Relire les fiches synthèse<br>⑪ Partir 30 min à l\'avance<br>⑫ Respirer et sourire !</small></div>\n' +
+    '</div>\n' +
+    '<div style="margin-top:16px;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 16px">\n' +
+    '<strong>Ordre conseillé :</strong> 1) présentation personnelle, 2) fiche de poste, 3) questions jury, 4) QCM, 5) vidéos. Ne pas commencer par les vidéos : elles servent à donner du vocabulaire et des exemples, pas à remplacer la révision active.\n' +
+    '</div>\n' +
+    '</div>\n</div>\n';
+
+  /* ── MAIL ET LOGISTIQUE ── */
+  html += '<div class="card" style="border-left:4px solid #d97706">\n' +
+    '<div class="card-header"><h2>✉️ Réponse au mail et logistique</h2><p>À régler avant de réviser : confirmer, préparer les pièces, éviter le stress inutile.</p></div>\n' +
+    '<div class="card-body">\n' +
+    '<h3 style="color:var(--primary);margin-bottom:12px">Réponse courte à envoyer</h3>\n' +
+    '<div style="background:#fff7ed;border-left:4px solid #d97706;border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:16px;line-height:1.7">\n' +
+    'Bonjour,<br><br>Je vous remercie pour votre retour. Je vous confirme ma présence à l&rsquo;entretien du <strong>mercredi 8 juillet 2026 à 11h15</strong>, en Salle R.H. de l&rsquo;Hôtel de la Collectivité à Cluny.<br><br>Concernant ma situation professionnelle actuelle : [indiquer ici type de contrat, durée, échéance éventuelle].<br><br>Cordialement,<br>[Nom Prénom]\n' +
+    '</div>\n' +
+    '<h3 style="color:var(--primary);margin:20px 0 12px">À préparer la veille</h3>\n' +
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px">\n' +
+    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Documents</strong><br><small>Convocation/mail, CV papier, pièce d&rsquo;identité, notes très courtes, stylo.</small></div>\n' +
+    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Trajet</strong><br><small>Repérer Cluny, viser une arrivée 15 à 20 minutes avant 11h15.</small></div>\n' +
+    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Tenue</strong><br><small>Sobre, professionnelle, confortable. Le jury doit voir une posture RH fiable.</small></div>\n' +
+    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Dernière révision</strong><br><small>Présentation 5 min, logiciels, trop-perçus, agrément, CTM article 73.</small></div>\n' +
     '</div>\n' +
     '</div>\n</div>\n';
 
@@ -196,6 +223,40 @@
     '<div style="background:#f5f3ff;border-radius:8px;padding:12px;border-top:3px solid #7c3aed"><strong>Formation obligatoire</strong><br><small>Stage préparatoire avant le premier accueil, puis formation de 240h préparant au diplôme d\'État d\'assistant familial.</small></div>\n' +
     '</div>\n' +
 
+    '</div>\n</div>\n';
+
+  /* ── PARTIE 3 BIS : CIRCUIT DE PAYE ASFAM ── */
+  html += '<div class="card">\n' +
+    '<div class="card-header"><h2>🧾 Partie 3 bis – Circuit de paye ASFAM : ce qu&rsquo;il faut savoir expliquer</h2><p>Le jury peut tester votre logique de gestionnaire, même si vous n&rsquo;avez pas encore utilisé les logiciels CTM.</p></div>\n' +
+    '<div class="card-body">\n' +
+    '<h3 style="color:var(--primary);margin-bottom:12px">Le circuit mensuel en 7 étapes</h3>\n' +
+    '<ol style="line-height:1.75;margin-left:20px">\n' +
+    '<li><strong>Collecte des informations</strong> : arrivées et sorties d&rsquo;enfants, congés, arrêts, suspensions, extensions d&rsquo;agrément, changements de situation.</li>\n' +
+    '<li><strong>Contrôle des sources</strong> : comparaison entre les informations des circonscriptions/AS FAMS, SOLIS et le dossier administratif.</li>\n' +
+    '<li><strong>Saisie RH/paye</strong> : mise à jour dans CIVIL RH des données utiles au calcul de la rémunération.</li>\n' +
+    '<li><strong>Contrôle de cohérence</strong> : nombre d&rsquo;enfants, dates exactes, indemnités d&rsquo;entretien, absence de doublon, cohérence avec l&rsquo;agrément.</li>\n' +
+    '<li><strong>Traitement financier</strong> : articulation avec GRAND ANGLE pour la chaîne comptable et le mandatement.</li>\n' +
+    '<li><strong>Gestion des anomalies</strong> : correction avant paie si possible, régularisation si la paie est déjà partie, information de la hiérarchie.</li>\n' +
+    '<li><strong>Traçabilité</strong> : conserver la justification de la modification, surtout pour un trop-perçu ou une réclamation.</li>\n' +
+    '</ol>\n' +
+    '<div class="info-box"><div class="info-title">Phrase à dire au jury</div>« Sur un poste paye, mon réflexe n&rsquo;est pas de saisir vite : c&rsquo;est de vérifier la donnée source, tracer la modification, puis sécuriser la paie avant validation. »</div>\n' +
+    '<h3 style="color:var(--primary);margin:20px 0 12px">Tableau des anomalies fréquentes</h3>\n' +
+    '<table style="width:100%;border-collapse:collapse;font-size:.88rem">\n' +
+    '<thead><tr style="background:var(--primary);color:#fff"><th style="padding:9px;text-align:left">Anomalie</th><th style="padding:9px;text-align:left">Risque</th><th style="padding:9px;text-align:left">Réflexe attendu</th></tr></thead>\n' +
+    '<tbody>\n' +
+    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)">Sortie d&rsquo;enfant non transmise</td><td style="padding:9px;border-bottom:1px solid var(--border)">Trop-perçu</td><td style="padding:9px;border-bottom:1px solid var(--border)">Vérifier date exacte, corriger, informer et tracer</td></tr>\n' +
+    '<tr style="background:var(--surface-2)"><td style="padding:9px;border-bottom:1px solid var(--border)">Agrément proche de l&rsquo;échéance</td><td style="padding:9px;border-bottom:1px solid var(--border)">Situation administrative fragile</td><td style="padding:9px;border-bottom:1px solid var(--border)">Alerte 6 mois / 3 mois, relance DPMI et suivi tableau</td></tr>\n' +
+    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)">Arrêt maladie transmis tardivement</td><td style="padding:9px;border-bottom:1px solid var(--border)">Paye erronée ou régularisation</td><td style="padding:9px;border-bottom:1px solid var(--border)">Contrôler période, statut de l&rsquo;accueil, impact indemnités</td></tr>\n' +
+    '<tr style="background:var(--surface-2)"><td style="padding:9px;border-bottom:1px solid var(--border)">Données SOLIS / CIVIL RH différentes</td><td style="padding:9px;border-bottom:1px solid var(--border)">Erreur de paie ou dossier incohérent</td><td style="padding:9px;border-bottom:1px solid var(--border)">Ne pas arbitrer seule : demander confirmation et corriger la source</td></tr>\n' +
+    '<tr><td style="padding:9px">Réclamation agressive d&rsquo;un ASFAM</td><td style="padding:9px">Perte de confiance, tension relationnelle</td><td style="padding:9px">Écoute, reformulation, vérification, délai clair de réponse</td></tr>\n' +
+    '</tbody></table>\n' +
+    '<h3 style="color:var(--primary);margin:20px 0 12px">Mini-méthode de réponse en entretien</h3>\n' +
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px">\n' +
+    '<div style="background:#f5f3ff;border-radius:8px;padding:12px;border-top:3px solid #7c3aed"><strong>1. Je qualifie</strong><br><small>Quelle donnée ? Quelle période ? Quel agent ? Quel enfant ?</small></div>\n' +
+    '<div style="background:#eff6ff;border-radius:8px;padding:12px;border-top:3px solid var(--primary)"><strong>2. Je vérifie</strong><br><small>Source fiable : SOLIS, CIVIL RH, dossier, circonscription, DPMI.</small></div>\n' +
+    '<div style="background:#f0fdf4;border-radius:8px;padding:12px;border-top:3px solid var(--success)"><strong>3. Je corrige</strong><br><small>Saisie, régularisation, courrier, échéancier si trop-perçu.</small></div>\n' +
+    '<div style="background:#fff7ed;border-radius:8px;padding:12px;border-top:3px solid #d97706"><strong>4. Je trace</strong><br><small>Note dossier, mail, pièce justificative, contrôle final.</small></div>\n' +
+    '</div>\n' +
     '</div>\n</div>\n';
 
   /* ── PARTIE 4 : LA CTM ── */
@@ -379,6 +440,46 @@
       cat: 'Qualités professionnelles', catColor: '#16a34a',
       q: 'Avez-vous des questions ?',
       r: 'TOUJOURS avoir 2-3 questions préparées. Exemples : (1) « Comment est organisée la montée en compétence sur SOLIS et CIVIL RH à la prise de poste ? Y a-t-il un tutorat prévu ? » (2) « Comment le service gère-t-il les pics d\'activité en fin de mois de paye ? » (3) « Quelle est la taille du portefeuille ASFAM que je gérerais et comment est-il réparti entre les gestionnaires ? » Évitez : les questions sur le salaire ou les congés au premier entretien.'
+    },
+    {
+      cat: 'Technique', catColor: 'var(--primary)',
+      q: 'Comment éviter les erreurs de paye en fin de mois ?',
+      r: 'Mettre en place une routine : liste des changements du mois, comparaison SOLIS/CIVIL RH, contrôle des dates exactes, vérification des agréments et tableau des anomalies. Je privilégie un double contrôle sur les dossiers sensibles : sortie d&rsquo;enfant, suspension, arrêt maladie, reprise, extension d&rsquo;agrément.'
+    },
+    {
+      cat: 'Technique', catColor: 'var(--primary)',
+      q: 'Que faites-vous si deux sources donnent des informations différentes ?',
+      r: 'Je ne choisis pas seule la donnée la plus pratique. Je vérifie la source primaire, je sollicite la circonscription ou la DPMI selon le sujet, je demande une confirmation écrite si nécessaire, puis je corrige les outils pour éviter que l&rsquo;erreur se reproduise.'
+    },
+    {
+      cat: 'Situation', catColor: '#d97706',
+      q: 'Un ASFAM dit ne pas comprendre une retenue sur salaire. Comment répondez-vous ?',
+      r: 'Je reste factuelle : je reprends la période, le motif, le montant, le document de notification et le mode de calcul. Si la retenue est justifiée, j&rsquo;explique avec pédagogie. Si un doute existe, je suspends toute réponse définitive, je vérifie et je reviens avec un délai précis.'
+    },
+    {
+      cat: 'Situation', catColor: '#d97706',
+      q: 'Vous découvrez une erreur favorable à la collectivité mais défavorable à l&rsquo;agent. Que faites-vous ?',
+      r: 'Je la traite avec la même rigueur qu&rsquo;un trop-perçu : vérification, information hiérarchique, correction et régularisation. La fiabilité de la paye protège aussi l&rsquo;agent ; le service public implique équité et transparence.'
+    },
+    {
+      cat: 'RH & Organisation', catColor: 'var(--success)',
+      q: 'Quelle posture adopter avec des assistants familiaux parfois en tension ?',
+      r: 'Écoute, calme, fermeté administrative et respect. Je distingue l&rsquo;émotion de la règle : l&rsquo;ASFAM peut être inquiet car la paye touche son quotidien, mais je dois répondre avec des faits, des délais et une trace.'
+    },
+    {
+      cat: 'RH & Organisation', catColor: 'var(--success)',
+      q: 'Comment montrer que votre Bachelor RH est utile pour ce poste ?',
+      r: 'Je fais le lien avec les compétences concrètes : gestion administrative du personnel, droit social, confidentialité, outils RH, relation agent, organisation, suivi d&rsquo;échéances, contrôle de dossiers et posture professionnelle.'
+    },
+    {
+      cat: 'CTM & Martinique', catColor: '#0ea5e9',
+      q: 'Pourquoi la CTM a-t-elle un rôle central dans ce poste ?',
+      r: 'Parce que la CTM exerce les compétences départementales et régionales. La protection de l&rsquo;enfance relève du bloc social départemental, et la DGA RH porte la gestion employeur des ASFAM : contrat, dossier administratif, rémunération, congés et régularisations.'
+    },
+    {
+      cat: 'Qualités professionnelles', catColor: '#16a34a',
+      q: 'Si vous ne connaissez pas une règle pendant l&rsquo;entretien, que dites-vous ?',
+      r: 'Il vaut mieux être honnête et professionnel : « Je ne veux pas vous donner une réponse approximative ; mon réflexe serait de vérifier le texte, la procédure interne et de sécuriser la réponse avant action. » Cela montre de la rigueur, pas une faiblesse.'
     }
   ];
 
@@ -417,54 +518,29 @@
 
   /* ── PARTIE 8 : YOUTUBE ── */
   html += '<div class="card">\n' +
-    '<div class="card-header"><h2>▶️ Partie 8 – Ressources vidéo pour approfondir</h2><p>À regarder pendant vos révisions – liens YouTube</p></div>\n' +
+    '<div class="card-header"><h2>▶️ Partie 8 – Ressources vidéo précises</h2><p>Liens directs vers des vidéos. À utiliser après la lecture active, pas à la place.</p></div>\n' +
     '<div class="card-body">\n' +
     '<div style="display:flex;flex-direction:column;gap:12px">\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=assistant+familial+accueil+enfant+placement+ASE" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">Le rôle de l\'assistant familial et de l\'ASE</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "assistant familial accueil enfant placement ASE" · Durée ~10 min</div></div>\n' +
-    '</a>\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=assistant+familial+agrement+PMI+formation+statut" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">L\'agrément PMI et le statut de l\'assistant familial</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "assistant familial agrément PMI formation statut" · Durée ~8 min</div></div>\n' +
-    '</a>\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=entretien+recrutement+collectivite+territoriale+jury+conseils" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">Conseils pour réussir un entretien de recrutement en collectivité</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "entretien recrutement collectivité territoriale jury conseils" · Durée ~15 min</div></div>\n' +
-    '</a>\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=CNFPT+formation+fonction+publique+territoriale" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">Chaîne CNFPT – Formation FPT officielle</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "CNFPT formation fonction publique territoriale" · Chaîne officielle du CNFPT</div></div>\n' +
-    '</a>\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=gestion+paie+agents+territoriaux+CIVIL+RH+Berger+Levrault" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">La paye des agents territoriaux – Comprendre CIVIL RH</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "gestion paie agents territoriaux CIVIL RH Berger-Levrault" · Durée ~20 min</div></div>\n' +
-    '</a>\n' +
-
-    '<a href="https://www.youtube.com/results?search_query=méthode+STAR+entretien+motivation+exemples" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:14px 18px;background:#fff;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow=\'var(--shadow-md)\'" onmouseout="this.style.boxShadow=\'none\'">\n' +
-    '  <div style="width:44px;height:44px;background:#dc2626;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem">▶️</div>\n' +
-    '  <div><div style="font-weight:700;color:var(--text);margin-bottom:3px">La méthode STAR pour répondre aux mises en situation</div><div style="font-size:.82rem;color:var(--text-muted)">YouTube · Recherche : "méthode STAR entretien motivation exemples" · Durée ~7 min</div></div>\n' +
-    '</a>\n' +
-
+    videoLink('https://www.youtube.com/watch?v=5k9q1xBgpFk', 'Assistants familiaux : Rencontre avec Aimie', 'Comprendre le quotidien et le vocabulaire du métier.', 'Priorité 1 · ASFAM') +
+    videoLink('https://www.youtube.com/watch?v=1411_3SQjIs', 'Assistants familiaux : le rôle des familles d&rsquo;accueil', 'À regarder pour expliquer la place de l&rsquo;accueil familial dans la protection de l&rsquo;enfance.', 'Priorité 1 · Protection de l&rsquo;enfance') +
+    videoLink('https://www.youtube.com/watch?v=G8afWWH7SL4', 'Devenir famille d&rsquo;accueil : métier raconté par Cédric', 'Témoignage utile pour comprendre la posture et les contraintes du métier.', 'Priorité 2 · Témoignage') +
+    videoLink('https://www.youtube.com/watch?v=KCSIzh7cvbw', 'Le recrutement dans la fonction publique territoriale ?', 'À regarder pour préparer la posture devant un jury de collectivité.', 'Priorité 2 · Entretien FPT') +
+    videoLink('https://www.youtube.com/watch?v=zttied8qWt4', 'Quelles questions attendre lors de l&rsquo;oral avec le jury ?', 'Bon complément pour anticiper les questions classiques d&rsquo;entretien.', 'Priorité 2 · Jury') +
+    videoLink('https://www.youtube.com/watch?v=YiayBBY2eEk', 'Les ressources humaines dans la fonction publique territoriale', 'Vision large RH territoriale : utile pour relier le poste ASFAM à la DGA RH.', 'Priorité 3 · RH publique') +
     '</div>\n' +
     '<div class="info-box" style="margin-top:16px;background:#fff7ed;border-left-color:#d97706"><div class="info-title">💡 Comment utiliser ces liens</div>\n' +
-    'Ces liens ouvrent une recherche YouTube. Regardez 1 à 2 vidéos par thème, de préférence les plus courtes et les mieux notées. Ne passez pas plus de 2h sur les vidéos : la lecture active de ce cours est plus efficace !\n' +
+    'Ces liens ouvrent directement des vidéos. Regardez en priorité les deux premières, puis notez 3 phrases réutilisables à l&rsquo;oral : rôle de l&rsquo;ASFAM, lien avec l&rsquo;ASE, posture attendue d&rsquo;un service RH.\n' +
     '</div>\n' +
     '</div>\n</div>\n';
 
   /* ── QCM DE PRÉPARATION ── */
   html += '<div class="card" id="asfam-qcm-card" style="border-left:4px solid #7c3aed">\n' +
-    '<div class="card-header"><h2>🧠 QCM de préparation</h2><p>20 questions sur la CTM et votre poste · Correction et aide à la révision immédiate</p></div>\n' +
+    '<div class="card-header"><h2>🧠 QCM de préparation</h2><p>40 questions sur la CTM, le poste et les mises en situation · Correction et aide à la révision immédiate</p></div>\n' +
     '<div class="card-body">\n' +
     '  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">\n' +
-    '    <button onclick="asfamQcmStart(\'ctm\')" style="padding:10px 20px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🏛️ CTM (10 questions)</button>\n' +
-    '    <button onclick="asfamQcmStart(\'poste\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">💼 Poste ASFAM (10 questions)</button>\n' +
-    '    <button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:linear-gradient(135deg,#7c3aed,var(--primary));color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🎯 Tout (20 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'ctm\')" style="padding:10px 20px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🏛️ CTM (18 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'poste\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">💼 Poste ASFAM (22 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:linear-gradient(135deg,#7c3aed,var(--primary));color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🎯 Tout (40 questions)</button>\n' +
     '  </div>\n' +
     '  <div id="asfam-qcm-zone" style="min-height:60px"><p style="color:var(--text-muted);font-style:italic">Choisissez un thème ci-dessus pour commencer le QCM.</p></div>\n' +
     '</div>\n</div>\n';
@@ -543,6 +619,46 @@
         c:1, expl:'La CTM emploie environ 7 000 agents, ce qui en fait l\'un des plus grands employeurs de Martinique. Cela inclut les agents titulaires et contractuels des deux collectivités fusionnées.',
         rev:'Revoir : Partie 4 de cet onglet – "La CTM en chiffres"' },
 
+      { cat:'ctm', q:'Quelle compétence de la CTM justifie son rôle dans les dossiers ASFAM ?',
+        opts:['La police nationale','La protection de l\'enfance et l\'aide sociale à l\'enfance','La diplomatie','La justice pénale'],
+        c:1, expl:'La CTM exerce les compétences sociales de niveau départemental, dont la protection de l\'enfance et l\'ASE. Les ASFAM interviennent dans ce cadre.',
+        rev:'Revoir : Partie 4 – "CTM, ASE et compétences sociales"' },
+
+      { cat:'ctm', q:'Quel est le bon réflexe si le jury demande la différence entre État et CTM ?',
+        opts:['Dire que la CTM dépend hiérarchiquement du préfet','Expliquer la décentralisation : la CTM est une collectivité distincte, contrôlée a posteriori par le préfet','Dire que ce sont deux mots pour la même administration','Dire que le préfet signe les bulletins de salaire ASFAM'],
+        c:1, expl:'La CTM est une collectivité territoriale avec personnalité morale, organes élus et compétences propres. Le préfet exerce le contrôle de légalité, pas une tutelle hiérarchique.',
+        rev:'Revoir : décentralisation, contrôle de légalité et libre administration.' },
+
+      { cat:'ctm', q:'Quel organe conduit l\'action administrative de la CTM ?',
+        opts:['Le Conseil exécutif','Le Sénat','Le tribunal administratif','La DDFIP uniquement'],
+        c:0, expl:'Le Conseil exécutif conduit l\'action de la Collectivité Territoriale de Martinique. Son président est aussi chef des services de la collectivité.',
+        rev:'Revoir : Assemblée de Martinique vs Conseil exécutif.' },
+
+      { cat:'ctm', q:'Pourquoi la DGA RH est-elle concernée par les ASFAM ?',
+        opts:['Parce que les ASFAM sont des agents à gérer administrativement et à rémunérer','Parce que la DGA RH décide seule du placement des enfants','Parce que la DGA RH remplace la DPMI','Parce que la DGA RH est une juridiction'],
+        c:0, expl:'Le poste relève de la gestion employeur : dossiers, contrats, paye, congés, régularisations, relation administrative avec les ASFAM.',
+        rev:'Revoir : rattachement DGA RH et limites du poste.' },
+
+      { cat:'ctm', q:'Quel partenaire interne est le plus directement lié aux agréments ?',
+        opts:['DPMI','DDFIP','Cabinet du président','Service communication'],
+        c:0, expl:'La DPMI est liée à l\'instruction, au suivi, au renouvellement et aux décisions concernant les agréments des assistants familiaux.',
+        rev:'Revoir : DPMI, agrément, renouvellement, extension et retrait.' },
+
+      { cat:'ctm', q:'Quel partenaire apporte les informations de terrain sur les accueils ?',
+        opts:['Circonscriptions / AS FAMS','Archives nationales','Direction des routes','Sénat'],
+        c:0, expl:'Les circonscriptions et AS FAMS suivent les situations sur le terrain et transmettent les changements utiles à la gestion administrative et paye.',
+        rev:'Revoir : circuit d\'information entre terrain, SOLIS et paye.' },
+
+      { cat:'ctm', q:'Quelle réponse montre une bonne posture territoriale ?',
+        opts:['Je veux juste un poste stable','Je souhaite contribuer au service public martiniquais, avec rigueur RH et compréhension des enjeux sociaux locaux','Je ne connais pas la CTM','Je préfère ne pas travailler avec les services sociaux'],
+        c:1, expl:'Le jury attend une motivation professionnelle, territoriale et liée au poste, pas seulement une recherche de stabilité.',
+        rev:'Revoir : motivation CTM, service public et protection de l\'enfance.' },
+
+      { cat:'ctm', q:'Quel point local peut être cité prudemment sur la protection de l\'enfance en Martinique ?',
+        opts:['Aucun enjeu social spécifique','Précarité, isolement de certaines familles, besoin de familles d\'accueil et continuité du service public','La CTM ne s\'occupe pas du social','La Martinique n\'a pas de compétence ASE'],
+        c:1, expl:'Il faut rester prudent mais montrer que l\'on comprend les réalités locales : précarité, familles vulnérables, besoin de professionnels fiables et suivis.',
+        rev:'Revoir : enjeux locaux et formulation mesurée devant un jury.' },
+
       /* ---- POSTE ASFAM ---- */
       { cat:'poste', q:'Que signifie le sigle ASFAM ?',
         opts:['Agent Spécialisé de la Fonction Administrative en Martinique','Assistant(e) Familial(e)','Associé Fonctionnaire de l\'Action Médico-sociale','Accompagnateur Social et Familial en Martinique'],
@@ -592,7 +708,67 @@
       { cat:'poste', q:'Combien d\'heures de formation les ASFAM doivent-ils effectuer dans les 3 ans suivant leur premier accueil ?',
         opts:['60 heures','120 heures','240 heures','300 heures'],
         c:2, expl:'La loi du 27 juin 2005 impose 240 heures de formation obligatoire pour les ASFAM dans les 3 ans suivant la première prise en charge d\'un enfant. Elle peut être dispensée par le CNFPT ou un organisme agréé.',
-        rev:'Revoir : Partie 2 de cet onglet – "La formation obligatoire des ASFAM"' }
+        rev:'Revoir : Partie 2 de cet onglet – "La formation obligatoire des ASFAM"' },
+
+      { cat:'poste', q:'Quel est le meilleur réflexe avant de modifier une paye ASFAM ?',
+        opts:['Saisir immédiatement pour aller vite','Vérifier la donnée source et la date exacte','Attendre la réclamation de l\'agent','Supprimer le dossier'],
+        c:1, expl:'La paye exige de fiabiliser la donnée avant saisie : source, période, justification, cohérence avec SOLIS/CIVIL RH et dossier administratif.',
+        rev:'Revoir : Partie 3 bis – circuit de paye en 7 étapes.' },
+
+      { cat:'poste', q:'Un enfant quitte le domicile le 15 du mois. Quelle donnée est indispensable ?',
+        opts:['La couleur du dossier','La date exacte de sortie et le type d\'impact sur rémunération/indemnités','Le nom du maire','Le nombre d\'agents CTM'],
+        c:1, expl:'La date exacte conditionne le prorata, les indemnités et la prévention des trop-perçus. C\'est une donnée sensible à vérifier avec la source terrain.',
+        rev:'Revoir : sortie d\'enfant, prorata, indemnités, trop-perçu.' },
+
+      { cat:'poste', q:'Pourquoi faut-il tracer une correction de paye ?',
+        opts:['Pour alourdir le dossier','Pour justifier la décision, répondre à une réclamation et sécuriser le contrôle interne','Parce que le logiciel l\'interdit','Pour éviter de parler à l\'agent'],
+        c:1, expl:'La traçabilité protège l\'agent, le service et la collectivité. Elle permet de comprendre pourquoi une paie a été modifiée.',
+        rev:'Revoir : traçabilité et contrôle interne.' },
+
+      { cat:'poste', q:'Que faire si SOLIS et CIVIL RH ne concordent pas ?',
+        opts:['Choisir au hasard','Prendre toujours SOLIS sans vérifier','Contrôler la source, demander confirmation et corriger les outils','Ignorer l\'écart'],
+        c:2, expl:'Un écart entre outils est un signal d\'alerte. Il faut identifier la source fiable, confirmer et corriger pour éviter l\'erreur de paie.',
+        rev:'Revoir : circuit SOLIS / CIVIL RH / terrain.' },
+
+      { cat:'poste', q:'Quelle information relève de la confidentialité ?',
+        opts:['La météo','Les éléments du dossier de l\'enfant placé et la situation familiale','La date de l\'entretien','Le nom du logiciel RH'],
+        c:1, expl:'Les dossiers ASE et les situations familiales sont sensibles. Le gestionnaire paye doit se limiter aux informations nécessaires à sa mission.',
+        rev:'Revoir : secret, discrétion professionnelle, données sensibles.' },
+
+      { cat:'poste', q:'Comment répondre à un ASFAM mécontent au téléphone ?',
+        opts:['Couper court immédiatement','Écouter, reformuler, vérifier le dossier, donner un délai de réponse','Promettre un paiement sans vérifier','Accuser la DPMI'],
+        c:1, expl:'La bonne posture combine écoute et rigueur. Il faut rassurer sans promettre une correction avant contrôle.',
+        rev:'Revoir : posture relationnelle et gestion de réclamation.' },
+
+      { cat:'poste', q:'Quel document ou suivi aide à anticiper les renouvellements d\'agrément ?',
+        opts:['Un tableau de bord des échéances','Une note sans date','Un simple souvenir oral','Un message WhatsApp personnel'],
+        c:0, expl:'Un tableau de bord avec alertes à 6 mois et 3 mois permet d\'anticiper les renouvellements et d\'éviter les ruptures administratives.',
+        rev:'Revoir : suivi des agréments et organisation du portefeuille.' },
+
+      { cat:'poste', q:'Quelle phrase est la plus professionnelle si elle ne connaît pas encore SOLIS ?',
+        opts:['Je ne saurai pas faire','Je n\'ai pas encore pratiqué SOLIS, mais je maîtrise la logique des outils RH et je sais apprendre rapidement avec procédure et tutorat','Je préfère ne pas utiliser de logiciel','Je ferai tout sur papier'],
+        c:1, expl:'Le jury n\'attend pas forcément une maîtrise préalable de chaque outil, mais une capacité d\'apprentissage, de méthode et de rigueur.',
+        rev:'Revoir : réponse modèle sur les logiciels.' },
+
+      { cat:'poste', q:'Que signifie gérer un portefeuille ASFAM ?',
+        opts:['Gérer uniquement les appels téléphoniques','Suivre un ensemble d\'agents : dossiers, échéances, paye, congés, anomalies et relation administrative','Gérer un budget personnel','Décider des placements judiciaires'],
+        c:1, expl:'Le portefeuille désigne l\'ensemble des dossiers ASFAM confiés au gestionnaire, avec suivi administratif et paye.',
+        rev:'Revoir : organisation des dossiers et priorisation.' },
+
+      { cat:'poste', q:'Quelle est la limite du gestionnaire paye par rapport à l\'ASE ?',
+        opts:['Il décide des placements','Il gère l\'impact administratif et paye, mais ne décide pas du placement des enfants','Il remplace le juge','Il donne les informations judiciaires aux ASFAM'],
+        c:1, expl:'La décision de placement relève de l\'ASE ou de la justice. Le gestionnaire traite les conséquences administratives et paye.',
+        rev:'Revoir : rôle administratif vs rôle socio-éducatif.' },
+
+      { cat:'poste', q:'Quelle qualité est la plus importante sur un trop-perçu ?',
+        opts:['Improvisation','Rigueur de calcul et communication claire','Rapidité sans contrôle','Silence envers l\'agent'],
+        c:1, expl:'Un trop-perçu est sensible financièrement et relationnellement. Il faut calculer juste, expliquer, notifier et suivre.',
+        rev:'Revoir : procédure de récupération des trop-perçus.' },
+
+      { cat:'poste', q:'Quelle réponse montre une bonne compréhension du poste ?',
+        opts:['Je veux seulement saisir des bulletins','Je dois sécuriser les dossiers ASFAM, fiabiliser la paye, respecter la confidentialité et travailler avec les partenaires internes','Je n\'aurai pas de contacts avec les agents','La paye est automatique donc il n\'y a rien à contrôler'],
+        c:1, expl:'Le poste n\'est pas une simple saisie. Il combine dossier administratif, outils, contrôle, relation agent, confidentialité et coordination.',
+        rev:'Revoir : phrase de positionnement du début de l\'onglet.' }
     ];
 
     var _state = { qs: [], cur: 0, wrong: [], score: 0, cat: '' };
