@@ -1,5 +1,5 @@
 /* Service Worker – Concours Attaché Territorial */
-const CACHE = 'concours-v2';
+const CACHE = 'concours-v3';
 
 const PRECACHE = [
   './',
@@ -46,6 +46,20 @@ self.addEventListener('fetch', e => {
 
   /* Never intercept KVdb API calls — always network */
   if (url.includes('kvdb.io')) return;
+
+  /* App shell navigations — network first so new tabs/scripts appear after deploy */
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request).then(r => {
+        if (r && r.status === 200) {
+          const c = r.clone();
+          caches.open(CACHE).then(cache => cache.put('./index.html', c));
+        }
+        return r;
+      }).catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
 
   /* Google Fonts — network first, fall back to cache */
   if (url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com')) {
