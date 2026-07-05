@@ -22,6 +22,7 @@ const PRECACHE = [
   './content/examen-blanc.js',
   './content/mises-en-situation.js',
   './content/quiz-supplements.js',
+  './content/entretien-asfam.js',
 ];
 
 self.addEventListener('install', e => {
