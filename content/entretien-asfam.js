@@ -18,7 +18,14 @@
     return '<span style="font-size:2rem;font-weight:900;color:#fff">' + d + 'j ' + h + 'h ' + m + 'm</span>';
   }
 
-  var html = '<section id="entretien-asfam" class="page-section">\n';
+  var html = '<section id="entretien-asfam" class="page-section">\n' +
+    '<style>\n' +
+    '@media (max-width: 700px) {\n' +
+    '  #entretien-asfam div[style*="display:grid"] { grid-template-columns: 1fr !important; }\n' +
+    '  #entretien-asfam table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }\n' +
+    '  #entretien-asfam h1 { overflow-wrap: anywhere; }\n' +
+    '}\n' +
+    '</style>\n';
 
   /* ── BANNER ── */
   html += '<div style="background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border-radius:14px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden">\n' +
@@ -42,18 +49,15 @@
     '</div>\n' +
     '</div>\n';
 
-  /* ── LIVE TIMER UPDATE ── */
-  html += '<script>\n(function(){\n  var el=document.getElementById("asfam-countdown");\n  if(!el) return;\n  setInterval(function(){\n    var target=new Date("2026-07-08T11:15:00"),now=new Date(),diff=target-now;\n    if(diff<=0){el.innerHTML=\'<span style="color:#4ade80;font-weight:700">✅ Bonne chance !</span>\';return;}\n    var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000);\n    el.innerHTML=\'<span style="font-size:2rem;font-weight:900;color:#fff">\'+d+\'j \'+h+\'h \'+m+\'m</span>\';\n  },30000);\n})();\n<\/script>\n';
-
   /* ── PLAN DE RÉVISION ── */
   html += '<div class="card" style="border-left:4px solid #7c3aed">\n' +
     '<div class="card-header"><h2>🗓️ Plan de révision express (3 jours)</h2></div>\n' +
     '<div class="card-body">\n' +
     '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">\n' +
-    '<div style="background:#f5f3ff;border-radius:10px;padding:16px;border-top:3px solid #7c3aed"><strong>Samedi 5 juillet</strong><br><small style="color:var(--text-muted)">① Le poste & les ASFAM<br>② La paye ASFAM<br>③ La CTM & DGA RH</small></div>\n' +
-    '<div style="background:#eff6ff;border-radius:10px;padding:16px;border-top:3px solid var(--primary)"><strong>Dimanche 6 juillet</strong><br><small style="color:var(--text-muted)">④ Questions jury (lire toutes)<br>⑤ Préparer ma présentation<br>⑥ S\'entraîner à voix haute x3</small></div>\n' +
-    '<div style="background:#f0fdf4;border-radius:10px;padding:16px;border-top:3px solid var(--success)"><strong>Lundi 7 juillet (veille)</strong><br><small style="color:var(--text-muted)">⑦ Relire les 10 questions clés<br>⑧ Répéter la présentation<br>⑨ Préparer la tenue & dormir tôt</small></div>\n' +
-    '<div style="background:#fff7ed;border-radius:10px;padding:16px;border-top:3px solid #d97706"><strong>Mardi 8 juillet matin</strong><br><small style="color:var(--text-muted)">⑩ Relire les fiches synthèse<br>⑪ Partir 30 min à l\'avance<br>⑫ Respirer et sourire !</small></div>\n' +
+    '<div style="background:#f5f3ff;border-radius:10px;padding:16px;border-top:3px solid #7c3aed"><strong>Dimanche 5 juillet</strong><br><small style="color:var(--text-muted)">① Le poste & les ASFAM<br>② La paye ASFAM<br>③ La CTM & DGA RH</small></div>\n' +
+    '<div style="background:#eff6ff;border-radius:10px;padding:16px;border-top:3px solid var(--primary)"><strong>Lundi 6 juillet</strong><br><small style="color:var(--text-muted)">④ Questions jury (lire toutes)<br>⑤ Préparer ma présentation<br>⑥ S\'entraîner à voix haute x3</small></div>\n' +
+    '<div style="background:#f0fdf4;border-radius:10px;padding:16px;border-top:3px solid var(--success)"><strong>Mardi 7 juillet (veille)</strong><br><small style="color:var(--text-muted)">⑦ Relire les 10 questions clés<br>⑧ Répéter la présentation<br>⑨ Préparer la tenue & dormir tôt</small></div>\n' +
+    '<div style="background:#fff7ed;border-radius:10px;padding:16px;border-top:3px solid #d97706"><strong>Mercredi 8 juillet matin</strong><br><small style="color:var(--text-muted)">⑩ Relire les fiches synthèse<br>⑪ Partir 30 min à l\'avance<br>⑫ Respirer et sourire !</small></div>\n' +
     '</div>\n' +
     '</div>\n</div>\n';
 
@@ -123,8 +127,8 @@
     '<table style="width:100%;border-collapse:collapse;font-size:.88rem">\n' +
     '<thead><tr style="background:var(--primary);color:#fff"><th style="padding:9px">Texte</th><th style="padding:9px">Contenu essentiel</th></tr></thead>\n' +
     '<tbody>\n' +
-    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Loi n°2005-706<br>du 27 juin 2005</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Loi fondatrice relative aux assistants maternels et familiaux. Crée le statut professionnel de l\'assistant familial, instaure la formation obligatoire (300h), définit les conditions d\'agrément.</td></tr>\n' +
-    '<tr style="background:var(--surface-2)"><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>CASF Art. L421-1<br>et suivants</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Code de l\'Action Sociale et des Familles : droit à l\'agrément, conditions d\'exercice, obligations de l\'employeur (le département / la CTM pour la Martinique).</td></tr>\n' +
+    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Loi n°2005-706<br>du 27 juin 2005</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Loi fondatrice relative aux assistants maternels et familiaux. Elle a structuré le statut professionnel, l\'agrément, la formation et les relations de travail.</td></tr>\n' +
+    '<tr style="background:var(--surface-2)"><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>CASF Art. L421-2<br>et suivants</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Code de l\'Action Sociale et des Familles : l\'article L421-2 définit l\'assistant familial ; les articles suivants encadrent l\'agrément, la formation et les obligations.</td></tr>\n' +
     '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Décret n°2006-627<br>du 29 mai 2006</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Modalités d\'agrément, formation, carte professionnelle. Fixe les conditions d\'évaluation et de renouvellement tous les 5 ans.</td></tr>\n' +
     '<tr style="background:var(--surface-2)"><td style="padding:9px"><strong>Convention collective<br>nationale 2004</strong></td><td style="padding:9px">CCN des assistants maternels du particulier employeur. Pour les ASFAM relevant d\'une collectivité : statut sui generis (ni fonctionnaire, ni salarié de droit commun).</td></tr>\n' +
     '</tbody></table>\n' +
@@ -134,7 +138,7 @@
     '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Qui délivre ?</strong><br><small>La <strong>PMI</strong> (Protection Maternelle et Infantile) – en Martinique, la DPMI sous la CTM</small></div>\n' +
     '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Durée</strong><br><small><strong>5 ans</strong>, renouvelable. Votre rôle : anticiper les renouvellements et lancer la procédure à temps</small></div>\n' +
     '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Capacité d\'accueil</strong><br><small>De <strong>1 à 3 enfants</strong> simultanément (jusqu\'à 4 par dérogation exceptionnelle)</small></div>\n' +
-    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Conditions</strong><br><small>Logement adapté, enquête sociale, évaluation psychologique, casier judiciaire vierge, formation 300h</small></div>\n' +
+    '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Conditions</strong><br><small>Garanties d\'accueil, logement adapté, évaluation, bulletin n°2 du casier judiciaire et formation obligatoire (stage préparatoire puis 240h)</small></div>\n' +
     '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Extension</strong><br><small>L\'ASFAM peut demander à accueillir +1 enfant → procédure spécifique DPMI</small></div>\n' +
     '<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px"><strong>Retrait</strong><br><small>La PMI peut retirer l\'agrément si les conditions ne sont plus remplies → fin de l\'emploi</small></div>\n' +
     '</div>\n' +
@@ -158,7 +162,7 @@
     '<table style="width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:20px">\n' +
     '<thead><tr style="background:var(--primary);color:#fff"><th style="padding:9px">Composante</th><th style="padding:9px">Description</th><th style="padding:9px">Particularité</th></tr></thead>\n' +
     '<tbody>\n' +
-    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Salaire de base</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Basé sur le SMIC ou équivalent, pour 1 enfant accueilli (45h hebdomadaires)</td><td style="padding:9px;border-bottom:1px solid var(--border)">Varie selon le nombre d\'enfants accueillis simultanément</td></tr>\n' +
+    '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Rémunération garantie</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Pour le premier accueil, la part minimale ne peut pas être inférieure au SMIC mensuel</td><td style="padding:9px;border-bottom:1px solid var(--border)">Les accueils supplémentaires ont aussi un minimum réglementaire, calculé en référence au SMIC</td></tr>\n' +
     '<tr style="background:var(--surface-2)"><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Indemnité d\'entretien</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Couvre les frais liés à l\'accueil (nourriture, habillement, activités) par enfant et par jour</td><td style="padding:9px;border-bottom:1px solid var(--border)">Exonérée de cotisations sociales dans certaines limites</td></tr>\n' +
     '<tr><td style="padding:9px;border-bottom:1px solid var(--border)"><strong>Indemnité de sujétion spécifique</strong></td><td style="padding:9px;border-bottom:1px solid var(--border)">Majoration pour accueil pendant les week-ends, jours fériés, nuits</td><td style="padding:9px;border-bottom:1px solid var(--border)">Calculée selon les jours effectivement travaillés</td></tr>\n' +
     '<tr style="background:var(--surface-2)"><td style="padding:9px"><strong>Indemnités de congés</strong></td><td style="padding:9px">Rémunération du congé annuel (30 jours de CP) et des congés de formation</td><td style="padding:9px">Complexité : calcul proratisé selon périodes d\'accueil</td></tr>\n' +
@@ -189,7 +193,7 @@
     '<div style="background:#f0fdf4;border-radius:8px;padding:12px;border-top:3px solid var(--success)"><strong>Congés annuels</strong><br><small>2,5 jours par mois d\'accueil effectif. Pendant les congés de l\'ASFAM, l\'enfant peut être placé en hébergement temporaire (famille relais).</small></div>\n' +
     '<div style="background:#eff6ff;border-radius:8px;padding:12px;border-top:3px solid var(--primary)"><strong>Arrêt maladie</strong><br><small>Signalement immédiat requis. L\'enfant est retiré du domicile → fin de l\'indemnité d\'entretien → paye modifiée.</small></div>\n' +
     '<div style="background:#fff7ed;border-radius:8px;padding:12px;border-top:3px solid #d97706"><strong>Maternité/paternité</strong><br><small>Droits identiques aux agents contractuels. La CTM verse la rémunération, remboursée par la CPAM.</small></div>\n' +
-    '<div style="background:#f5f3ff;border-radius:8px;padding:12px;border-top:3px solid #7c3aed"><strong>Formation obligatoire</strong><br><small>300h de formation initiale. L\'ASFAM est rémunéré pendant cette formation prise en charge par la CTM.</small></div>\n' +
+    '<div style="background:#f5f3ff;border-radius:8px;padding:12px;border-top:3px solid #7c3aed"><strong>Formation obligatoire</strong><br><small>Stage préparatoire avant le premier accueil, puis formation de 240h préparant au diplôme d\'État d\'assistant familial.</small></div>\n' +
     '</div>\n' +
 
     '</div>\n</div>\n';
@@ -227,7 +231,7 @@
     '</div>\n' +
 
     '<div class="info-box"><div class="info-title">🇲🇶 Pourquoi la CTM et pas un Département ?</div>\n' +
-    'La Martinique est une <strong>collectivité unique</strong> issue de la fusion Département + Région (loi du 27 juillet 2011, effective au 18 décembre 2015). La CTM exerce donc à la fois les compétences du Département (ASE, PMI, RSA, routes) ET de la Région (formation pro, lycées, FEDER). C\'est l\'article 73 de la Constitution et la loi organique n°2011-884 qui organisent ce statut unique en France métropolitaine.\n' +
+    'La Martinique est une <strong>collectivité unique</strong> issue de la fusion Département + Région (lois du 27 juillet 2011, effective en décembre 2015). La CTM exerce donc à la fois les compétences du Département (ASE, PMI, RSA, routes) ET de la Région (formation pro, lycées, FEDER). Elle est régie par l\'article 73 de la Constitution, avec la loi ordinaire n°2011-884 et la loi organique n°2011-883 du 27 juillet 2011.\n' +
     '</div>\n' +
     '</div>\n</div>\n';
 
@@ -284,7 +288,7 @@
     {
       cat: 'Motivation', catColor: '#7c3aed',
       q: 'Que savez-vous des Assistants Familiaux ?',
-      r: 'Professionnel agréé par la PMI (DPMI en Martinique) qui accueille des enfants confiés par l\'ASE à son domicile. Contrat de travail de droit public avec la CTM. Rémunération spécifique : salaire de base + indemnité d\'entretien + sujétions. Cadre : loi 27 juin 2005, CASF art. L421-1. Agrément valable 5 ans, renouvelable, pour 1 à 3 enfants.'
+      r: 'Professionnel agréé par la PMI (DPMI en Martinique) qui accueille des enfants confiés par l\'ASE à son domicile. Contrat de travail de droit public avec la CTM. Rémunération spécifique : rémunération garantie + indemnité d\'entretien + sujétions éventuelles. Cadre : loi du 27 juin 2005, CASF art. L421-2. Agrément valable 5 ans, renouvelable, pour 1 à 3 enfants en principe.'
     },
     {
       cat: 'Motivation', catColor: '#7c3aed',
@@ -401,11 +405,11 @@
     '<div style="background:var(--primary-50);border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--primary)">2005</div><div style="font-size:.8rem;color:var(--text-muted)">Loi fondatrice<br>assistants familiaux</div></div>\n' +
     '<div style="background:#f5f3ff;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:#7c3aed">5 ans</div><div style="font-size:.8rem;color:var(--text-muted)">Durée de l\'agrément<br>PMI, renouvelable</div></div>\n' +
     '<div style="background:#f0fdf4;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--success)">1 à 3</div><div style="font-size:.8rem;color:var(--text-muted)">Enfants maximum<br>par ASFAM</div></div>\n' +
-    '<div style="background:#fff7ed;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:#d97706">300h</div><div style="font-size:.8rem;color:var(--text-muted)">Formation initiale<br>obligatoire</div></div>\n' +
+    '<div style="background:#fff7ed;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:#d97706">240h</div><div style="font-size:.8rem;color:var(--text-muted)">Formation au diplôme<br>+ stage préparatoire</div></div>\n' +
     '<div style="background:var(--primary-50);border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--primary)">2015</div><div style="font-size:.8rem;color:var(--text-muted)">Création de la CTM<br>(18 décembre)</div></div>\n' +
     '<div style="background:#f5f3ff;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:#7c3aed">51</div><div style="font-size:.8rem;color:var(--text-muted)">Conseillers<br>Assemblée de Martinique</div></div>\n' +
     '<div style="background:#f0fdf4;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--success)">Art. 73</div><div style="font-size:.8rem;color:var(--text-muted)">Constitution – statut<br>DROM (Martinique)</div></div>\n' +
-    '<div style="background:#fef2f2;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--danger)">L421-1</div><div style="font-size:.8rem;color:var(--text-muted)">CASF – article clé<br>sur les ASFAM</div></div>\n' +
+    '<div style="background:#fef2f2;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--danger)">L421-2</div><div style="font-size:.8rem;color:var(--text-muted)">CASF – définition<br>assistant familial</div></div>\n' +
     '<div style="background:#fff7ed;border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:#d97706">2 ans</div><div style="font-size:.8rem;color:var(--text-muted)">Délai de prescription<br>remboursement trop-perçu</div></div>\n' +
     '<div style="background:var(--primary-50);border-radius:8px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:900;color:var(--primary)">3</div><div style="font-size:.8rem;color:var(--text-muted)">Logiciels clés :<br>SOLIS · CIVIL RH · GRAND ANGLE</div></div>\n' +
     '</div>\n' +
@@ -478,6 +482,13 @@
   var container = document.querySelector('.main-content');
   if (container && !document.getElementById('entretien-asfam')) {
     container.insertAdjacentHTML('beforeend', html);
+    var countdownTimer = document.getElementById('asfam-countdown');
+    if (countdownTimer) {
+      countdownTimer.innerHTML = buildCountdown();
+      setInterval(function () {
+        countdownTimer.innerHTML = buildCountdown();
+      }, 30000);
+    }
 
     /* ── QCM ENGINE ── */
     var _QCM = [
@@ -518,8 +529,8 @@
         rev:'Revoir : Partie 4 de cet onglet – "Structure et rôle de la CTM"' },
 
       { cat:'ctm', q:'Quel texte a créé la Collectivité Territoriale de Martinique ?',
-        opts:['Loi du 13 août 2004','Loi organique du 27 juillet 2011','Ordonnance du 7 janvier 2016','Loi du 3 août 2018'],
-        c:1, expl:'La CTM a été créée par la loi organique n°2011-883 du 27 juillet 2011. Elle fait suite au référendum du 24 janvier 2010 où les Martiniquais ont voté pour une collectivité unique.',
+        opts:['Loi du 13 août 2004','Lois du 27 juillet 2011 relatives aux collectivités de Guyane et de Martinique','Ordonnance du 7 janvier 2016','Loi du 3 août 2018'],
+        c:1, expl:'La CTM repose sur les textes du 27 juillet 2011 : loi ordinaire n°2011-884 et loi organique n°2011-883. Elles font suite au référendum du 24 janvier 2010 où les Martiniquais ont voté pour une collectivité unique.',
         rev:'Revoir : Partie 4 de cet onglet – "Historique de la CTM"' },
 
       { cat:'ctm', q:'Que gère la DSI à la CTM (sigle mentionné dans votre DVE) ?',
@@ -558,10 +569,10 @@
         c:0, expl:'GRAND ANGLE est le logiciel de comptabilité et de gestion financière de la CTM (édité par Berger-Levrault). Il est interfacé avec CIVIL RH pour le traitement des mandats de paye.',
         rev:'Revoir : Partie 1 de cet onglet – "Le logiciel GRAND ANGLE"' },
 
-      { cat:'poste', q:'Sur quel article du CASF (Code de l\'Action Sociale et des Familles) le statut d\'assistant familial est-il défini ?',
-        opts:['Article L411-1','Article L421-1','Article L431-1','Article L441-1'],
-        c:1, expl:'L\'article L421-1 du CASF définit l\'assistant familial comme la personne qui accueille habituellement et de façon permanente des mineurs à son domicile, moyennant rémunération.',
-        rev:'Revoir : Partie 2 de cet onglet – "Article L421-1 du CASF"' },
+      { cat:'poste', q:'Sur quel article du CASF (Code de l\'Action Sociale et des Familles) l\'assistant familial est-il défini ?',
+        opts:['Article L411-1','Article L421-1','Article L421-2','Article L441-1'],
+        c:2, expl:'L\'article L421-2 du CASF définit l\'assistant familial comme la personne qui accueille habituellement et de façon permanente des mineurs et des jeunes majeurs de moins de 21 ans à son domicile, moyennant rémunération.',
+        rev:'Revoir : Partie 2 de cet onglet – "Article L421-2 du CASF"' },
 
       { cat:'poste', q:'Quelle est la durée maximale d\'un agrément ASFAM ?',
         opts:['1 an renouvelable','3 ans renouvelables','5 ans renouvelables','10 ans renouvelables'],
@@ -573,9 +584,9 @@
         c:1, expl:'Un trop-perçu est une somme versée à tort à l\'agent (erreur de calcul, salaire versé pendant une période non travaillée…). La collectivité doit le récupérer via retenue sur salaire ou titre de recettes, en respectant une procédure stricte (notification écrite, délai, seuils).',
         rev:'Revoir : Partie 3 de cet onglet – "Les trop-perçus : procédure et récupération"' },
 
-      { cat:'poste', q:'Quel est le salaire minimum garanti d\'un ASFAM pour un enfant en accueil ordinaire ?',
-        opts:['0,5 SMIC par enfant accueilli','1 SMIC par enfant accueilli','1,5 SMIC par enfant accueilli','2 SMIC par enfant accueilli'],
-        c:1, expl:'Le salaire minimum garanti d\'un ASFAM en accueil ordinaire est de 1 SMIC par enfant. Des majorations existent pour les enfants handicapés, les accueils d\'urgence ou en dérogation.',
+      { cat:'poste', q:'Quel est le minimum garanti pour la part correspondant au premier accueil ?',
+        opts:['0,5 SMIC mensuel','Le SMIC mensuel','1,5 SMIC mensuel','Un montant libre sans minimum'],
+        c:1, expl:'Depuis la revalorisation applicable depuis 2022, la part correspondant au premier accueil ne peut pas être inférieure au SMIC mensuel. Les accueils supplémentaires ont aussi un minimum réglementaire en référence au SMIC.',
         rev:'Revoir : Partie 3 de cet onglet – "La rémunération des ASFAM"' },
 
       { cat:'poste', q:'Combien d\'heures de formation les ASFAM doivent-ils effectuer dans les 3 ans suivant leur premier accueil ?',
