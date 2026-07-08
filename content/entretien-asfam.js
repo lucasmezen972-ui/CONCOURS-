@@ -535,12 +535,12 @@
 
   /* ── QCM DE PRÉPARATION ── */
   html += '<div class="card" id="asfam-qcm-card" style="border-left:4px solid #7c3aed">\n' +
-    '<div class="card-header"><h2>🧠 QCM de préparation</h2><p>40 questions sur la CTM, le poste et les mises en situation · Correction et aide à la révision immédiate</p></div>\n' +
+    '<div class="card-header"><h2>🧠 QCM de préparation</h2><p>70 questions sur la CTM, le poste et les mises en situation · Ordre mélangé à chaque tentative</p></div>\n' +
     '<div class="card-body">\n' +
     '  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">\n' +
-    '    <button onclick="asfamQcmStart(\'ctm\')" style="padding:10px 20px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🏛️ CTM (18 questions)</button>\n' +
-    '    <button onclick="asfamQcmStart(\'poste\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">💼 Poste ASFAM (22 questions)</button>\n' +
-    '    <button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:linear-gradient(135deg,#7c3aed,var(--primary));color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🎯 Tout (40 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'ctm\')" style="padding:10px 20px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🏛️ CTM (30 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'poste\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">💼 Métier ASFAM (40 questions)</button>\n' +
+    '    <button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:linear-gradient(135deg,#7c3aed,var(--primary));color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem">🎯 Tout (70 questions)</button>\n' +
     '  </div>\n' +
     '  <div id="asfam-qcm-zone" style="min-height:60px"><p style="color:var(--text-muted);font-style:italic">Choisissez un thème ci-dessus pour commencer le QCM.</p></div>\n' +
     '</div>\n</div>\n';
@@ -659,6 +659,66 @@
         c:1, expl:'Il faut rester prudent mais montrer que l\'on comprend les réalités locales : précarité, familles vulnérables, besoin de professionnels fiables et suivis.',
         rev:'Revoir : enjeux locaux et formulation mesurée devant un jury.' },
 
+      { cat:'ctm', q:'Quel principe explique que la CTM puisse organiser ses services sans tutelle hiérarchique de l\'État ?',
+        opts:['La libre administration des collectivités territoriales','Le pouvoir disciplinaire du préfet','La séparation des ordonnateurs et des comptables','La déconcentration'],
+        c:0, expl:'Les collectivités territoriales s\'administrent librement par des conseils élus, dans le respect de la loi. Le préfet contrôle la légalité, mais ne dirige pas les services de la CTM.',
+        rev:'Revoir : libre administration, décentralisation et contrôle de légalité.' },
+
+      { cat:'ctm', q:'Dans une collectivité, que signifie le contrôle de légalité ?',
+        opts:['Le préfet valide chaque appel téléphonique','Le préfet vérifie après transmission que certains actes respectent la loi','Le comptable public décide des recrutements','Le juge administratif signe les contrats'],
+        c:1, expl:'Le contrôle de légalité est exercé a posteriori par le préfet sur les actes transmis. Ce n\'est pas une tutelle hiérarchique sur la collectivité.',
+        rev:'Revoir : rôle du préfet et actes transmissibles.' },
+
+      { cat:'ctm', q:'Qui est l\'ordonnateur principal de la CTM pour les dépenses ?',
+        opts:['Le président du Conseil exécutif','Le préfet','Le directeur de la DDFIP','Le président du tribunal administratif'],
+        c:0, expl:'L\'ordonnateur engage, liquide et ordonne les dépenses. Pour la CTM, ce rôle relève de l\'exécutif territorial, sous l\'autorité de son président.',
+        rev:'Revoir : ordonnateur, comptable public, chaîne financière.' },
+
+      { cat:'ctm', q:'Quel acteur paie effectivement après mandatement dans la chaîne publique ?',
+        opts:['Le gestionnaire RH seul','Le comptable public','Le jury de recrutement','L\'assistant familial'],
+        c:1, expl:'La collectivité mandate la dépense, puis le comptable public contrôle et paie. C\'est la séparation classique ordonnateur/comptable.',
+        rev:'Revoir : séparation ordonnateur/comptable et rôle de la DDFIP.' },
+
+      { cat:'ctm', q:'Quel principe du service public est directement attendu dans la gestion de la paye ?',
+        opts:['Neutralité, égalité de traitement et continuité','Publicité commerciale','Liberté totale de modifier les règles','Absence de traçabilité'],
+        c:0, expl:'La gestion RH doit respecter les principes du service public : égalité de traitement des agents, neutralité, continuité et fiabilité.',
+        rev:'Revoir : principes du service public appliqués à une DGA RH.' },
+
+      { cat:'ctm', q:'Pourquoi la confidentialité est-elle encore plus importante dans ce poste qu\'en RH classique ?',
+        opts:['Parce que les dossiers peuvent concerner des enfants confiés et des situations familiales sensibles','Parce que les bulletins de salaire sont publics','Parce que la CTM interdit tout échange interne','Parce que les ASFAM ne sont pas rémunérés'],
+        c:0, expl:'Le poste combine données RH, paye et parfois informations liées à la protection de l\'enfance. Le devoir de discrétion professionnelle doit être très solide.',
+        rev:'Revoir : confidentialité, données sensibles, protection de l\'enfance.' },
+
+      { cat:'ctm', q:'Quel lien faire entre CTM et proximité avec les usagers ?',
+        opts:['La CTM est éloignée de toute action sociale','La CTM agit au contact du territoire, avec des services sociaux et RH qui répondent à des besoins locaux concrets','La CTM remplace les communes dans tous les domaines','La CTM ne traite que des dossiers nationaux'],
+        c:1, expl:'La force d\'une collectivité territoriale est d\'agir près du terrain. Pour les ASFAM, cela signifie des décisions et suivis liés aux réalités martiniquaises.',
+        rev:'Revoir : service public local et ancrage territorial.' },
+
+      { cat:'ctm', q:'Que doit montrer une candidate quand elle parle de la CTM en entretien ?',
+        opts:['Une critique générale des services','Une compréhension simple : collectivité unique, compétences sociales, rôle employeur, service public local','Uniquement des chiffres appris par coeur','Un refus de parler d\'organisation'],
+        c:1, expl:'Le jury cherche une personne qui comprend où elle arrive : une collectivité unique, des politiques sociales fortes et une organisation RH structurée.',
+        rev:'Revoir : pitch CTM en 30 secondes.' },
+
+      { cat:'ctm', q:'Quel exemple montre une bonne coopération interne ?',
+        opts:['Corriger une paye sans prévenir personne','Demander confirmation à la circonscription ou à la DPMI avant une modification sensible','Envoyer des données personnelles à un tiers','Attendre la fin du mois sans agir'],
+        c:1, expl:'Le poste nécessite une coordination fiable avec les services métiers. Une confirmation écrite évite les erreurs et protège la décision.',
+        rev:'Revoir : coordination DGA RH, DPMI, circonscriptions, AS FAMS.' },
+
+      { cat:'ctm', q:'Quel risque existe si une collectivité ne fiabilise pas ses données RH ?',
+        opts:['Aucun, la paie se corrige automatiquement','Erreurs de paye, réclamations, perte de confiance et difficultés de contrôle interne','Uniquement une faute informatique sans conséquence','Une hausse automatique de salaire'],
+        c:1, expl:'Une donnée RH erronée peut produire une erreur de rémunération, un contentieux, une réclamation ou une mauvaise décision administrative.',
+        rev:'Revoir : qualité des données et contrôle interne RH.' },
+
+      { cat:'ctm', q:'Quelle phrase est la plus juste sur la CTM ?',
+        opts:['Elle exerce seulement les compétences d\'une commune','Elle cumule des compétences de niveau départemental et régional','Elle dépend du ministère des Armées','Elle ne recrute pas d\'agents contractuels'],
+        c:1, expl:'La CTM est une collectivité unique : elle réunit les compétences anciennement exercées par le département et la région.',
+        rev:'Revoir : spécificité de la collectivité unique.' },
+
+      { cat:'ctm', q:'Pourquoi le poste peut-il être considéré comme sensible pour la CTM ?',
+        opts:['Parce qu\'il touche à la protection de l\'enfance, à la rémunération et à la continuité du service public','Parce qu\'il n\'a aucun contact avec les agents','Parce qu\'il ne demande aucune vérification','Parce qu\'il relève uniquement de la communication'],
+        c:0, expl:'La paye ASFAM est à la croisée de l\'humain, du social et de la rigueur administrative. Une erreur peut avoir des effets très concrets.',
+        rev:'Revoir : enjeux du poste et posture de gestionnaire fiable.' },
+
       /* ---- POSTE ASFAM ---- */
       { cat:'poste', q:'Que signifie le sigle ASFAM ?',
         opts:['Agent Spécialisé de la Fonction Administrative en Martinique','Assistant(e) Familial(e)','Associé Fonctionnaire de l\'Action Médico-sociale','Accompagnateur Social et Familial en Martinique'],
@@ -768,7 +828,97 @@
       { cat:'poste', q:'Quelle réponse montre une bonne compréhension du poste ?',
         opts:['Je veux seulement saisir des bulletins','Je dois sécuriser les dossiers ASFAM, fiabiliser la paye, respecter la confidentialité et travailler avec les partenaires internes','Je n\'aurai pas de contacts avec les agents','La paye est automatique donc il n\'y a rien à contrôler'],
         c:1, expl:'Le poste n\'est pas une simple saisie. Il combine dossier administratif, outils, contrôle, relation agent, confidentialité et coordination.',
-        rev:'Revoir : phrase de positionnement du début de l\'onglet.' }
+        rev:'Revoir : phrase de positionnement du début de l\'onglet.' },
+
+      { cat:'poste', q:'Un ASFAM signale que son indemnité d\'entretien semble manquante. Premier réflexe ?',
+        opts:['Dire que ce n\'est pas votre problème','Vérifier les dates d\'accueil, le type d\'indemnité, les justificatifs et la saisie avant de répondre','Créer une prime au hasard','Répondre seulement oralement sans trace'],
+        c:1, expl:'Une réclamation de paye se traite par vérification méthodique : période, droit ouvert, donnée source, saisie et trace de la réponse.',
+        rev:'Revoir : méthode réclamation paye.' },
+
+      { cat:'poste', q:'Quel élément peut déclencher une régularisation sur la paye d\'un ASFAM ?',
+        opts:['Un changement de situation transmis tardivement','La météo','Le nombre de communes en Martinique','Une question du jury'],
+        c:0, expl:'Une arrivée, sortie, suspension, congé, arrêt ou changement d\'agrément transmis après clôture peut entraîner une régularisation.',
+        rev:'Revoir : événements de gestion impactant la paie.' },
+
+      { cat:'poste', q:'Que faut-il éviter quand un agent conteste sa paye ?',
+        opts:['Donner un délai de réponse','Reconnaître qu\'on va vérifier','Promettre une correction avant contrôle','Rester calme'],
+        c:2, expl:'Il ne faut jamais promettre une correction avant d\'avoir contrôlé le droit, les dates et les pièces. La bonne posture est claire mais prudente.',
+        rev:'Revoir : posture relationnelle en réclamation.' },
+
+      { cat:'poste', q:'Quelle donnée doit être particulièrement surveillée pour éviter de payer au-delà du droit ?',
+        opts:['La date de fin d\'accueil','La couleur du téléphone','Le nombre de fenêtres du bureau','Le prénom du gestionnaire précédent'],
+        c:0, expl:'La date de fin d\'accueil est critique : si elle n\'est pas intégrée à temps, elle peut créer un trop-perçu.',
+        rev:'Revoir : dates d\'entrée/sortie et prévention du trop-perçu.' },
+
+      { cat:'poste', q:'Quel est le bon comportement face à une consigne orale importante ?',
+        opts:['L\'appliquer sans trace','Demander ou produire une confirmation écrite si elle impacte la paye ou le dossier','L\'ignorer systématiquement','La transmettre à tous les agents'],
+        c:1, expl:'Quand une consigne impacte un droit, un montant ou une situation administrative, une trace écrite protège le service et l\'agent.',
+        rev:'Revoir : traçabilité des décisions.' },
+
+      { cat:'poste', q:'Pourquoi le gestionnaire doit-il connaître les limites de son rôle ?',
+        opts:['Pour refuser tout travail','Pour ne pas empiéter sur les décisions éducatives, médicales ou judiciaires','Pour décider seul du placement','Pour éviter la confidentialité'],
+        c:1, expl:'Le gestionnaire paye traite les conséquences administratives et financières, mais ne décide pas du projet éducatif, de l\'agrément ou du placement.',
+        rev:'Revoir : limites du poste et travail avec les partenaires.' },
+
+      { cat:'poste', q:'Une extension d\'agrément est accordée. Quel impact possible ?',
+        opts:['Aucun suivi nécessaire','Mise à jour du dossier, capacité d\'accueil et contrôle des impacts de paye selon les accueils effectifs','Suppression de l\'ancien dossier','Fin automatique du contrat'],
+        c:1, expl:'Une extension modifie la capacité autorisée. Il faut mettre à jour le dossier et vérifier les accueils réellement confiés avant tout impact paye.',
+        rev:'Revoir : agrément, extension, nombre d\'enfants autorisés.' },
+
+      { cat:'poste', q:'Quel outil mental utiliser en mise en situation ?',
+        opts:['Réagir vite sans vérifier','Faits, sources, règle, action, trace','Chercher un coupable','Répondre uniquement par émotion'],
+        c:1, expl:'Cette méthode évite les réponses floues : identifier les faits, vérifier la source, appliquer la règle, agir, puis tracer.',
+        rev:'Revoir : méthode de réponse aux cas pratiques.' },
+
+      { cat:'poste', q:'Quel est le risque d\'avoir deux dossiers ASFAM avec des informations différentes ?',
+        opts:['Aucun, les logiciels devinent','Erreur de paye, erreur de courrier, mauvaise décision ou réclamation','Uniquement une faute d\'orthographe','Une amélioration automatique du suivi'],
+        c:1, expl:'Les incohérences de dossier fragilisent toute la chaîne : RH, paye, courrier, contrôle et relation agent.',
+        rev:'Revoir : qualité du dossier administratif.' },
+
+      { cat:'poste', q:'Quel exemple illustre la discrétion professionnelle ?',
+        opts:['Parler d\'un dossier enfant dans un couloir','Ne partager une information sensible qu\'avec les personnes habilitées et pour le besoin du service','Envoyer un bulletin de salaire à une mauvaise adresse','Garder les mots de passe sur un post-it'],
+        c:1, expl:'La discrétion professionnelle impose de limiter l\'accès aux informations sensibles aux personnes qui en ont réellement besoin pour traiter le dossier.',
+        rev:'Revoir : confidentialité et bonnes pratiques de bureau.' },
+
+      { cat:'poste', q:'Quel indicateur peut aider un gestionnaire à prioriser sa journée ?',
+        opts:['Les dossiers avec échéance de paie, agrément ou réclamation urgente','La couleur des chemises','L\'ordre alphabétique uniquement','Les dossiers les plus faciles seulement'],
+        c:0, expl:'La priorisation doit tenir compte de l\'urgence, de l\'impact financier, des échéances légales et du risque pour l\'agent ou le service.',
+        rev:'Revoir : organisation du travail et priorisation.' },
+
+      { cat:'poste', q:'Que faire si une erreur de paye est découverte après mandatement ?',
+        opts:['La cacher','Informer la hiérarchie, analyser l\'origine, préparer la régularisation et tracer','Supprimer le mail','Accuser l\'agent'],
+        c:1, expl:'Après mandatement, il faut passer par une régularisation organisée. La transparence interne et la trace sont essentielles.',
+        rev:'Revoir : correction après paie et régularisation.' },
+
+      { cat:'poste', q:'Quelle phrase montre une bonne gestion du stress ?',
+        opts:['Je panique quand plusieurs dossiers arrivent','Je priorise selon les échéances, je sécurise les dossiers sensibles et j\'alerte si un arbitrage est nécessaire','Je traite tout au hasard','Je garde les difficultés pour moi'],
+        c:1, expl:'Le poste peut connaître des pics d\'activité. Le jury veut entendre méthode, priorisation et alerte au bon niveau.',
+        rev:'Revoir : gestion des pics de paie.' },
+
+      { cat:'poste', q:'Un ASFAM demande des informations sur la situation familiale de l\'enfant. Que faire ?',
+        opts:['Tout transmettre par téléphone','Vérifier son droit à l\'information et orienter vers le service compétent si cela dépasse la mission paye','Publier l\'information dans un mail collectif','Répondre sans vérifier'],
+        c:1, expl:'Le gestionnaire paye ne diffuse pas d\'informations sensibles hors de son champ. Il oriente vers le service habilité.',
+        rev:'Revoir : confidentialité et périmètre de mission.' },
+
+      { cat:'poste', q:'Quel est le meilleur argument pour justifier sa motivation ?',
+        opts:['Je cherche n\'importe quel poste','Je veux mettre ma rigueur RH au service d\'un poste utile, concret et sensible pour la protection de l\'enfance','Je n\'ai pas lu la fiche de poste','Je préfère éviter les relations avec les agents'],
+        c:1, expl:'Une motivation solide relie compétences, utilité du poste, intérêt pour la CTM et compréhension des enjeux humains.',
+        rev:'Revoir : réponse "Pourquoi ce poste ?".' },
+
+      { cat:'poste', q:'Quelle pratique réduit le risque d\'oubli sur les agréments ?',
+        opts:['Un calendrier partagé ou tableau de suivi avec alertes','Une mémoire personnelle','Un dossier papier sans dates','Aucune relance'],
+        c:0, expl:'Les alertes et tableaux de suivi permettent d\'anticiper les échéances et de relancer les services concernés avant qu\'un dossier devienne urgent.',
+        rev:'Revoir : suivi d\'échéances et organisation.' },
+
+      { cat:'poste', q:'Dans une réponse orale, quelle structure est la plus convaincante ?',
+        opts:['Une réponse très longue sans exemple','Une réponse courte : principe, exemple concret, conclusion professionnelle','Une réponse apprise sans lien avec le poste','Une critique de l\'ancien employeur'],
+        c:1, expl:'Le jury retient mieux une réponse structurée et incarnée : règle générale, exemple, posture attendue.',
+        rev:'Revoir : méthode STAR et réponses en 1 minute.' },
+
+      { cat:'poste', q:'Que signifie sécuriser une paye ?',
+        opts:['Cliquer le plus vite possible','Vérifier les droits, les dates, les pièces, la saisie, la cohérence et la trace avant validation','Déléguer toute vérification à l\'agent','Éviter tout contrôle'],
+        c:1, expl:'Sécuriser une paye, c\'est éviter l\'erreur avant qu\'elle parte : contrôle, cohérence, justification et traçabilité.',
+        rev:'Revoir : contrôle avant validation.' }
     ];
 
     var _state = { qs: [], cur: 0, wrong: [], score: 0, cat: '' };
@@ -837,12 +987,18 @@
         wrongHTML +
         '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">' +
           '<button onclick="asfamQcmStart(\'' + _state.cat + '\')" style="padding:10px 20px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">🔄 Recommencer</button>' +
-          '<button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">🎯 Tout faire (20 questions)</button>' +
+          '<button onclick="asfamQcmStart(\'all\')" style="padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer">🎯 Tout faire (70 questions)</button>' +
         '</div>';
     }
 
     window.asfamQcmStart = function(cat) {
       var qs = cat === 'all' ? _QCM.slice() : _QCM.filter(function(q) { return q.cat === cat; });
+      for (var i = qs.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = qs[i];
+        qs[i] = qs[j];
+        qs[j] = tmp;
+      }
       _state = { qs: qs, cur: 0, wrong: [], score: 0, cat: cat };
       _render();
     };
