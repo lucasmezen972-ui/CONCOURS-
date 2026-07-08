@@ -1,0 +1,7 @@
+name = "concours-progress-api"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "CONCOURS_PROGRESS"
+id = "9560fa81c7e44da38f459a46d2c38d21"
